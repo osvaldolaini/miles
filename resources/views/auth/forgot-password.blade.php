@@ -43,9 +43,10 @@
 
         <div class="flex items-center justify-center mt-0 pt-0" >
             @if (Route::has('login'))
-                <a class="text-md text-sky-900 hover:sky-700 font-bold" href="{{ route('login') }}">
-                    {{ __('Volte ao entrar') }}
+                <a class="text-md text-sky-900 hover:sky-700 font-bold mr-2" href="{{ route('login') }}">
+                    {{ __(' Clique aqui') }}
                 </a>
+                {{ __('para voltar ') }}
             @endif
         </div>
     </x-auth-card>

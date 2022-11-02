@@ -33,7 +33,7 @@ Route::get('/auth/callback', function ($driver) {
 
     Auth::login($socialUser);
 
-    return redirect('/dashboard');
+    return redirect('/app');
 });
 
 #endregion
@@ -41,9 +41,24 @@ Route::get('/auth/callback', function ($driver) {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/termo-de-uso', 'SiteController@term')->name('term');
+Route::get('/politica-de-privacidade', 'SiteController@politics')->name('politics');
+// Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
+// Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');
+// Route::resource('/views','Admin\ViewController')->names('view')->parameters(['views' => 'view']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+    /**Site */
+    Route::group(['middleware' => ['auth']], function () {
+        Route::get('/app', 'AppController@index')->name('index');
+    });
+    /**Usuário */
+    Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
+        Route::post('/editar-meu-cadastro', 'UserController@update')->name('update');
+        Route::resource('/meu-cadastro','UserController')->names('user')->parameters(['meu-cadastro' => 'user']);
+    });
 
 require __DIR__.'/auth.php';

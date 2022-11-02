@@ -28,7 +28,7 @@
         </x-button-socialite>
 
         <div class="flex items-center mt-4 mb-2 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-            <p class="text-center font-semibold mx-4 mb-0">OU</p>
+            <p class="text-center font-semibold mx-4 mb-0">ou</p>
         </div>
 
         <form method="POST" action="{{ route('login') }}">
@@ -75,8 +75,9 @@
 
         <div class="flex items-center justify-center mt-0 pt-0" >
             @if (Route::has('register'))
-                <a class="text-md text-sky-900 hover:sky-700 font-bold" href="{{ route('register') }}">
-                    {{ __('Não tem uma conta?') }}
+                {{ __('Não tem uma conta? ') }}
+                <a class="text-md text-sky-900 hover:sky-700 font-bold ml-2" href="{{ route('register') }}">
+                    {{ __(' Clique aqui!') }}
                 </a>
             @endif
         </div>

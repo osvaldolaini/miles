@@ -75,8 +75,9 @@
 
         <div class="flex items-center justify-center mt-0 pt-0" >
             @if (Route::has('login'))
-                <a class="text-md text-sky-900 hover:sky-700 font-bold" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
+                <a class="text-md text-sky-900 hover:sky-700 font-bold ml-2" href="{{ route('login') }}">
+                    {{ __(' Clique aqui para voltar.') }}
                 </a>
             @endif
         </div>

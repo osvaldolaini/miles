@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.2.0",
+        "sweetalert2": "^11.6.5",
         "tw-elements": "^1.0.0-alpha12"
     }
 }

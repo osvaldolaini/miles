@@ -12,6 +12,13 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $rules = [
+        'cpf'       => 'required|unique:users',
+        'username'  => 'required',
+        'name'      => 'required',
+        'phone'     => 'required',
+        'email'     => 'required|unique:users',
+    ];
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +28,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'cpf',
+        'avatar'
     ];
 
     /**

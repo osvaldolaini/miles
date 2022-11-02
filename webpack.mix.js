@@ -12,9 +12,15 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-.sass('resources/scss/app.scss', 'public/css')
 .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
-
+//Plugins
+mix
+.scripts('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/vendor/sweetalert2/sweetalert2.min.js')
+.sass('node_modules/sweetalert2/src/sweetalert2.scss', 'public/vendor/sweetalert2/sweetalert2.min.css')
+//Sistema
+mix
+.scripts('resources/views/app/assets/js/app_main.js', 'public/assets/js/app_main.js')
+.scripts('resources/views/app/assets/js/app_crud.js', 'public/assets/js/app_crud.js')

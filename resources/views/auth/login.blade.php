@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-sky-500" />
+                <x-application-logo class="w-20 h-20 fill-current text-sky-500 mb-0 pb-0" />
             </a>
         </x-slot>
 
@@ -27,7 +27,7 @@
             {{ __('Entrar com o Facebook') }}
         </x-button-socialite>
 
-        <div class="flex items-center mt-4 mb-2 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+        <div class="flex items-center mt-2 mb-1 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p class="text-center font-semibold mx-4 mb-0">ou</p>
         </div>
 

@@ -27,7 +27,7 @@ class UserController extends Controller
             'assets/js/app_crud.js',
         );
         return view('app.user.form',[
-            'data'      => Auth::user(),
+            'title'     => 'MEU CADASTRO',
             'scripts'   => $scripts,
             'styles'    => $styles,
             'data'      => User::where('id',Auth::user()->id)->first()
@@ -85,10 +85,12 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
+        $request->username = Str::slug($request->username, '_');
         $request->validate([
             'cpf'       => ['required',
                 Rule::unique('users', 'cpf')->ignore(Auth::user()->id)],
-            'username'  => 'required',
+            'username'       => ['required',
+                Rule::unique('users', 'username')->ignore(Auth::user()->id)],
             'name'      => 'required',
             'phone'     => 'required',
             'email'     => ['required',
@@ -97,7 +99,7 @@ class UserController extends Controller
 
         $user               = User::where('id',Auth::user()->id)->first();
         $user->name         = mb_strtoupper($request->name);
-        $user->username     = Str::slug($request->username, '_');
+        $user->username     = $request->username;
         $user->cpf          = $request->cpf;
         $user->phone        = $request->phone;
         $user->bio          = $request->bio;

@@ -11,7 +11,7 @@ class SiteController extends Controller
         //$config = Config::get()->first();
 
         return view('term', [
-            'title_postfix' => 'Termo de uso',
+            'title' => 'Termo de uso',
             //'config'        =>  $config,
             //'img_jarallax'  =>  'crossfit-canoas-home-1.jpg',
         ]);
@@ -20,7 +20,7 @@ class SiteController extends Controller
     {
         //$config = Config::get()->first();
         return view('politics', [
-            'title_postfix' => 'Política de privacidade',
+            'title' => 'Política de privacidade',
             //'config'        =>  $config,
             //'img_jarallax'  =>  'crossfit-canoas-home-1.jpg',
         ]);

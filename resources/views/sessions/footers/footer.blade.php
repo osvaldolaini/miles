@@ -111,41 +111,40 @@
           </div>
         </div>
 
-        <div class="pt-16 pb-8 lg:pt-24 lg:pr-12">
-          <div class="hidden text-teal-300 ">
+        <div class="pt-16 pb-8 lg:pt-12 lg:pr-12">
+          {{-- <div class=" text-teal-300 ">
             <x-slot name="logo">
-                <a href="/">
+                <a href="{{ url('') }}">
                     <x-application-logo class="w-20 h-20 fill-current text-sky-500" />
                 </a>
             </x-slot>
-          </div>
+          </div> --}}
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:mt-12">
 
 
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-12">
             <div class="text-center lg:text-left">
-              <p class="text-lg font-medium text-white">Sobre</p>
+                <p class="text-lg font-medium text-white">Sobre</p>
+                <nav aria-label="Footer About Nav" class="mt-4">
+                  <ul class="space-y-1.5 text-sm">
+                    <li>
+                      <a class="text-white transition hover:text-white/75" href="/">
+                        Missão
+                      </a>
+                    </li>
 
-              <nav aria-label="Footer About Nav" class="mt-4">
-                <ul class="space-y-1.5 text-sm">
-                  <li>
-                    <a class="text-white transition hover:text-white/75" href="/">
-                      Missão
-                    </a>
-                  </li>
+                    <li>
+                      <a class="text-white transition hover:text-white/75" href="/">
+                        Cursos
+                      </a>
+                    </li>
 
-                  <li>
-                    <a class="text-white transition hover:text-white/75" href="/">
-                      Cursos
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class="text-white transition hover:text-white/75" href="/">
-                      Blog
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                    <li>
+                      <a class="text-white transition hover:text-white/75" href="/">
+                        Blog
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
             </div>
 
             <div class="text-center lg:text-left">
@@ -157,6 +156,9 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="text-center lg:text-left">
+                <x-application-logo class="w-10 h-10 text-sky-500" />
             </div>
           </div>
 
@@ -203,3 +205,4 @@
       </div>
     </div>
   </footer>
+

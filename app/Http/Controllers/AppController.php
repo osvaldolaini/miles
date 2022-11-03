@@ -9,7 +9,7 @@ class AppController extends Controller
     public function index ()
     {
         return view('app.index',[
-            'title_postfix' =>  'Home',
+            'title'     => 'PEDIDOS EM ABERTO',
         ]);
     }
 }

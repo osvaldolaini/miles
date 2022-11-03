@@ -59,6 +59,7 @@ Route::get('/politica-de-privacidade', 'SiteController@politics')->name('politic
     Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
         Route::post('/editar-meu-cadastro', 'UserController@update')->name('update');
         Route::resource('/meu-cadastro','UserController')->names('user')->parameters(['meu-cadastro' => 'user']);
+        Route::resource('/meus-pedidos','DemandController')->names('demand')->parameters(['meus-pedidos' => 'demand']);
     });
 
 require __DIR__.'/auth.php';

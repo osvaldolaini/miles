@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Model\App\Demand;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,13 +13,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $rules = [
-        'cpf'       => 'required|unique:users',
-        'username'  => 'required',
-        'name'      => 'required',
-        'phone'     => 'required',
-        'email'     => 'required|unique:users',
-    ];
     /**
      * The attributes that are mass assignable.
      *
@@ -50,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function demands()
+    {
+        return $this->hasMany(Demand::class);
+    }
 }

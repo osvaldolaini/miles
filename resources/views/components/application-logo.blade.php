@@ -6,9 +6,11 @@
         <source srcset="{{ url('storage/logo/logo-200x200.webp') }}" type="image/webp">
     <img src="{{ url('storage/logo/logo-200x200.png') }}" alt="sistemilhas-logo">
 </picture> --}}
-<picture {{ $attributes }}>
-    <source srcset="{{ url('storage/logo/logo-seta-130x130.png') }}" media="(min-width: 600px)">
-    <source srcset="{{ url('storage/logo/logo-seta-130x130.webp') }}" type="image/webp">
-    <source srcset="{{ url('storage/logo/logo-seta-130x130.webp') }}" type="image/webp" media="(min-width: 600px)">
-    <img src="{{ url('storage/logo/logo-seta-130x130.png') }}" alt="sistemilhas-logo">
-</picture>
+<a href="{{ url('') }}">
+    <picture {{ $attributes }}>
+        <source srcset="{{ url('storage/logo/logo-seta-130x130.png') }}" media="(min-width: 600px)">
+        <source srcset="{{ url('storage/logo/logo-seta-130x130.webp') }}" type="image/webp">
+        <source srcset="{{ url('storage/logo/logo-seta-130x130.webp') }}" type="image/webp" media="(min-width: 600px)">
+        <img src="{{ url('storage/logo/logo-seta-130x130.png') }}" alt="sistemilhas-logo">
+    </picture>
+<a>

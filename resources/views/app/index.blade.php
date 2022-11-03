@@ -16,10 +16,11 @@
 <x-app-breadcrumb >{{ __($title) }}</x-app-breadcrumb>
 
 <div class="w-full space-y-2 my-3 ">
-    {{-- <div class="flex items-center mx-auto container justify-center md:justify-between py-2"> --}}
-        <x-app-demand :data="true"></x-app-demand>
-        {{-- @include('app.sessions.demand') --}}
-    {{-- </div> --}}
+    @if (isset($data))
+        @foreach ($data as $demand)
+            <x-app-demand :data='$demand'></x-app-demand>
+        @endforeach
+    @endif
 </div>
 
 @endsection

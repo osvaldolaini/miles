@@ -1,5 +1,4 @@
 @props(['data'])
-
 @if ($data)
     {{-- <div class="container-fluid rounded-lg shadow-md py-2 bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
         <div class="flex items-center justify-between py-0 px-3">
@@ -73,23 +72,50 @@
                 <div class="-space-y-1">
                     <h2 class="text-sm font-semibold leading-none">{{ $data->user->username }}</h2>
                     <span class="inline-block text-xs leading-none dark:text-gray-400">Iniciante</span>
+                    {{-- <span class="flex items-center leading-none
+                        justify-center rounded-full bg-emerald-100
+                        px-2.5 py-0.5 text-emerald-700">
+                        <p class="whitespace-nowrap text-xs">Comprou XXXX</p>
+                    </span>
+                    <span class="inline-block items-center leading-none
+                        justify-center rounded-full bg-red-100
+                        px-2.5 py-0.5 text-red-700">
+                        <p class="whitespace-nowrap text-xs">Vendeu XXXX</p>
+                    </span> --}}
                 </div>
             </div>
             <div class="text-right">
                 <h1 class="text-xl font-bold mt-0 pt-0" >{{ $data->miles }} Milhas</h1>
                 <h2 class="text-lg font-bold mt-0 pt-0" >{{ $data->qtd }} CPF</h2>
                 <h2 class="text-md font-bold mt-0 pt-0" >Valor R$ {{ number_format($data->value, 2, ',', '.') }}</h2>
-                <div class="mt-3">
-                    <a href="{{ route('login') }}" class="bg-teal-500
-                        hover:bg-gray-900 border-2 border-teal-500
-                        active:bg-teal-300 text-white text-xs
-                        font-bold uppercase px-6 py-2.5 rounded-full
-                        shadow hover:shadow-md outline-none focus:outline-none
-                        mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
-                        duration-150" >
-                    Fazer oferta
-                    </a>
-                </div>
+                @if ($data->user->id == Auth::user()->id)
+                    <div class="mt-0 pt-0">
+                        <form action="excluir-pedido" method="POST" id="form" class="container mt-0 pt-0 flex flex-col mx-auto space-y-4 ng-untouched ng-pristine ng-valid">
+                            @csrf
+                            <button type='submit' class="bg-red-500
+                            hover:bg-gray-900 border-2 border-red-500
+                            active:bg-red-300 text-white text-xs
+                            font-bold uppercase px-6 py-2.5 rounded-full
+                            shadow hover:shadow-md outline-none focus:outline-none
+                            mr-0 mb-0 ml-3 mx-4  ease-linear transition-all
+                            duration-150" >
+                        Excluir <span class="fa-solid fa-trash"></span>
+                            </button>
+                        </form>
+                    </div>
+                @else
+                    <div class="mt-0">
+                        <a href="{{ route('login') }}" class="bg-teal-500
+                                hover:bg-gray-900 border-2 border-teal-500
+                                active:bg-teal-300 text-white text-xs
+                                font-bold uppercase px-6 py-2.5 rounded-full
+                                shadow hover:shadow-md outline-none focus:outline-none
+                                mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
+                                duration-150" >
+                            Fazer oferta
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="px-3">
@@ -121,8 +147,8 @@
             </div>
 
             <div class="space-y-3">
-                <p class="text-sm text-right">
-                    <span class="text-base font-semibold">Publicado à </span>{{ timeCreate($data->created_at) }}
+                <p class="text-xs text-right">
+                    <span class="text-base font-semibold text-xs">Publicado à </span>{{ timeCreate($data->created_at) }}
                 </p>
             </div>
         </div>

@@ -21,14 +21,14 @@ class Demand extends Model
     protected $dates = [
         'end_date'
     ];
-    public function setEndDateAttribute($value)
-    {
-        if ($value != "") {
-            $this->attributes['end_date']=implode("-",array_reverse(explode("/",$value)));
-        }else{
-            $this->attributes['end_date']=NULL;
-        }
-    }
+    // public function setEndDateAttribute($value)
+    // {
+    //     if ($value != "") {
+    //         $this->attributes['end_date']=implode("-",array_reverse(explode("/",$value)));
+    //     }else{
+    //         $this->attributes['end_date']=NULL;
+    //     }
+    // }
     public function user()
     {
         return $this->belongsTo(User::class);

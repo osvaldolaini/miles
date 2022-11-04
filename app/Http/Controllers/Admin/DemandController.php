@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Functions;
 use App\Http\Controllers\Controller;
 use App\Models\Model\App\Demand;
 use Illuminate\Http\Request;
@@ -16,7 +17,6 @@ class DemandController extends Controller
      */
     public function index()
     {
-
         $styles = array(
             'vendor/sweetalert2/sweetalert2.min.css',
         );
@@ -26,13 +26,13 @@ class DemandController extends Controller
             'assets/js/app_crud.js',
         );
         return view('app.demands.list',[
-            'title'     => 'MEUS PEDIDOS',
+            'title'     => 'NOVO PEDIDOS',
             'scripts'   => $scripts,
             'styles'    => $styles,
             'data'      => Demand::with(['user'])
                                 ->orderBy('created_at','desc')
                                 ->where('user_id',Auth::user()->id)
-                                ->get()
+                                ->paginate(5)
         ]);
     }
 
@@ -43,7 +43,19 @@ class DemandController extends Controller
      */
     public function create()
     {
-        //
+        $styles = array(
+            'vendor/sweetalert2/sweetalert2.min.css',
+        );
+        $scripts = array(
+            'vendor/sweetalert2/sweetalert2.min.js',
+            'assets/js/app_main.js',
+            'assets/js/app_crud.js',
+        );
+        return view('app.demands.form',[
+            'title'     => 'NOVO PEDIDO',
+            'scripts'   => $scripts,
+            'styles'    => $styles,
+        ]);
     }
 
     /**
@@ -54,7 +66,38 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'miles'     => 'required',
+            'qtd'       => 'required',
+            'value'     => 'required',
+            'value_max' => 'required',
+            'end_date'  => 'required'
+        ]);
+
+        $demand               = new Demand;
+        $demand->miles        = $request->miles;
+        $demand->qtd          = $request->qtd;
+        $demand->value        = Functions::valueDB($request->value);
+        $demand->value_max    = Functions::valueDB($request->value_max);
+        $demand->end_date     = $request->end_date;
+        $demand->created_by   = Auth::user()->name;
+
+        if($demand->save()){
+            return response()->json(
+                [
+                    'success' => true,
+                    'location'=> '',
+                    'message' => 'Atualizado com sucesso'
+                ]
+            );
+        }else{
+            return response()->json(
+                [
+                    'success' => false,
+                    'message' => 'Erro ao tentar atualizar'
+                ]
+            );
+        }
     }
 
     /**

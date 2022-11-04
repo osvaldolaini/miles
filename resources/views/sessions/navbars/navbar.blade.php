@@ -59,11 +59,18 @@ px-2 py-2 navbar-expand-lg bg-gray-900">
                     <li class="flex items-center">
                         @auth
                             <div class="flex items-center mr-5">
+                                <a href="{{ route('demand.create') }}" class="bg-teal-500
+                                hover:bg-gray-900 border-2 border-teal-500
+                                active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150" >
+                                FAZER PEDIDO <span class="fa-solid fa-plus"></span>
+                                </a>
+                            </div>
+                            <div class="flex items-center mr-5">
                                 <x-dropdown-alerts></x-dropdown-user>
                             </div>
                             <x-dropdown-user></x-dropdown-user>
                         @else
-                        <a href="{{ route('login') }}" class="bg-teal-500
+                            <a href="{{ route('login') }}" class="bg-teal-500
                             hover:bg-gray-900 border-2 border-teal-500
                             active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150" >
                              Entrar
@@ -74,19 +81,6 @@ px-2 py-2 navbar-expand-lg bg-gray-900">
                             active:bg-teal-300 active:text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150" >
                                  Registrar
                             </a>
-                        {{-- <x-slot name="content">
-                            <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                            </form>
-                        </x-slot> --}}
-
                         @endauth
 
                     </li>

@@ -17,6 +17,7 @@
 
 <div class="w-full space-y-2 my-3 ">
     @if (isset($data))
+        @csrf
         @foreach ($data as $demand)
             <x-app-demand :data='$demand'></x-app-demand>
         @endforeach

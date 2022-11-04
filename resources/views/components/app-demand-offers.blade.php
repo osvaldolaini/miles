@@ -1,8 +1,20 @@
+@props(['data'])
+{{-- @if ($data) --}}
+
+{{-- @endif --}}
 <div x-data="{ open: false }" class="relative inline-block">
     <!-- Dropdown toggle button -->
     <div @click="open = !open" class="flex justify-center items-center space-x-3 cursor-pointer" >
-        <div class="font-semibold text-white">
-            <div class="cursor-pointer"><i class="fa-solid fa-bell"></i> Notificações
+        <div class="flex flex-wrap items-center pt-3 pb-1 cursor-pointer" >
+            <div class="flex items-center space-x-2">
+                <div class="flex -space-x-4">
+                    <img alt="" class="w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800" src="https://source.unsplash.com/40x40/?portrait?1">
+                    <img alt="" class="w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800" src="https://source.unsplash.com/40x40/?portrait?2">
+                    <img alt="" class="w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800" src="https://source.unsplash.com/40x40/?portrait?3">
+                </div>
+                <span class="text-sm">6 pessoas
+                    <span class="font-semibold">fizeram oferta</span>
+                </span>
             </div>
         </div>
     </div>
@@ -34,6 +46,7 @@
                 <p class="mx-2 text-sm text-gray-600 dark:text-white"><span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h</p>
             </a>
         </div>
-        <a href="#" class="block py-2 font-bold text-center text-white bg-gray-800 dark:bg-gray-700 hover:underline">See all notifications</a>
+        <a href="#" class="block py-2 font-bold text-center text-white bg-gray-800 dark:bg-gray-700 hover:underline">Ver lista completa</a>
     </div>
 </div>
+

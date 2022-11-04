@@ -32,6 +32,7 @@ class DemandController extends Controller
             'data'      => Demand::with(['user'])
                                 ->orderBy('created_at','desc')
                                 ->where('user_id',Auth::user()->id)
+                                ->where('status','!=',0)
                                 ->paginate(5)
         ]);
     }
@@ -66,8 +67,6 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $request->validate([
             'miles'     => 'required',
             'qtd'       => 'required',
@@ -77,6 +76,7 @@ class DemandController extends Controller
         ]);
 
         $demand               = new Demand();
+        $demand->active       = 1;
         $demand->miles        = $request->miles;
         $demand->qtd          = $request->qtd;
         $demand->value        = Functions::valueDB($request->value);
@@ -139,7 +139,24 @@ class DemandController extends Controller
      */
     public function update(Request $request, Demand $demand)
     {
-        //
+        $demand->status       = 0;
+
+        if($demand->save()){
+            return response()->json(
+                [
+                    'success' => true,
+                    'location'=> url('meus-pedidos'),
+                    'message' => 'Excluido com sucesso'
+                ]
+            );
+        }else{
+            return response()->json(
+                [
+                    'success' => false,
+                    'message' => 'Erro ao tentar atualizar'
+                ]
+            );
+        }
     }
 
     /**

@@ -15,6 +15,7 @@ class CreateDemandsTable extends Migration
     {
         Schema::create('demands', function (Blueprint $table) {
             $table->id();
+            $table->boolean('active')->nullable();
             $table->string('qtd',15)->nullable();
             $table->dateTime('end_date')->nullable();
             $table->decimal('value', $precision = 10, $scale = 2)->nullable();

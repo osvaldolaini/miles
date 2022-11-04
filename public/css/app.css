@@ -1899,6 +1899,12 @@ select {
 .right-0 {
   right: 0px;
 }
+.left-\[-34px\] {
+  left: -34px;
+}
+.top-\[32px\] {
+  top: 32px;
+}
 .left-auto {
   left: auto;
 }
@@ -1916,6 +1922,9 @@ select {
 }
 .col-span-full {
   grid-column: 1 / -1;
+}
+.float-right {
+  float: right;
 }
 .float-left {
   float: left;
@@ -2047,6 +2056,12 @@ select {
 .mt-10 {
   margin-top: 2.5rem;
 }
+.mr-9 {
+  margin-right: 2.25rem;
+}
+.mt-9 {
+  margin-top: 2.25rem;
+}
 .mt-0 {
   margin-top: 0px;
 }
@@ -2140,6 +2155,9 @@ select {
 .h-1 {
   height: 0.25rem;
 }
+.h-56 {
+  height: 14rem;
+}
 .h-6 {
   height: 1.5rem;
 }
@@ -2193,6 +2211,15 @@ select {
 }
 .w-64 {
   width: 16rem;
+}
+.w-56 {
+  width: 14rem;
+}
+.w-\[170px\] {
+  width: 170px;
+}
+.w-72 {
+  width: 18rem;
 }
 .w-20 {
   width: 5rem;
@@ -2249,11 +2276,11 @@ select {
 .basis-auto {
   flex-basis: auto;
 }
-.origin-top-left {
-  transform-origin: top left;
-}
 .origin-top {
   transform-origin: top;
+}
+.origin-top-left {
+  transform-origin: top left;
 }
 .origin-top-right {
   transform-origin: top right;
@@ -2264,6 +2291,10 @@ select {
 }
 .rotate-90 {
   --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-rotate-45 {
+  --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-90 {
@@ -2582,6 +2613,10 @@ select {
 }
 .bg-transparent {
   background-color: transparent;
+}
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 .bg-red-500 {
   --tw-bg-opacity: 1;

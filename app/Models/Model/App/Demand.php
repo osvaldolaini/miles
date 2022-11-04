@@ -14,9 +14,9 @@ class Demand extends Model
     use HasFactory;
     use Notifiable, LogsActivity;
 
-    protected static $logAttributes = ['value', 'value_max', 'miles', 'qtd'];
+    protected static $logAttributes = ['value', 'value_max', 'miles', 'qtd','end_date'];
     protected $fillable = [
-        'value', 'value_max', 'miles', 'qtd'
+        'value', 'value_max', 'miles', 'qtd',
     ];
     protected $dates = [
         'end_date'

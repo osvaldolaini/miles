@@ -26,7 +26,7 @@ class DemandController extends Controller
             'assets/js/app_crud.js',
         );
         return view('app.demands.list',[
-            'title'     => 'NOVO PEDIDOS',
+            'title'     => 'MEUS PEDIDOS',
             'scripts'   => $scripts,
             'styles'    => $styles,
             'data'      => Demand::with(['user'])
@@ -66,6 +66,8 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $request->validate([
             'miles'     => 'required',
             'qtd'       => 'required',
@@ -74,19 +76,25 @@ class DemandController extends Controller
             'end_date'  => 'required'
         ]);
 
-        $demand               = new Demand;
+        $demand               = new Demand();
         $demand->miles        = $request->miles;
         $demand->qtd          = $request->qtd;
         $demand->value        = Functions::valueDB($request->value);
         $demand->value_max    = Functions::valueDB($request->value_max);
         $demand->end_date     = $request->end_date;
-        $demand->created_by   = Auth::user()->name;
-
+        $demand->user_id      = Auth::user()->id;
+        // return response()->json(
+        //     [
+        //         'success' => true,
+        //         'location'=> '',
+        //         'message' => $demand->value
+        //     ]
+        // );
         if($demand->save()){
             return response()->json(
                 [
                     'success' => true,
-                    'location'=> '',
+                    'location'=> url('meus-pedidos'),
                     'message' => 'Atualizado com sucesso'
                 ]
             );

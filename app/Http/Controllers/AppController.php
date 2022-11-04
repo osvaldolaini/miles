@@ -13,6 +13,7 @@ class AppController extends Controller
             'title'     => 'PEDIDOS EM ABERTO',
             'data'      => Demand::with(['user'])
                                 ->orderBy('created_at','desc')
+                                ->where('end_date','>=',date('Y-m-d H:i:s'))
                                 ->get()
         ]);
     }

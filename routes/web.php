@@ -60,6 +60,7 @@ Route::get('/politica-de-privacidade', 'SiteController@politics')->name('politic
         Route::post('/editar-meu-cadastro', 'UserController@update')->name('update');
         Route::resource('/meu-cadastro','UserController')->names('user')->parameters(['meu-cadastro' => 'user']);
         Route::resource('/meus-pedidos','DemandController')->names('demand')->parameters(['meus-pedidos' => 'demand']);
+        Route::resource('/minhas-ofertas','OfferController')->names('offer')->parameters(['minhas-ofertas' => 'offer']);
     });
 
 require __DIR__.'/auth.php';

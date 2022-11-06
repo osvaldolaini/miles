@@ -24,3 +24,4 @@ mix
 mix
 .scripts('resources/views/app/assets/js/app_main.js', 'public/assets/js/app_main.js')
 .scripts('resources/views/app/assets/js/app_crud.js', 'public/assets/js/app_crud.js')
+.scripts('resources/views/app/assets/js/app_masks.js', 'public/assets/js/app_masks.js')

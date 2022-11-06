@@ -25,6 +25,7 @@ class UserController extends Controller
             'vendor/sweetalert2/sweetalert2.min.js',
             'assets/js/app_main.js',
             'assets/js/app_crud.js',
+            'assets/js/app_masks.js',
         );
         return view('app.user.form',[
             'title'     => 'MEU CADASTRO',

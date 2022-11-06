@@ -11,7 +11,7 @@
                     <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">
                         <div class="col-span-full sm:col-span-3">
                             <label for="miles" class="text-sm">Quantidade de Milhas</label>
-                            <input value="{{ old('miles', $data->miles ?? '') }}" name="miles" required type="text" placeholder="Milhas" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
+                            <input value="{{ old('miles', $data->miles ?? '') }}" name="miles" required maxlength="10" onkeypress="masks(this,maskMiles)" type="text" placeholder="Milhas" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
                         <div class="col-span-full sm:col-span-3">
                             <label for="qtd" class="text-sm">Quantidade de CPF</label>
@@ -19,11 +19,11 @@
                         </div>
                         <div class="col-span-full sm:col-span-3">
                             <label for="value" class="text-sm">Valor</label>
-                            <input value="{{ old('value', $data->value ?? '') }}" name="value" required type="text" placeholder="Valor" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
+                            <input value="{{ old('value', $data->value ?? '') }}" maxlength="7" onkeypress="masks(this,maskMoney)"  name="value" required type="text" placeholder="Valor" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
                         <div class="col-span-full sm:col-span-3">
                             <label for="value_max" class="text-sm">Valor máximo</label>
-                            <input value="{{ old('value_max', $data->value_max ?? '') }}" name="value_max" required type="text" placeholder="Valor" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
+                            <input value="{{ old('value_max', $data->value_max ?? '') }}"  maxlength="7" onkeypress="masks(this,maskMoney)" name="value_max" required type="text" placeholder="Valor" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
                         <div class="col-span-full ">
                             <h2 class="text-sm">Duração do pedido</label>

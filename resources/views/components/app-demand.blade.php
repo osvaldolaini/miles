@@ -84,7 +84,7 @@
                     </div>
                     <div class="text-right">
                         <div class="-pt-4">
-                            <h1 class="text-xl font-bold mt-0 pt-0" >{{ $data->miles }} Milhas</h1>
+                            <h1 class="text-xl font-bold mt-0 pt-0" >{{ milesUnit($data->miles) }} Milhas</h1>
                             <h2 class="text-lg font-bold mt-0 pt-0" >{{ $data->qtd }} CPF</h2>
                             <h2 class="text-md font-bold mt-0 pt-0" >Valor R$ {{ number_format($data->value, 2, ',', '.') }}</h2>
                         </div>
@@ -114,24 +114,19 @@
                         <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar" class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
                     @endif
                     <div class="-space-y-1">
-                        <h2 class="text-sm font-semibold leading-none">{{ $data->user->username }}</h2>
-                        <span class="inline-block text-xs leading-none dark:text-gray-400">Iniciante</span>
+                        <h2 class="text-sm font-semibold leading-none">{{ '@'.$data->user->username }}</h2>
+                        <span class="inline-block text-xs leading-none dark:text-gray-400 mb-2">Iniciante</span>
                         @if ($data->user->id != Auth::user()->id)
-                        <span class="flex items-center leading-none
-                            justify-center rounded-full bg-emerald-100
-                            px-2.5 py-0.5 text-emerald-700">
-                            <p class="whitespace-nowrap text-xs">Comprou XXXX</p>
-                        </span>
-                        <span class="inline-block items-center leading-none
-                            justify-center rounded-full bg-red-100
-                            px-2.5 py-0.5 text-red-700">
-                            <p class="whitespace-nowrap text-xs">Vendeu XXXX</p>
-                        </span>
+                            <span class="flex items-center leading-none  ml-0
+                                justify-center rounded-md bg-emerald-100
+                                px-2.5 py-0.5 text-emerald-700">
+                                <p class="whitespace-nowrap text-xs">Comprou 10.5k</p>
+                            </span>
                         @endif
                     </div>
                 </div>
                 <div class="text-right">
-                    <h1 class="text-xl font-bold mt-0 pt-0" >{{ $data->miles }} Milhas</h1>
+                    <h1 class="text-xl font-bold mt-0 pt-0" >{{ milesUnit($data->miles) }}  Milhas</h1>
                     <h2 class="text-lg font-bold mt-0 pt-0" >{{ $data->qtd }} CPF</h2>
                     <h2 class="text-md font-bold mt-0 pt-0" >Valor R$ {{ number_format($data->value, 2, ',', '.') }}</h2>
                     @if ($data->user->id == Auth::user()->id)
@@ -150,8 +145,9 @@
                                     </button>
                         </div>
                     @else
-                        <div class="mt-0">
-                            <a href="{{ route('login') }}" class="bg-teal-500
+                        <div class="mt-2">
+                            <x-app-offer :data='$data'></x-app-demand>
+                            {{-- <a href="{{ route('login') }}" class="bg-teal-500
                                     hover:bg-gray-900 border-2 border-teal-500
                                     active:bg-teal-300 text-white text-xs
                                     font-bold uppercase px-6 py-2.5 rounded-full
@@ -159,7 +155,7 @@
                                     mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
                                     duration-150" >
                                 Fazer oferta
-                            </a>
+                            </a> --}}
                         </div>
                     @endif
                 </div>
@@ -180,7 +176,7 @@
                             </svg>
                         </button>
                         {{-- dropdown ofertas --}}
-                        <x-app-demand-offers :data='true'></x-app-demand-offers>
+                        <x-app-demand-offers :data='$data'></x-app-demand-offers>
                     </div>
                 </div>
 

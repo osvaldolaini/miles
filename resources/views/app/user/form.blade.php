@@ -21,14 +21,13 @@
                             <label for="email" class="text-sm">Email</label>
                             <input value="{{ old('email', $data->email ?? '') }}" name="email" required type="email" placeholder="Email" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
-
                         <div class="col-span-full sm:col-span-3">
                             <label for="cpf" class="text-sm">CPF</label>
-                            <input value="{{ old('cpf', $data->cpf ?? '') }}" name="cpf" required type="text" placeholder="CPF" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
+                            <input value="{{ old('cpf', $data->cpf ?? '') }}" maxlength="14" onkeypress="masks(this,maskCpf)" name="cpf" required type="text" placeholder="CPF" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
                         <div class="col-span-full sm:col-span-3">
                             <label for="phone" class="text-sm">Contato</label>
-                            <input value="{{ old('phone', $data->phone ?? '') }}" name="phone" required type="text" placeholder="Contato" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
+                            <input value="{{ old('phone', $data->phone ?? '') }}" maxlength="15" onkeypress="masks(this,maskCellPhone)" name="phone" required type="text" placeholder="Contato" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900">
                         </div>
                         <div class="col-span-full">
                             <label for="bio" class="text-sm">Bio</label>

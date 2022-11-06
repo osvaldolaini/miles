@@ -34,3 +34,31 @@ if(!function_exists('timeCreate')){
     }
 }
 
+if(!function_exists('milesUnit')){
+    function milesUnit($miles){
+        $k = $miles/1000;
+        switch ($k) {
+            case $k < 1:
+                $m = $miles;
+                break;
+            case $k >= 1 && $k < 1000:
+                $m =  $k.'K';
+                    break;
+            default:
+            $m =  $k.'K';
+                break;
+        }
+        return $m;
+    }
+}
+if(!function_exists('money')){
+    function money($value){
+        if($value){
+            str_replace(' ', '', $value);
+            ltrim($value);
+            $value = str_replace(',', '', $value);
+            $value = str_replace('.', ',', $value);
+            return str_replace(' ', '', $value);
+        }
+    }
+}

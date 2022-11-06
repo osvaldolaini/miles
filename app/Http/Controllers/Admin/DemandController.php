@@ -33,7 +33,7 @@ class DemandController extends Controller
                                 ->orderBy('created_at','desc')
                                 ->where('user_id',Auth::user()->id)
                                 ->where('status','!=',0)
-                                ->paginate(5)
+                                ->paginate(4)
         ]);
     }
 
@@ -51,6 +51,7 @@ class DemandController extends Controller
             'vendor/sweetalert2/sweetalert2.min.js',
             'assets/js/app_main.js',
             'assets/js/app_crud.js',
+            'assets/js/app_masks.js',
         );
         return view('app.demands.form',[
             'title'     => 'NOVO PEDIDO',
@@ -76,20 +77,14 @@ class DemandController extends Controller
         ]);
 
         $demand               = new Demand();
-        $demand->active       = 1;
-        $demand->miles        = $request->miles;
+        $demand->status       = 1;
+        $demand->miles        = str_replace('.', '', $request->miles);
         $demand->qtd          = $request->qtd;
         $demand->value        = Functions::valueDB($request->value);
         $demand->value_max    = Functions::valueDB($request->value_max);
         $demand->end_date     = $request->end_date;
         $demand->user_id      = Auth::user()->id;
-        // return response()->json(
-        //     [
-        //         'success' => true,
-        //         'location'=> '',
-        //         'message' => $demand->value
-        //     ]
-        // );
+
         if($demand->save()){
             return response()->json(
                 [
@@ -139,6 +134,7 @@ class DemandController extends Controller
      */
     public function update(Request $request, Demand $demand)
     {
+
         $demand->status       = 0;
 
         if($demand->save()){

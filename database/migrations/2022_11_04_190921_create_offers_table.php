@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDemandsTable extends Migration
+class CreateOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateDemandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('demands', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table) {
             $table->id();
             $table->boolean('status')->nullable();
-            $table->string('qtd',15)->nullable();
-            $table->dateTime('end_date')->nullable();
             $table->decimal('value', $precision = 10, $scale = 2)->nullable();
-            $table->decimal('value_max', $precision = 10, $scale = 2)->nullable();
-            $table->decimal('miles', $precision = 10, $scale = 0)->nullable();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('demand_id')->constrained();
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateDemandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('demands');
+        Schema::dropIfExists('offers');
     }
 }

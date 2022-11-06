@@ -2,8 +2,26 @@ const CSRF_TOKEN    = document.querySelector("meta[name='csrf-token']").getAttri
 
 window.onload = () => {
     var form = document.getElementById('form');
+        form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+            save(form,'POST')
+        })
+}
+
+del = (id) =>{
+    var form = document.getElementById('form_'+id);
+    save(form,'PUT')
+}
+
+offer = (id) =>{
+    var form = document.getElementById('form_'+id);
     form.addEventListener('submit', (evt) => {
         evt.preventDefault();
+        save(form,'POST')
+    })
+}
+
+function save(form,method) {
         Swal.fire({
             title: 'Todos os dados estão corretos?',
             text: "Não será possível reverter esta ação!",
@@ -22,7 +40,7 @@ window.onload = () => {
                 myHeader.append('X-CSRF-TOKEN', CSRF_TOKEN);
                 var myFormData = new FormData(form);
                 fetch(url, {
-                    method: 'POST',
+                    method: method,
                     headers: myHeader,
                     body: JSON.stringify(Object.fromEntries(myFormData.entries()))
                 })
@@ -62,6 +80,4 @@ window.onload = () => {
                 });
             }
         })
-    });
 }
-

@@ -5,11 +5,37 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\Functions;
 use App\Http\Controllers\Controller;
 use App\Models\Model\App\Demand;
+use App\Models\Model\App\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class DemandController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function offersToDemand(Demand $demand)
+    {
+        $offers = Offer::with(['user'])
+        ->orderBy('value','desc')
+        ->where('status','!=',0)->limit(3)->get();
+        return $offers;
+    }
+
+    public function api()
+    {
+        $damands = Demand::with(['user'])
+        ->orderBy('created_at','desc')
+        ->where('user_id','!=',Auth::user()->id)
+        ->where('status','!=',0)->get();
+
+        return $damands;
+    }
+
     /**
      * Display a listing of the resource.
      *

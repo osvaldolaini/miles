@@ -1,4 +1,4 @@
-<div class="flex justify-center p-12">
+<div class="flex justify-center">
     <!-- Dropdown -->
     <div x-data="{ open: false }" class="relative">
       <button x-on:click="open = true" class="border-2 border-teal-500 bg-gray-900

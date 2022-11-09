@@ -15,7 +15,8 @@ mix.js('resources/js/app.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss'),
     require('autoprefixer'),
-]);
+])
+.react();
 //Plugins
 mix
 .scripts('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/vendor/sweetalert2/sweetalert2.min.js')

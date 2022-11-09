@@ -16,11 +16,13 @@
 <x-app-breadcrumb >{{ __($title) }}</x-app-breadcrumb>
 
 <div class="w-full space-y-2 my-3 ">
-    @if (isset($data))
+
+    <div id="demands"></div>
+    {{-- @if (isset($data))
         @foreach ($data as $demand)
             <x-app-demand :data='$demand'></x-app-demand>
         @endforeach
-    @endif
+    @endif --}}
 </div>
 
 @endsection

@@ -105,7 +105,8 @@
             </div>
         </div>
     @else
-        <div class="container-fluid rounded-lg shadow-md py-2 bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
+        <div class="container-fluid rounded-lg shadow-md py-2
+        bg-gray-100 dark:bg-gray-900 dark:text-gray-100 mx-2">
             <div class="flex items-center justify-between py-0 px-3">
                 <div class="flex items-center space-x-2">
                     @if ($data->user->avatar)

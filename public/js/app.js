@@ -13440,7 +13440,6 @@ function PublishedAt(props) {
   var now = new Date(); // Data de hoje
   var past = new Date(props.date); // Outra data no passado
   var diff = Math.abs(now.getTime() - past.getTime()); // Subtrai uma data pela outra
-
   var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
   var years = Math.ceil(months / 12);
   var months = Math.ceil(days / 30);
@@ -13515,7 +13514,7 @@ var Offers = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, Offers);
     _this = _super.call(this, props);
     _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
-      window.location = e;
+      alert(e);
     });
     _this.state = {
       demand: props.offersToDemand,
@@ -13544,6 +13543,7 @@ var Offers = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
       if (this.state.offers) {
         var of = this.state.offers.length;
         if (of > 1) {
@@ -13553,9 +13553,9 @@ var Offers = /*#__PURE__*/function (_Component) {
         }
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "flex justify-center items-center space-x-3 cursor-pointer",
+            className: "flex justify-center items-center space-x-3 ",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "flex flex-wrap items-center pt-3 pb-1 cursor-pointer",
+              className: "flex flex-wrap items-center pt-3 pb-1 ",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                 className: "flex items-center space-x-2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -13569,7 +13569,10 @@ var Offers = /*#__PURE__*/function (_Component) {
                     }
                     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
                       alt: "sistemilhas-avatar-" + data.user.username,
-                      className: "w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800",
+                      className: "cursor-pointer w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800",
+                      onClick: function onClick(e) {
+                        return _this3.handleClick('modal', data.id);
+                      },
                       src: avatar
                     }, key);
                   })

@@ -30,7 +30,7 @@ export default class Offers extends Component {
     }
 
     handleClick = (e) => {
-        window.location = e
+        alert(e)
     };
 
     render() {
@@ -43,8 +43,8 @@ export default class Offers extends Component {
                 }
                 return(
                     <>
-                        <div className="flex justify-center items-center space-x-3 cursor-pointer" >
-                            <div className="flex flex-wrap items-center pt-3 pb-1 cursor-pointer" >
+                        <div className="flex justify-center items-center space-x-3 ">
+                            <div className="flex flex-wrap items-center pt-3 pb-1 " >
                                 <div className="flex items-center space-x-2">
                                 <div className="flex -space-x-4">
                                     {this.state.offers.map((data, key)=>{
@@ -54,7 +54,10 @@ export default class Offers extends Component {
                                         }else{
                                             avatar = APP_URL+'/storage/profiles/avatar.jpg'
                                         }
-                                        return <img alt={"sistemilhas-avatar-"+data.user.username} className="w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800" src={avatar} key={key}/>;
+                                        return <img alt={"sistemilhas-avatar-"+data.user.username}
+                                        className="cursor-pointer w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800"
+                                        onClick={(e) => this.handleClick('modal', data.id)}
+                                        src={avatar} key={key}/>;
                                     })}
                                 </div>
                                     <span className="text-sm">{text[0]}

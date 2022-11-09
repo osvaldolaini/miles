@@ -148,12 +148,9 @@ function PublishedAt(props) {
     const now = new Date(); // Data de hoje
     const past = new Date(props.date); // Outra data no passado
     const diff = Math.abs(now.getTime() - past.getTime()); // Subtrai uma data pela outra
-
     const days       = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
     const years      = Math.ceil(months / 12)
     const months     = Math.ceil(days / 30)
-
     const hours      = Math.ceil(days * 24)
     const minutes    = Math.ceil(hours * 60)
     const second     = Math.ceil(minutes * 60)
@@ -175,8 +172,8 @@ function PublishedAt(props) {
             }
         }
     }
-
 }
+
 if (document.getElementById('demands')) {
     ReactDOM.render(<Demand />, document.getElementById('demands'));
 }

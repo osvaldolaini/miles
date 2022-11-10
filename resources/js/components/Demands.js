@@ -65,19 +65,21 @@ export default class Demand extends Component {
                 <div className="container-fluid rounded-lg shadow-md py-2 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 my-2" key={key}>
                     {this.state.skeletonLoader &&
                         <>
-                            <div className=" flex items-center justify-between py-0 px-3">
-                                <div className="div" class="flex p-4 space-x-4 sm:px-8">
-                                    <div className=" flex-shrink-0 w-16 h-16 rounded-full bg-teal-200 dark:bg-gray-700"></div>
-                                    <div className=" flex-1 py-2 space-y-4">
-                                        <div className=" w-full h-3 rounded bg-teal-200 dark:bg-gray-700"></div>
-                                        <div className=" w-5/6 h-3 rounded bg-teal-200 dark:bg-gray-700"></div>
+                            <div role="status" className="container-fluid py-6 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 my-2">
+                                <div className="flex px-2 items-center animate-pulse justify-start py-0 px-3">
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-300 dark:bg-gray-700"></div>
+                                    <div className="flex-1 space-y-4 px-3 ">
+                                        <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
+                                        <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
                                     </div>
+                                    <div className="block space-y-4 px-8 ">
+                                        <div className="h-5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                        <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                        <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                    </div>
+
                                 </div>
-                                <div className="p-4 space-y-4 sm:px-8">
-                                    <div className="w-full h-4 rounded bg-teal-200 dark:bg-gray-700"></div>
-                                    <div className="w-full h-4 rounded bg-teal-200 dark:bg-gray-700"></div>
-                                    <div className="w-3/4 h-4 rounded bg-teal-200 dark:bg-gray-700"></div>
-                                </div>
+                                <span className="sr-only">Loading...</span>
                             </div>
                         </>
                     }
@@ -126,7 +128,9 @@ export default class Demand extends Component {
                                     <button type="button" title="Compatilhar" className="flex items-center justify-center">
                                         <ShareIcon />
                                     </button>
-                                    <Offers offersToDemand={data.id}  />
+                                    <div className="relative inline-block">
+                                        <Offers offersToDemand={data.id}  />
+                                    </div>
                                 </div>
                             </div>
                             <div className="space-y-3">

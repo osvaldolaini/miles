@@ -20,8 +20,9 @@ class DemandController extends Controller
      */
     public function offersToDemand(Demand $demand)
     {
-        $offers = Offer::with(['user'])
+        $offers = Offer::with(['user','demand'])
         ->orderBy('value','desc')
+        ->where('demand_id',$demand->id)
         ->where('status','!=',0)->limit(3)->get();
         return $offers;
     }

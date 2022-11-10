@@ -13,7 +13,8 @@
             </div>
         </div>
     @else
-        <div @click="open = !open" x-on:click.away="open = false" class="flex justify-center items-center space-x-3 cursor-pointer" >
+        <div @click="open = !open" x-on:click.away="open = false" class="
+        flex justify-center items-center space-x-3 cursor-pointer" >
             <div class="flex flex-wrap items-center pt-3 pb-1 cursor-pointer" >
                 <div class="flex items-center space-x-2">
                     @php

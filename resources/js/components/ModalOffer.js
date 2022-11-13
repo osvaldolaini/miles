@@ -104,11 +104,11 @@ export default class ModalOffer extends Component{
                                     </span></label>
                                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">
                                             <div className="col-span-full ">
-                                            <input type="text" value={this.state.value} onChange={this.handleChange}
+                                            <input type="text" name="value" value={this.state.value} onChange={this.handleChange}
                                             placeholder="Valor" ref = { register({ required: true, maxLength: 7 }) }
                                                 className="mb-2 mt-2 w-full rounded-md focus:ring focus:ring-opacity-75
                                                 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"/>
-                                                <input value={}/>
+                                                <input name="demand_id" value={this.state.demand.id} />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">

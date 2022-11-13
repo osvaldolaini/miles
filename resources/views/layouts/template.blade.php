@@ -50,7 +50,7 @@
             @endforeach
         @endif
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" id="main">
         <div class="min-h-screen bg-gray-200 bg-cover bg-center bg-fixed"
 
         {{-- style="background-image: url('storage/images/donate/sistemilhas-donate-big-6.webp')"> --}}

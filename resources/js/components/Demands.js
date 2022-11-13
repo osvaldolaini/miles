@@ -3,12 +3,19 @@ import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShareIcon from '@mui/icons-material/Share';
-import Skeleton from 'react-loading-skeleton';
+//import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
+
+import 'alpinejs';
 
 import Offers from './Offers';
 
+import ModalOffer from './ModalOffer';
+
 const appurlmeta    = document.querySelector("meta[name='app_url']");
 const APP_URL       = appurlmeta.getAttribute("content");
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 
 export default class Demand extends Component {
 
@@ -17,8 +24,10 @@ export default class Demand extends Component {
         this.state = {
             demand:[],
             skeletonLoader:true,
-        }
+            //showModal: false
+        };
 
+        //this.handleModal = this.handleModal.bind(this);
     }
 
     componentDidMount(){
@@ -35,8 +44,15 @@ export default class Demand extends Component {
     }
 
     handleClick = (e) => {
-        window.location = e
+        //window.location = e
     };
+
+    // handleModal () {
+    //     this.setState(prevState => ({
+    //         showModal: !prevState.showModal
+    //     }));
+    //     console.log(this.state.showModal)
+    // }
 
     render() {
         return this.state.demand.map((data, key)=>{
@@ -66,21 +82,20 @@ export default class Demand extends Component {
                     {this.state.skeletonLoader &&
                         <>
                             <div role="status" className="container-fluid py-6 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 my-2">
-                                <div className="flex px-2 items-center animate-pulse justify-start py-0 px-3">
-                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-300 dark:bg-gray-700"></div>
-                                    <div className="flex-1 space-y-4 px-3 ">
-                                        <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
-                                        <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
+                                    <div className="flex px-2 items-center animate-pulse justify-start py-0 px-3">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-300 dark:bg-gray-700"></div>
+                                        <div className="flex-1 space-y-4 px-3 ">
+                                            <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
+                                            <div className="w-2/6 h-3 rounded bg-teal-300 dark:bg-gray-700"></div>
+                                        </div>
+                                        <div className="block space-y-4 px-8 ">
+                                            <div className="h-5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                            <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                            <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
+                                        </div>
                                     </div>
-                                    <div className="block space-y-4 px-8 ">
-                                        <div className="h-5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
-                                        <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
-                                        <div className="h-2.5 bg-teal-300 rounded-full dark:bg-gray-700 w-12"></div>
-                                    </div>
-
+                                    <span className="sr-only">Loading...</span>
                                 </div>
-                                <span className="sr-only">Loading...</span>
-                            </div>
                         </>
                     }
                     {!this.state.skeletonLoader &&
@@ -104,18 +119,8 @@ export default class Demand extends Component {
                             <h1 className="text-xl font-bold mt-0 pt-0" >{m}  Milhas</h1>
                             <h2 className="text-lg font-bold mt-0 pt-0" >{data.qtd } CPF</h2>
                             <h2 className="text-md font-bold mt-0 pt-0" >Valor R$ {value}</h2>
-                            <div className="mt-2">
-                                <div  className="relative flex justify-center">
-                                    <button className="bg-teal-500
-                                        hover:bg-gray-900 border-2 border-teal-500
-                                        active:bg-teal-300 text-white text-xs
-                                        font-bold uppercase px-6 py-2.5 rounded-full
-                                        shadow hover:shadow-md outline-none focus:outline-none
-                                        mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
-                                        duration-150" onClick={(e) => this.handleClick(APP_URL+'/fazer-oferta/'+data.id, e)}>
-                                        FAZER OFERTA
-                                    </button>
-                                </div>
+                            <div className="mt-2" >
+                                <ModalOffer  demandToModal={data} />
                             </div>
                         </div>
                     </div>
@@ -145,7 +150,18 @@ export default class Demand extends Component {
             )
           })
     }
+}
 
+
+
+
+
+function offer(id){
+    var form = document.getElementById('form_'+id);
+    form.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        save(form,'POST')
+    })
 }
 
 function PublishedAt(props) {

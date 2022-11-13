@@ -58,11 +58,17 @@ Route::get('/politica-de-privacidade', 'SiteController@politics')->name('politic
     /**Usuário */
     Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
         Route::get('/demandas', 'DemandController@api')->name('api');
-        Route::get('/ofertas-para-demanda/{demand}', 'DemandController@offersToDemand')->name('offersToDemand');
+
         Route::post('/editar-meu-cadastro', 'UserController@update')->name('update');
         Route::resource('/meu-cadastro','UserController')->names('user')->parameters(['meu-cadastro' => 'user']);
         Route::resource('/meus-pedidos','DemandController')->names('demand')->parameters(['meus-pedidos' => 'demand']);
+
+    });
+    // Ofertas
+    Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
+        Route::get('/ofertas-para-demanda/{demand}', 'DemandController@offersToDemand')->name('offersToDemand');
         Route::resource('/minhas-ofertas','OfferController')->names('offer')->parameters(['minhas-ofertas' => 'offer']);
+
     });
 
 require __DIR__.'/auth.php';

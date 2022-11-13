@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Functions;
 use App\Http\Controllers\Controller;
+use App\Models\Model\App\Demand;
 use App\Models\Model\App\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,12 +21,13 @@ class OfferController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
+     /**
+     * Display the specified resource.
      *
+     * @param  \App\Models\Model\App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Demand $demand)
     {
         //
     }

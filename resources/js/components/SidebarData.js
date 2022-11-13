@@ -6,7 +6,9 @@ import BookmarkRemove from '@mui/icons-material/BookmarkRemove';
 import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
 
 const appurlmeta    = document.querySelector("meta[name='app_url']");
-const APP_URL       = appurlmeta.getAttribute("content");
+if(appurlmeta){
+    const APP_URL       = appurlmeta.getAttribute("content");
+}
 
 export const SidebarData = [
     {

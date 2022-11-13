@@ -30,7 +30,5 @@ export const Sidebar = () =>
     )
 }
 if (document.getElementById('Sidebar')) {
-const container = document.getElementById('Sidebar');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<Sidebar tab="home" />);
-})
+    ReactDOM.render(<Sidebar tab="home" />, document.getElementById('Sidebar'));
+}

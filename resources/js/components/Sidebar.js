@@ -31,5 +31,5 @@ export const Sidebar = () =>
     )
 }
 if (document.getElementById('Sidebar')) {
-    ReactDOM.render(<Sidebar tab="home" />, document.getElementById('Sidebar'));
+    ReactDOM.render(<Sidebar />, document.getElementById('Sidebar'));
 }

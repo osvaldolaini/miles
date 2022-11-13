@@ -32,7 +32,7 @@ class TableUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(array('active','group_id','image','update_by'));
+            $table->dropColumn(array('cpf','avatar','username','phone','bio','updated_by','created_by'));
         });
     }
 }

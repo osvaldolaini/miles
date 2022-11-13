@@ -22,7 +22,7 @@ Route::get('/login/{driver}/redirect', function ($driver) {
     return Socialite::driver($driver)->redirect();
 })->name('auth.social.redirect');
 
-Route::get('/auth/google/callback', function ($driver) {
+Route::get('/auth/{driver}/callback', function ($driver) {
     $socialUser=Socialite::driver($driver)->stateless->user();
 
     $socialUser = User::updateOrCreate([

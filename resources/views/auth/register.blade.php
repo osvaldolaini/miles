@@ -13,12 +13,12 @@
                 <p class="text-center text-lg font-bold mx-4 mb-0">Crie sua conta</p>
             </div>
             <x-button-socialite class="bg-blue-800 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-700"
-                href="{{ __(route('auth.social.redirect',['driver'=>'google']) )}}" >
+                :href="route('auth.social.redirect',['driver'=>'google'])" >
                 <span class="fa-brands fa-google fa-xl mx-1"></span>
                 {{ __('Entrar com o Google') }}
             </x-button-socialite>
             <x-button-socialite class="bg-blue-400 hover:bg-blue-500 focus:bg-blue-500 active:bg-blue-600"
-                href="{{ __(route('auth.social.redirect',['driver'=>'facebook']) )}}" >
+            :href="route('auth.social.redirect',['driver'=>'facebook'])" >
                 <span class="fa-brands fa-facebook-f fa-xl mx-1"></span>
                 {{ __('Entrar com o Facebook') }}
             </x-button-socialite>

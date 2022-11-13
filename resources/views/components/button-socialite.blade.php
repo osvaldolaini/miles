@@ -1,5 +1,6 @@
+@props(['href'])
 <div class="flex space-x-2 justify-center py-1" >
-    <button-socialite
+    <a href={{ $href }}
         {{ $attributes->merge([
             'type' => 'button',
             'data-mdb-ripple'=>'true',
@@ -11,5 +12,5 @@
             ])
         }}>
     {{ $slot }}
-    </button-socialite>
+    </a>
 </div>

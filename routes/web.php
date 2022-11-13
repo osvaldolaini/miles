@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +24,12 @@ Route::get('/login/{driver}/redirect', function ($driver) {
 
 Route::get('/auth/callback', function ($driver) {
     $socialUser=Socialite::driver($driver)->stateless->user();
+
     $socialUser = User::updateOrCreate([
         'email' => $socialUser->email,
     ], [
         'name' => $socialUser->name,
+        'username'=> Str::slug($socialUser->name.uniqid(), '_'),
         'email' => $socialUser->email,
         'github_token' => $socialUser->token,
         'github_refresh_token' => $socialUser->refreshToken,

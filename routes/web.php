@@ -23,7 +23,12 @@ Route::get('/login/{driver}/redirect', function ($driver) {
 })->name('auth.social.redirect');
 
 Route::get('/auth/{driver}/callback', function ($driver) {
-    $socialUser=Socialite::driver($driver)->stateless->user();
+    if ($driver == 'facebook') {
+        $socialUser=Socialite::driver($driver)->stateless->user();
+    }else{
+        $socialUser=Socialite::driver($driver)->user();
+    }
+
 
     $socialUser = User::updateOrCreate([
         'email' => $socialUser->email,

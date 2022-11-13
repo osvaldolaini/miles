@@ -13663,10 +13663,11 @@ var ModalOffer = /*#__PURE__*/function (_Component) {
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                       className: "grid grid-cols-6 gap-4 col-span-full lg:col-span-4",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                         className: "col-span-full ",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                           type: "text",
+                          name: "value",
                           value: this.state.value,
                           onChange: this.handleChange,
                           placeholder: "Valor",
@@ -13675,7 +13676,10 @@ var ModalOffer = /*#__PURE__*/function (_Component) {
                             maxLength: 7
                           }),
                           className: "mb-2 mt-2 w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"
-                        })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                          name: "demand_id",
+                          value: this.state.demand.id
+                        })]
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                       className: "grid grid-cols-6 gap-4 col-span-full lg:col-span-4",
@@ -13940,12 +13944,11 @@ var Sidebar = function Sidebar() {
     })
   });
 };
-//ReactDOM.render(<Sidebar/>,document.getElementById('Sidebar'))
-var container = document.getElementById('Sidebar');
-var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container); // createRoot(container!) if you use TypeScript
-root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Sidebar, {
-  tab: "home"
-}));
+if (document.getElementById('Sidebar')) {
+  ReactDOM.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Sidebar, {
+    tab: "home"
+  }), document.getElementById('Sidebar'));
+}
 
 /***/ }),
 

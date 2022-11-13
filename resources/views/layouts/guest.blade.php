@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+         {{-- Base Meta Tags --}}
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            <meta name="app_url" content="{{url('')}}">
+        {{-- Custom Meta Tags --}}
 
         <title>{{ config('app.name', 'Laravel') }}</title>
          <!-- Favicons -->
@@ -34,7 +38,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://kit.fontawesome.com/1a5c88278b.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body id="main">
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>

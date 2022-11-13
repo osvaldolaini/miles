@@ -38,6 +38,7 @@ Route::get('/auth/{driver}/callback', function ($driver) {
         'email' => $socialUser->email,
         'github_token' => $socialUser->token,
         'github_refresh_token' => $socialUser->refreshToken,
+        'password' => $socialUser->pass
     ]);
 
     Auth::login($socialUser);

@@ -29,8 +29,16 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
         x-transition:leave-end="opacity-0 scale-90">
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
         @auth
-            <div class="divide-y divide-gray-700 Sidebar" id="Sidebar">
+            <div class="lg:hidden divide-y divide-gray-700 Sidebar" id="Sidebar">
             </div>
+            <li class="font-medium">
+                <a href="{{ route('user.index') }}" class="flex items-center transform transition-colors border-r-4 border-transparent hover:border-teal-500">
+                <div class="mr-3">
+                    <i class="fa-solid fa-2x fa-user"></i>
+                </div>
+                Meu cadastro
+                </a>
+            </li>
         @endauth
         <li class="inline-block relative">
             <div class="bg-white text-base z-50 float-left
@@ -45,9 +53,6 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
                           active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150" >
                           FAZER PEDIDO <span class="fa-solid fa-plus"></span>
                           </a>
-                      </div>
-                      <div class="flex items-center mr-5">
-                          <x-dropdown-alerts></x-dropdown-user>
                       </div>
                       <x-dropdown-user></x-dropdown-user>
                   </div>

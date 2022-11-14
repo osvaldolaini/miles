@@ -39,6 +39,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
                 <!-- Scripts -->
                 <script src="{{ asset('js/app.js') }}" defer></script>
+                <script src="{{ asset('assets/js/app_main.js') }}" defer></script>
                 <script src="https://kit.fontawesome.com/1a5c88278b.js" crossorigin="anonymous"></script>
         <style>
             body {

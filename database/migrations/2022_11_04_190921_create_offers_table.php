@@ -21,11 +21,9 @@ class CreateOffersTable extends Migration
             // $table->foreignId('user_id')->constrained();
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('demand_id')->nullable();
             $table->timestamps();
             /*Relacionamentos */
-            $table->foreign('demand_id')->references('id')->on('demands')->onDelete('SET NULL');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
         });
     }
 

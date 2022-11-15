@@ -65,7 +65,6 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
           <div class="bg-gray-900  float-left
             py-2 list-none text-center text-bold text-teal-500 min-w-48" id="demo-pages-dropdown">
             @auth
-
                     <a href="{{ url('/app') }}" class="text-sm py-2 px-4
                     font-bold block w-full whitespace-nowrap bg-transparent
                     text-bold text-teal-500 ">
@@ -130,7 +129,7 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
                                 FAZER PEDIDO <span class="fa-solid fa-plus"></span>
                                 </a>
                             </div>
-                            <div class="flex items-center mr-5">
+                            <div class="flex items-center mr-5 ">
                                 <x-dropdown-alerts></x-dropdown-user>
                             </div>
                             <x-dropdown-user></x-dropdown-user>

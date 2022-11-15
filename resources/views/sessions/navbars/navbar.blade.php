@@ -65,11 +65,11 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
           <div class="bg-gray-900  float-left
             py-2 list-none text-center text-bold text-teal-500 min-w-48" id="demo-pages-dropdown">
             @auth
-                <div class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="demo-pages-dropdown">
+
                     <a href="{{ url('/app') }}" class="text-sm py-2 px-4
                     font-bold block w-full whitespace-nowrap bg-transparent
                     text-bold text-teal-500 ">
-                    Home
+                        Home
                     </a>
                     <a href="{{ url('/app') }}" class="text-sm py-2 px-4
                     font-bold block w-full whitespace-nowrap bg-transparent
@@ -86,21 +86,22 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
                     text-bold text-teal-500 ">
                         Minhas ofertas
                     </a>
-                    <div class="flex items-center mr-5">
-                        <a href="{{ route('demand.create') }}" class="bg-teal-500
-                        hover:bg-gray-900 border-2 border-teal-500
-                        active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150" >
-                        FAZER PEDIDO <span class="fa-solid fa-plus"></span>
+
+                    <a href="{{ route('user.index') }}" class="text-sm py-2 px-4
+                        font-bold block w-full whitespace-nowrap bg-transparent
+                        text-bold text-teal-500 ">
+                        Meu cadastro
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        this.closest('form').submit();" class="text-sm py-2 px-4
+                            font-bold block w-full whitespace-nowrap bg-transparent
+                            text-bold text-teal-500 ">
+                            Sair
                         </a>
-                    </div>
-                    <div class="flex items-center mr-5">
-                        <x-dropdown-alerts></x-dropdown-user>
-                    </div>
-                    <x-dropdown-user></x-dropdown-user>
-                </div>
+                    </form>
             @else
-
-
                 <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="demo-pages-dropdown">
                     <a href="{{ route('login') }}" class="bg-teal-500
                     hover:bg-gray-900 border-2 border-teal-500
@@ -118,7 +119,6 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
 
           </div>
         </li>
-
             @if (Route::has('login'))
                 <div class="top-0 right-0 px-6 py-5 sm:block">
                     <li class="flex items-center">

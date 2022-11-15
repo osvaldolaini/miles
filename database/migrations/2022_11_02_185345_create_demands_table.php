@@ -21,10 +21,15 @@ class CreateDemandsTable extends Migration
             $table->decimal('value', $precision = 10, $scale = 2)->nullable();
             $table->decimal('value_max', $precision = 10, $scale = 2)->nullable();
             $table->decimal('miles', $precision = 10, $scale = 0)->nullable();
-            $table->foreignId('user_id')->constrained();
+            // $table->foreignId('user_id')->constrained();
+
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
+            /*Relacionamentos */
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
         });
     }
+
 
     /**
      * Reverse the migrations.

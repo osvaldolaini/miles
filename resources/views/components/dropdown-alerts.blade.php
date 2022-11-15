@@ -2,7 +2,7 @@
     <!-- Dropdown toggle button -->
     <div @click="open = !open" class="flex justify-center items-center space-x-3 cursor-pointer" >
         <div class="font-semibold text-white">
-            <div class="cursor-pointer"><i class="fa-solid fa-bell"></i> <span class="sm:hidden">Notificações</span>
+            <div class="cursor-pointer"><i class="fa-solid fa-bell"></i> Notificações
             </div>
         </div>
     </div>

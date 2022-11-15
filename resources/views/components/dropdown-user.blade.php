@@ -1,4 +1,4 @@
-<div class="flex justify-center">
+<div class="justify-center hidden lg:flex">
     <!-- Dropdown -->
     <div x-data="{ open: false }" class="relative">
       <button x-on:click="open = true" class="border-2 border-teal-500 bg-gray-900
@@ -52,7 +52,6 @@
                     Sair
                 </a>
             </form>
-            </a>
         </li>
         </ul>
     </div>

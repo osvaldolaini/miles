@@ -1,4 +1,3 @@
-import { Save } from '@mui/icons-material';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
@@ -30,6 +29,8 @@ export default class ModalOffer extends Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       //this.handleCloseModal = this.handleCloseModal.bind(this);
+
+      console.log(props.demandToModal)
     }
 
     handleModal() {
@@ -39,14 +40,11 @@ export default class ModalOffer extends Component{
     }
 
     handleSubmit(event) {
-        if(event.target.value){
 
-        }else{
             var id = this.state.demand.id
             var form = document.getElementById('form_'+id)
             event.preventDefault()
             save(form,'POST')
-        }
     }
     handleChange(event) {
         var v = event.target.value
@@ -61,7 +59,7 @@ export default class ModalOffer extends Component{
     render () {
         const data = this.state.demand;
         var value_max = data.value_max.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-        const { register, handleSubmit } = useForm();
+        //const { register, handleSubmit } = useForm();
       return (
         <div className='div'>
           <button className="bg-teal-500
@@ -77,14 +75,14 @@ export default class ModalOffer extends Component{
              onRequestClose={this.handleModal}
              style={customStyles}
           >
-                <div id="offerModal">
+                <div className="div" id="offerModal" >
                     <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
                         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
                         <div className="relative inline-block px-4 pt-1 pb-4 overflow-hidden
                                 text-left align-bottom transition-all transform bg-white rounded-lg
                                 shadow-xl dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
                             <button className='text-sm ' onClick={this.handleModal}>Fechar X</button>
-                            <div>
+                            <div className="div">
                                 <div className="mt-4 text-center">
                                     <h3 className="font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">
                                             Faça sua oferta
@@ -105,10 +103,10 @@ export default class ModalOffer extends Component{
                                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">
                                             <div className="col-span-full ">
                                             <input type="text" name="value" value={this.state.value} onChange={this.handleChange}
-                                            placeholder="Valor" ref = { register({ required: true, maxLength: 7 }) }
+                                            placeholder="Valor" required=""
                                                 className="mb-2 mt-2 w-full rounded-md focus:ring focus:ring-opacity-75
                                                 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"/>
-                                                <input name="demand_id" value={this.state.demand.id} />
+                                                <input name="demand_id" type="hidden"  value={this.state.demand.id} />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">
@@ -138,6 +136,6 @@ export default class ModalOffer extends Component{
 
   const props = {};
 
-if (document.getElementById('modalOffer')) {
-    ReactDOM.render(<ModalOffer {...props} />, document.getElementById('modalOffer'))
+if (document.getElementById('offerModal')) {
+    ReactDOM.render(<ModalOffer {...props} />, document.getElementById('offerModal'))
 }

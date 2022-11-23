@@ -119,8 +119,8 @@ export default class Demand extends Component {
                             <h1 className="text-xl font-bold mt-0 pt-0" >{m}  Milhas</h1>
                             <h2 className="text-lg font-bold mt-0 pt-0" >{data.qtd } CPF</h2>
                             <h2 className="text-md font-bold mt-0 pt-0" >Valor R$ {value}</h2>
-                            <div className="mt-2" >
-                                <ModalOffer  demandToModal={data} />
+                            <div className="mt-2" id="modalOffer">
+                                <ModalOffer demandToModal={data} />
                             </div>
                         </div>
                     </div>
@@ -156,13 +156,13 @@ export default class Demand extends Component {
 
 
 
-function offer(id){
-    var form = document.getElementById('form_'+id);
-    form.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-        save(form,'POST')
-    })
-}
+// function offer(id){
+//     var form = document.getElementById('form_'+id);
+//     form.addEventListener('submit', (evt) => {
+//         evt.preventDefault();
+//         save(form,'POST')
+//     })
+// }
 
 function PublishedAt(props) {
     const now = new Date(); // Data de hoje
@@ -181,13 +181,17 @@ function PublishedAt(props) {
         if(minutes < 60){
             return minutes+' min';
         }else{
-            if(days < 30){
-                return days+' dias';
+            if(hours < 24){
+                return hours+' h';
             }else{
-                if(months < 12){
-                    return months+' meses';
+                if(days < 30){
+                    return days+' dias';
                 }else{
-                    return years+' anos';
+                    if(months < 12){
+                        return months+' meses';
+                    }else{
+                        return years+' anos';
+                    }
                 }
             }
         }

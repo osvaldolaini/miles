@@ -30,9 +30,9 @@ px-2 py-2 navbar-expand-lg bg-gray-900" x-data="{ open: false }">
                                 FAZER PEDIDO <span class="fa-solid fa-plus"></span>
                                 </a>
                             </div>
-                            <div class="flex items-center mr-5">
+                            {{-- <div class="flex items-center mr-5">
                                 <x-dropdown-alerts></x-dropdown-user>
-                            </div>
+                            </div> --}}
                             <x-dropdown-user></x-dropdown-user>
                         @else
                             <a href="{{ route('login') }}" class="bg-teal-500

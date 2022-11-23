@@ -31,6 +31,7 @@ class DemandController extends Controller
     {
         $damands = Demand::with(['user'])
         ->orderBy('created_at','desc')
+        ->where('end_date','>=',date('Y-m-d H:i:s'))
         ->where('user_id','!=',Auth::user()->id)
         ->where('status','!=',0)->get();
 

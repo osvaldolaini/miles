@@ -25,7 +25,7 @@
       class="absolute right-0 w-64 px-5 py-3 dark:bg-gray-800 overflow-hidden bg-white rounded-md shadow-lg border dark:border-transparent mt-6">
       <ul class="space-y-3 dark:text-white">
         <li class="font-medium">
-            <a href="{{ route('user.index') }}" class="flex items-center transform transition-colors border-r-4 border-transparent hover:border-teal-500">
+            <a href="href="{{ route('profile.user') }}" class="flex items-center transform transition-colors border-r-4 border-transparent hover:border-teal-500">
             <div class="mr-3">
                 <i class="fa-solid fa-2x fa-user"></i>
             </div>

@@ -1,84 +1,44 @@
 <?php
 
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Livewire\App\Chats;
+use App\Http\Livewire\App\Dashboard;
+use App\Http\Livewire\App\Demand;
+use App\Http\Livewire\App\DemandUser;
+use App\Http\Livewire\App\MyDemandLike;
+use App\Http\Livewire\App\OffersList;
+use App\Http\Livewire\App\OfferUser;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
-
-use Illuminate\Support\Str;
-
+//Usuário
+use App\Http\Livewire\App\UserProfile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
-#region Socialite
-Route::get('/login/{driver}/redirect', function ($driver) {
-    return Socialite::driver($driver)->redirect();
-})->name('auth.social.redirect');
-
-Route::get('/auth/{driver}/callback', function ($driver) {
-    if ($driver == 'facebook') {
-        $socialUser=Socialite::driver($driver)->stateless->user();
-    }else{
-        $socialUser=Socialite::driver($driver)->user();
-    }
-
-
-    $socialUser = User::updateOrCreate([
-        'email' => $socialUser->email,
-    ], [
-        'name' => $socialUser->name,
-        'username'=> Str::slug($socialUser->name.uniqid(), '_'),
-        'email' => $socialUser->email,
-        'github_token' => $socialUser->token,
-        'github_refresh_token' => $socialUser->refreshToken,
-        'password' => $socialUser->pass
-    ]);
-
-    Auth::login($socialUser);
-
-    return redirect('/app');
-});
-
-#endregion
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('livewire/homepage/welcome');
 });
-Route::get('/termo-de-uso', 'SiteController@term')->name('term');
-Route::get('/politica-de-privacidade', 'SiteController@politics')->name('politics');
-// Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
-// Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');
-// Route::resource('/views','Admin\ViewController')->names('view')->parameters(['views' => 'view']);
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/meus-dados', UserProfile::class)->name('profile.user');
+    Route::get('/app', Dashboard::class)->name('app');
+    Route::get('/fazer-pedido', Demand::class)->name('demand');
+    Route::get('/meus-pedido', DemandUser::class)->name('demand.user');
+    Route::get('/meus-favoritos', MyDemandLike::class)->name('like.demand.user');
+    Route::get('/ofertas-do-pedido/{demand:code}', OffersList::class)->name('all.offers.demand');
+    Route::get('/negociar/{offers:code}', OfferUser::class)->name('offer.user');
 
-    /**Site */
-    Route::group(['middleware' => ['auth']], function () {
-        Route::get('/app', 'AppController@index')->name('index');
-    });
-    /**Usuário */
-    Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
-        Route::get('/demandas', 'DemandController@api')->name('api');
 
-        Route::post('/editar-meu-cadastro', 'UserController@update')->name('update');
-        Route::resource('/meu-cadastro','UserController')->names('user')->parameters(['meu-cadastro' => 'user']);
-        Route::resource('/meus-pedidos','DemandController')->names('demand')->parameters(['meus-pedidos' => 'demand']);
-
-    });
-    // Ofertas
-    Route::group(['namespace' => 'Admin','middleware' => ['auth']], function () {
-        Route::get('/ofertas-para-demanda/{demand}', 'DemandController@offersToDemand')->name('offersToDemand');
-        Route::resource('/minhas-ofertas','OfferController')->names('offer')->parameters(['minhas-ofertas' => 'offer']);
-
-    });
-
-require __DIR__.'/auth.php';
+    Route::get('/chats', Chats::class)->name('chats');
+});

@@ -21,15 +21,12 @@ class OfferUser extends Component
     public $alertSession = false;
     public $rules;
 
-    protected $listeners = ['messageSent' => 'getMessages'];
-
-    protected $pollingIntervalInSeconds = 1;
+    protected $listeners = ['echo:chat-offer,ChatMessageSent' => '$refresh'];
 
     public function mount(Offers $offers)
     {
         $this->user_id = Auth::user()->id;
         $this->offers = $offers;
-        $this->getMessages();
     }
     public function render()
     {
@@ -50,30 +47,27 @@ class OfferUser extends Component
         // ];
 
         // $this->validate();
-
+        if (Auth::user()->id == $this->offers->user->id) {
+            $send_to = $this->offers->demand->user->id;
+        }else{
+            $send_to = $this->offers->user->id;
+        }
         $chat = Chat::create([
             'demand_id' => $this->offers->demand->id,
             'offer_id'  => $this->offers->id,
             'user_id'   => Auth::user()->id,
             'text'      => $this->text,
-            'send_to'   => $this->offers->user->id,
+            'send_to'   => $send_to,
             'status'    => 1,
             'code'      => Str::uuid(),
             'send_at'   => date('Y-m-d H:i:s'),
         ]);
 
         ChatMessageSent::dispatch($chat);
-        // event(new \App\Events\ChatMessageSent($chat));
+
         $this->reset(
             'text',
         );
-        $this->chats = $this->offers->chat->sortBy('send_at');
-    }
-    public function getMessages()
-    {
-        // Lógica para obter as mensagens do banco de dados
-        $this->chats = Chat::where('offer_id',$this->offers->id)
-        ->where('status',1)
-        ->orderBy('send_at','desc')->get();
+        // $this->chats = $this->offers->chat->sortBy('send_at');
     }
 }

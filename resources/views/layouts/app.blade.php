@@ -29,7 +29,6 @@
                 </div>
                 <!-- Page Content -->
                 <main class="w-full mt-12 lg:mt-8 px-2 min-h-screen">
-
                     {{ $slot }}
                 </main>
                 <!-- Adsense -->

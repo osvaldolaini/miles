@@ -18,9 +18,14 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('chat-offer.{chats}', function ($user, $chatId) {
+// Broadcast::channel('chat-offer.{chats}', function ($user, $chatId) {
 
-    return DB::selectOne('select count(0) as count from chats where id = ? and user_id = ?', [$chatId, $user->id])
-            ->count > 0;
+//     return DB::selectOne('select count(0) as count from chats where id = ?', [$chatId])
+//             ->count > 0;
 
+// });
+
+Broadcast::channel('chat-offer', function () {
+    return true;
 });
+

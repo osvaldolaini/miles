@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class DemandHasBeenCreated
+class DemandHasBeenCreated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -30,7 +30,7 @@ class DemandHasBeenCreated
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('demand-created'),
+            new Channel('demand'),
         ];
     }
 }

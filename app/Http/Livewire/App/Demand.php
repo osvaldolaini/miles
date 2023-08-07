@@ -55,7 +55,6 @@ class Demand extends Component
 
     public function store()
     {
-
         $this->rules = [
             'value_max' => 'required|max:5',
             'value' => 'required|max:5',
@@ -81,11 +80,12 @@ class Demand extends Component
 
         $this->alertSession = true;
         $this->showModalCreate = false;
-        return redirect()->route('app');
+        return redirect()->route('demand.user');
     }
     //Fecha a caixa da mensagem
     public function closeAlert()
     {
         $this->alertSession = false;
     }
+
 }

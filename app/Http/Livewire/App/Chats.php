@@ -31,13 +31,6 @@ class Chats extends Component
             }
         }
 
-        // dd($listChats);
-        // $this->user_id = Auth::user()->id;
-        // foreach ($chats as $key => $value) {
-        //     foreach ($value->take(1) as $chat) {
-        //         $listChats[] = $chat;
-        //     }
-        // }
         return view('livewire.app.chats',[
             'listChats' => $listChats
         ]);

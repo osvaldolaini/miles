@@ -14,18 +14,16 @@ class DemandList extends Component
     public $model_id;
     public $showDeleteModal = false;
     public $alertSession = false;
-    public function mount()
+
+    protected $listeners = ['echo:demand,DemandHasBeenCreated' => '$refresh'];
+
+    public function render()
     {
         $this->data = Demands::where('status', 1)
             ->orderBy('end_date', 'desc')
             ->where('user_id', '!=', Auth::user()->id)
+            ->where('end_date','>=',date('Y-m-d H:i:s'))
             ->get();
-        // $this->data = Demands::where('status',1)->get();
-    }
-    public function render()
-    {
-        $this->data = Demands::where('status', 1)
-            ->orderBy('end_date', 'desc')->where('user_id', '!=', Auth::user()->id)->get();
         return view('livewire.app.demand-list');
     }
     //DELETE
@@ -62,4 +60,10 @@ class DemandList extends Component
     {
         $this->alertSession = false;
     }
+
+
+    // public function demandPanel()
+    // {
+    //     dump();
+    // }
 }

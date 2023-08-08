@@ -1,7 +1,7 @@
-<div class="h-96">
+<div class="h-96 px-2 sm:px-0">
     <div wire:model="chats"
         class="w-full p-2 space-y-2 mt-0 flex flex-col-reverse
-        lg:mt-0 bg-gray-100 dark:border-gray-800 dark:border-gray-100
+        lg:mt-0 bg-gray-100 dark:bg-gray-900 dark:border-gray-100
         rounded-t-lg shadow-lg overflow-y-scroll h-3/4">
         @if ($chats->count() == 0)
             Envie uma Mensagem
@@ -23,7 +23,7 @@
                         Eu
                         <time class="text-xs opacity-50">{{ $chat->send_at }}</time>
                     </div>
-                    <div class="chat-bubble text-teal-500">
+                    <div class="chat-bubble dark:chat-bubble-accent dark:text-white text-teal-500">
                         {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }}
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         {{ $chat->user->name }}
                         <time class="text-xs opacity-50">{{ $chat->send_at }}</time>
                     </div>
-                    <div class="chat-bubble text-teal-500">
+                    <div class="chat-bubble dark:chat-bubble-info dark:text-white text-teal-500">
                         {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }}</div>
                     {{-- <div class="chat-footer opacity-50">
                         Delivered
@@ -61,7 +61,7 @@
             <label for="comment" class="sr-only">Sua mensagem</label>
             <textarea id="comment" rows="4" wire:model="text" wire:keydown.enter="sendMessage()"
                 class="w-full px-0 text-sm text-teal-500  border-0
-                    bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-teal-400"
+                    bg-gray-800 focus:ring-0 dark:placeholder-teal-400"
                 placeholder="Escreva sua mensagem..." required>
             </textarea>
 

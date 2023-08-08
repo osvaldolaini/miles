@@ -1,9 +1,9 @@
 <div>
-    @if ($data->count() == 0)
+    @if ($demands->count() == 0)
         Nenhuma demanda
     @endif
-    @foreach ($data as $item)
-        <div
+    @foreach ($demands as $item)
+        <div wire:key="{{ $item }}"
             class="container-fluid rounded-lg shadow-md py-2
                 dark:bg-gray-900 dark:text-gray-100 mb-4
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">

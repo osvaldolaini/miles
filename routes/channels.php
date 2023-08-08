@@ -25,7 +25,7 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 
 // });
 
-Broadcast::channel('chat-offer', function () {
-    return true;
-});
+// Broadcast::channel('chat-offer', function () {
+//     return true;
+// });
 

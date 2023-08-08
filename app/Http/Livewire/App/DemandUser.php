@@ -10,21 +10,18 @@ use Illuminate\Support\Facades\Gate;
 
 class DemandUser extends Component
 {
-    public $data;
+    public $demands;
     public $model_id;
     public $showDeleteModal = false;
     public $alertSession = false;
     public function mount()
     {
-        $this->data = Auth::user()->demands
+        $this->demands = Auth::user()->demands
         ->sortByDesc('end_date')
         ->where('status',1);
     }
     public function render()
     {
-        $this->data = Auth::user()->demands
-        ->sortByDesc('end_date')
-        ->where('status',1);
         return view('livewire.app.demand-user');
     }
     //DELETE

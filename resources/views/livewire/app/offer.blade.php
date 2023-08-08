@@ -1,5 +1,4 @@
 <div>
-    <x-message-session></x-message-session>
     <div class="relative flex justify-center">
         <button wire:click="showModalCreate({{ $demand->id }})" class="bg-teal-500
         hover:bg-gray-900 border-2 border-teal-500

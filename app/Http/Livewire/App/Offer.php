@@ -42,8 +42,8 @@ class Offer extends Component
     }
     public function showModalCreate()
     {
-         //Redireciona para a escolha do curso
-         if (Gate::allows('profile-user')) {
+        //Redireciona para a escolha do curso
+        if (Gate::allows('profile-user')) {
             abort(403);
         }
         $this->showModalCreate = true;
@@ -51,7 +51,6 @@ class Offer extends Component
 
     public function store()
     {
-
         $this->validate();
         Offers::create([
             'value'     => $this->value,
@@ -60,16 +59,20 @@ class Offer extends Component
             'status'    => 1,
             'code'      => Str::uuid(),
         ]);
+        $this->openAlert('success', 'Oferta realizada com sucesso.');
 
-        session()->flash('success', 'Demanda criada com sucesso');
-
-        $this->alertSession = true;
         $this->showModalCreate = false;
         return redirect()->route('app');
     }
-    //Fecha a caixa da mensagem
+    //CLOSE MESSAGE
     public function closeAlert()
     {
         $this->alertSession = false;
+    }
+    //OPEN MESSAGE
+    public function openAlert($status, $msg)
+    {
+        session()->flash($status, $msg);
+        $this->alertSession = true;
     }
 }

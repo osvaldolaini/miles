@@ -1,18 +1,22 @@
 <div>
+
+    @livewire('app.message-alert')
     @foreach ($demands as $item)
         <div wire:key="{{ $item }}">
             <div
-                class="relative overflow-hidden container-fluid rounded-lg shadow-md py-2
+                class="relative  rounded-lg shadow-md py-2
                 dark:bg-gray-900 dark:text-gray-100 mb-4
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
-                @if ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)
-                    <div class="absolute left-0 top-0 h-16 w-16">
-                        <div
-                            class="absolute transform -rotate-45 bg-gray-600 text-center text-white font-semibold py-1 left-[-34px] top-[32px] w-[170px]">
-                            Expirado
+                <div class="absolute overflow-hidden h-full w-1/2 -mt-2">
+                    @if ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)
+                        <div class="absolute left-0 top-0 h-16 w-16">
+                            <div
+                                class="absolute transform -rotate-45 bg-gray-600 text-center text-white font-semibold py-1 left-[-34px] top-[32px] w-[170px]">
+                                Expirado
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
+                </div>
                 <div class="flex items-center justify-between py-0 px-3">
                     <div class="flex items-center space-x-2" wire:key="{{ $item->id }}">
                         @if ($item->user->profile_photo_url)
@@ -25,7 +29,7 @@
                         @endif
                         <div>
                             <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
-                                <span>{{$item->user->name }}</span>
+                                <span>{{ $item->user->name }}</span>
                                 @if ($item->user->cpf)
                                     <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +42,7 @@
                             <span class="flex text-xs leading-none dark:text-gray-400 my-0">
                                 {{ '@' . $item->user->username }}
                             </span>
-                                <span class="text-xs leading-none dark:text-gray-400 my-0">
+                            <span class="text-xs leading-none dark:text-gray-400 my-0">
                                 Iniciante
                             </span>
                             @if ($item->user->id != Auth::user()->id and $item->user->trade > 0)
@@ -55,19 +59,19 @@
                         <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesConvert }} Milhas</h1>
                         <h2 class="text-lg font-bold mt-0 pt-0">{{ $item->qtd }} CPF</h2>
                         <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->value }}</h2>
-                        @if ($item->end_date > date('Y-m-d H:i:s') OR $item->status != 1)
-                        <div class="mt-0 pt-0">
-                            <button type='button' wire:click="showDeleteModal({{ $item->id }})"
-                                class="bg-red-500
-                                hover:bg-gray-900 border-2 border-red-500
-                                active:bg-red-300 text-white text-xs
-                                font-bold uppercase px-6 py-2.5 rounded-full
-                                shadow hover:shadow-md outline-none focus:outline-none
-                                mr-0 mb-0 ml-3 mx-4  ease-linear transition-all
-                                duration-150">
-                                Excluir <span class="fa-solid fa-trash"></span>
-                            </button>
-                        </div>
+                        @if ($item->end_date > date('Y-m-d H:i:s') or $item->status != 1)
+                            <div class="mt-0 pt-0">
+                                <button type='button' wire:click="showDeleteModal({{ $item->id }})"
+                                    class="bg-red-500 cursor-pointer
+                                    hover:bg-gray-900 border-2 border-red-500
+                                    active:bg-red-300 text-white text-xs
+                                    font-bold uppercase px-6 py-2.5 rounded-full
+                                    shadow hover:shadow-md outline-none focus:outline-none
+                                    mr-0 mb-0 ml-3 mx-4 ease-linear transition-all
+                                    duration-150">
+                                    Excluir <span class="fa-solid fa-trash"></span>
+                                </button>
+                            </div>
                         @endif
 
                     </div>

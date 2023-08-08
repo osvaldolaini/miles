@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class UserCard extends Component
 {
-    public $user = [];
+    public $user;
     public function mount(User $user)
     {
         $this->user = $user;

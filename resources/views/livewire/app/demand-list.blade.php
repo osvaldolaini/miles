@@ -1,4 +1,6 @@
 <div>
+
+    @livewire('app.message-alert')
     @if ($demands->count() == 0)
         Nenhuma demanda
     @endif

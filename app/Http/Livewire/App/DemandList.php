@@ -13,7 +13,6 @@ class DemandList extends Component
     public $demands;
     public $model_id;
     public $showDeleteModal = false;
-    public $alertSession = false;
 
     protected $listeners = ['echo:demand,DemandHasBeenCreated' => '$refresh'];
 
@@ -30,11 +29,14 @@ class DemandList extends Component
     {
         return view('livewire.app.demand-list');
     }
-
-    //Fecha a caixa da mensagem
     public function closeAlert()
     {
-        $this->alertSession = false;
+        $this->emit('closeAlert');
+    }
+    //pega o status do registro
+    public function openAlert($status, $msg)
+    {
+        $this->emit('openAlert', $status, $msg);
     }
 
 }

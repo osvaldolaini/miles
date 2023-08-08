@@ -76,7 +76,7 @@ class Demand extends Component
 
         DemandHasBeenCreated::dispatch();
 
-        session()->flash('success', 'Demanda criada com sucesso');
+        $this->openAlert('success','Pedido efetuado com sucesso.');
 
         $this->alertSession = true;
         $this->showModalCreate = false;
@@ -85,7 +85,12 @@ class Demand extends Component
     //Fecha a caixa da mensagem
     public function closeAlert()
     {
-        $this->alertSession = false;
+        $this->emit('closeAlert');
+    }
+    //pega o status do registro
+    public function openAlert($status, $msg)
+    {
+        $this->emit('openAlert', $status, $msg);
     }
 
 }

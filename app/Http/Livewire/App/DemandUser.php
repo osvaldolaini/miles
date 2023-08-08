@@ -13,7 +13,6 @@ class DemandUser extends Component
     public $demands;
     public $model_id;
     public $showDeleteModal = false;
-    public $alertSession = false;
 
     public function render()
     {
@@ -43,14 +42,18 @@ class DemandUser extends Component
         $data->save();
 
         DemandHasBeenCreated::dispatch();
-        session()->flash('success', 'Pedido excluido com sucesso.');
+        $this->openAlert('success','Pedido excluido com sucesso.');
 
-        $this->alertSession = true;
         $this->showDeleteModal = false;
     }
-    //Fecha a caixa da mensagem
     public function closeAlert()
     {
-        $this->alertSession = false;
+        $this->emit('closeAlert');
     }
+    //pega o status do registro
+    public function openAlert($status, $msg)
+    {
+        $this->emit('openAlert', $status, $msg);
+    }
+
 }

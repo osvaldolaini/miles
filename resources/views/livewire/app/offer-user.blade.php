@@ -24,10 +24,8 @@
                         <time class="text-xs opacity-50">{{ $chat->send_at }}</time>
                     </div>
                     <div class="chat-bubble text-teal-500">
-                        {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }} </div>
-                    {{-- <div class="chat-footer opacity-50">
-                    Seen at 12:46
-                </div> --}}
+                        {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }}
+                    </div>
                 </div>
             @else
                 <div class="chat chat-start">

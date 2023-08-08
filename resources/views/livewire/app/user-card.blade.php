@@ -1,4 +1,4 @@
-<div class="flex items-center space-x-2">
+<div class="flex items-center space-x-2" >
     @if ($user->profile_photo_url)
         <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
             class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
@@ -8,7 +8,7 @@
     @endif
     <div>
         <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
-            <span>{{ '@' . $user->username }}</span>
+            <span>{{ '@' . $user->name }}</span>
             @if ($user->cpf)
                 <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path stroke="#068bac"
@@ -17,7 +17,8 @@
                 </svg>
             @endif
         </h2>
-        <span class="inline-block text-xs leading-none dark:text-gray-400 mb-2 mt-0">Iniciante</span>
+        <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">{{ '@' . $user->username }}</span>
+        {{-- <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">Iniciante</span> --}}
         @if ($user->id != Auth::user()->id and $user->trade > 0)
             <span
                 class="flex items-center leading-none mx-0

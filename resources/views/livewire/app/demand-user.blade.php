@@ -5,7 +5,7 @@
         <div wire:key="{{ $item }}">
             <div
                 class="relative  rounded-lg shadow-md py-2
-                dark:bg-gray-900 dark:text-gray-100 mb-4
+                dark:bg-gray-900  mb-4
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
                 <div class="absolute overflow-hidden h-full w-1/2 -mt-2">
                     @if ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)

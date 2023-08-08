@@ -10,7 +10,7 @@
             </div>
         </div>
     @else
-        <details class="dropdown dropdown-bottom sm:dropdown-right">
+        <details class="dropdown dropdown-bottom sm:dropdown-right dark:bg-gray-900">
             <summary class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
@@ -36,7 +36,7 @@
         <div
             class="dropdown-content z-[1] ml-5 menu py-2 px-1 shadow bg-base-100 rounded-box
              absolute right-0 z-20 w-64 mt-2 overflow-hidden bg-white rounded-md shadow-lg sm:w-96
-             dark:bg-gray-800">
+             dark:bg-gray-900">
             <div class="py-2">
                 @foreach ($offers->take(5) as $offer)
                     @if ($linkOffer == true)

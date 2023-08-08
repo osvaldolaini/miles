@@ -3,7 +3,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
     <div class="divide-y divide-gray-700">
         <div class="Sidebar">
             <ul class="ul pt-2 pb-4 space-y-1 text-sm">
-                <li class="li dark:bg-gray-800 dark:text-whitecursor-pointer">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('app') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -14,7 +14,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                         <span class="span semibold">Home</span>
                     </a>
                 </li>
-                <li class="li dark:bg-gray-800 dark:text-whitecursor-pointer">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('chats') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -27,7 +27,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                         <span class="span semibold">Chat</span>
                     </a>
                 </li>
-                <li class="li dark:bg-gray-800 dark:text-whitecursor-pointer">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -40,7 +40,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                         <span class="span semibold">Meus pedidos</span>
                     </a>
                 </li>
-                <li class="li dark:bg-gray-800 dark:text-whitecursor-pointer">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('like.demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"
@@ -53,7 +53,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                         <span class="span semibold">Meus favoritos</span>
                     </a>
                 </li>
-                <li class="li dark:bg-gray-800 dark:text-whitecursor-pointer">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="#" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"

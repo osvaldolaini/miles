@@ -194,7 +194,7 @@
                             </form>
                         </li>
                     @else
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('login') }}"
                                 class="bg-teal-500
                             hover:bg-gray-900 border-2 border-teal-500
@@ -203,7 +203,7 @@
                             </a>
 
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('register') }}"
                                 class="
                                 border-2 border-teal-500 bg-gray-900 text-white

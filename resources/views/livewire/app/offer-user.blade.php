@@ -61,7 +61,7 @@
 
         <div class="px-4 rounded-t-lg bg-gray-800">
             <label for="comment" class="sr-only">Sua mensagem</label>
-            <textarea id="comment" rows="4" wire:model="text"
+            <textarea id="comment" rows="4" wire:model="text" wire:keydown.enter="sendMessage()"
                 class="w-full px-0 text-sm text-teal-500  border-0
                     bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-teal-400"
                 placeholder="Escreva sua mensagem..." required>

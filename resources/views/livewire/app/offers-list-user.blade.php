@@ -9,7 +9,7 @@
                 <div class="stat">
                     <div class="stat-title font-bold">Dados do pedido</div>
                     <div class="stat-title text-lg font-extrabold">
-                        R$ {{ $chat->demand->value }} - R$ {{ $chat->demand->value_max }}
+                        R$ {{ $item->demand->value }} - R$ {{ $item->demand->value_max }}
                     </div>
                     <div class="stat-actions">
                         <div class="stats p-0 m-0 bg-transparent">

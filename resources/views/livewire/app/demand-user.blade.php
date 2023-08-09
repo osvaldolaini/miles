@@ -2,7 +2,7 @@
 
     @livewire('app.message-alert')
     @foreach ($demands as $item)
-        <div wire:key="{{ $item }}">
+        <div wire:key="{{ $item->id }}">
             <div
                 class="relative  rounded-lg shadow-md py-2
                 dark:bg-gray-900  mb-4

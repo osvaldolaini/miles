@@ -109,10 +109,10 @@
                             <div class="flex items-center">
                                 <a href="{{ route('demand') }}"
                                     class="bg-teal-500
-                        hover:bg-gray-900 border-2 border-teal-500
-                        active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5
-                        rounded-full shadow hover:shadow-md outline-none focus:outline-none
-                        lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
+                                    hover:bg-gray-900 border-2 border-teal-500
+                                    active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5
+                                    rounded-full shadow hover:shadow-md outline-none focus:outline-none
+                                    lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
                                     FAZER PEDIDO <span class="fa-solid fa-plus"></span>
                                 </a>
                             </div>
@@ -169,7 +169,7 @@
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                            <a href="#" class="a flex items-center p-2 space-x-3 rounded-md">
+                            <a href="{{ route('offer.list.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
                                         viewBox="0 0 24 24" data-testid="BookmarkAddIcon">
@@ -179,6 +179,18 @@
                                     </svg>
                                 </span>
                                 <span class="span semibold">Minhas ofertas</span>
+                            </a>
+                        </li>
+                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                            <a href="{{ route('account.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                                <span class="span ">
+                                    <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22,17a4,4,0,1,1-4-4A4,4,0,0,1,22,17ZM21,3H4A2,2,0,0,0,2,5V19a2,2,0,0,0,2,2h9.54A5.99,5.99,0,0,1,22,12.54V8a1,1,0,0,0-1-1H5A1,1,0,0,1,5,5H22V4A1,1,0,0,0,21,3Z" />
+                                    </svg>
+                                </span>
+                                <span class="span semibold">Minhas contas</span>
                             </a>
                         </li>
 

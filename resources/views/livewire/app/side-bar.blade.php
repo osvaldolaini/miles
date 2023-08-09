@@ -54,7 +54,7 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                     </a>
                 </li>
                 <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                    <a href="#" class="a flex items-center p-2 space-x-3 rounded-md">
+                    <a href="{{ route('offer.list.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
                             <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
                                 viewBox="0 0 24 24" data-testid="BookmarkAddIcon">

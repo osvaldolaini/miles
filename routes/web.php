@@ -8,6 +8,7 @@ use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
 use App\Http\Livewire\App\MyDemandLike;
 use App\Http\Livewire\App\OffersList;
+use App\Http\Livewire\App\OffersListUser;
 use App\Http\Livewire\App\OfferUser;
 use Illuminate\Support\Facades\Route;
 //Usuário
@@ -37,13 +38,13 @@ Route::middleware([
     Route::get('/app', Dashboard::class)->name('app');
     Route::get('/fazer-pedido', Demand::class)->name('demand');
     Route::get('/fazer-pedido/passageiros', DemandPassengers::class)->name('demand.pass');
+    Route::get('/negociar/{offers:code}', OfferUser::class)->name('offer.user');
+    Route::get('/ofertas-do-pedido/{demand:code}', OffersList::class)->name('all.offers.demand');
+
     Route::get('/meus-pedido', DemandUser::class)->name('demand.user');
     Route::get('/meus-favoritos', MyDemandLike::class)->name('like.demand.user');
-    Route::get('/ofertas-do-pedido/{demand:code}', OffersList::class)->name('all.offers.demand');
-    Route::get('/negociar/{offers:code}', OfferUser::class)->name('offer.user');
-
+    Route::get('/minhas-ofertas', OffersListUser::class)->name('offer.list.user');
     Route::get('/minhas-contas', Accounts::class)->name('account.user');
-
 
     Route::get('/chats', Chats::class)->name('chats');
 });

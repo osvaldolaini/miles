@@ -32,7 +32,7 @@
                             </div>
                             <div
                                 class="chat-bubble {{ $chat->user_id == $user_id ? 'text-white' : 'text-teal-500' }} ">
-                                {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }} </div>
+                                {{ $chat->status == 1 ? mb_strimwidth($chat->text, 0, 20, "...") : 'Mensagem apagada' }} </div>
                         </div>
 
                     <time class="w-full text-xs opacity-50 text-right justify-end">{{ $chat->send_at }}</time>

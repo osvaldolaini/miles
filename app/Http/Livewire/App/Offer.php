@@ -42,7 +42,7 @@ class Offer extends Component
     }
     public function showModalCreate()
     {
-        //Redireciona para a escolha do curso
+
         if (Gate::allows('profile-user')) {
             abort(403);
         }
@@ -52,11 +52,14 @@ class Offer extends Component
     public function store()
     {
         $this->validate();
+        $number = $this->demand->offers->count();
+
         Offers::create([
             'value'     => $this->value,
             'demand_id' => $this->demand->id,
             'user_id'   => $this->user_id,
             'status'    => 1,
+            'order'     => ($number + 1),
             'code'      => Str::uuid(),
         ]);
         $this->openAlert('success', 'Oferta realizada com sucesso.');

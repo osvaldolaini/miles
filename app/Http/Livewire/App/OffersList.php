@@ -14,15 +14,16 @@ class OffersList extends Component
 {
     public $offers;
     public $user_id;
+    public $breadcrumb;
 
     public function mount(Demands $demand)
     {
-         //Redireciona para a escolha do curso
-         if (Gate::allows('profile-user')) {
+        if (Gate::allows('profile-user')) {
             abort(403);
         }
         $this->user_id = Auth::user()->id;
-        $this->offers = $demand->offers->sortByDesc('value');
+        $this->offers = $demand->offers->sortBy('value');
+        $this->breadcrumb = 'Ofertas';
     }
     public function render()
     {

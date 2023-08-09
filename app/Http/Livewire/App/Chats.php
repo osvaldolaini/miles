@@ -10,7 +10,14 @@ use Livewire\Component;
 class Chats extends Component
 {
     public $user_id;
+    public $breadcrumb;
 
+
+    public function mount()
+    {
+        $this->breadcrumb = 'Minhas conversas';
+
+    }
     public function render()
     {
         $listChats=array();

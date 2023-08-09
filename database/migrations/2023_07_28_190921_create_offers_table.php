@@ -17,6 +17,7 @@ class CreateOffersTable extends Migration
             $table->id();
             $table->boolean('status')->nullable();
             $table->decimal('value', $precision = 10, $scale = 2)->nullable();
+            $table->integer('order')->nullable();
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onUpdate('cascade')

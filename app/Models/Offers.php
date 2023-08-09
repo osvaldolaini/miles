@@ -14,7 +14,7 @@ class Offers extends Model
     protected $table = 'offers';
 
     protected $fillable = [
-        'id','status','user_id','demand_id','value','code'
+        'id','status','user_id','order','demand_id','value','code'
     ];
     public function setValueAttribute($value)
     {
@@ -24,6 +24,7 @@ class Offers extends Model
     {
         return str_replace(".", ",", $value);
     }
+
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class);

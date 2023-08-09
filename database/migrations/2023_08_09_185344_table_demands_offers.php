@@ -15,6 +15,7 @@ class TableDemandsOffers extends Migration
     {
         Schema::table('demands', function (Blueprint $table) {
             $table->foreignId('offer_id')
+                ->nullable()
                 ->constrained('offers')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

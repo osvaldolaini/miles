@@ -11,12 +11,16 @@ use Illuminate\Support\Facades\Gate;
 class DemandUser extends Component
 {
     public $demands;
+    public $breadcrumb;
     public $model_id;
     public $showDeleteModal = false;
 
+    public function mount()
+    {
+        $this->breadcrumb = 'Meus pedidos';
+    }
     public function render()
     {
-        //Redireciona para a escolha do curso
         if (Gate::allows('profile-user')) {
             abort(403);
         }

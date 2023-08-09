@@ -43,7 +43,7 @@ class Demand extends Component
     }
     public function render()
     {
-        //Redireciona para a escolha do curso
+
         if (Gate::allows('profile-user')) {
             abort(403);
         }

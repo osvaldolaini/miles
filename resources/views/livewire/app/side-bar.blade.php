@@ -43,8 +43,8 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                 <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('like.demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke="currentColor" fill-rule="evenodd" clip-rule="evenodd"
                                     d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -64,6 +64,18 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                             </svg>
                         </span>
                         <span class="span semibold">Minhas ofertas</span>
+                    </a>
+                </li>
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                    <a href="{{ route('account.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                        <span class="span ">
+                            <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22,17a4,4,0,1,1-4-4A4,4,0,0,1,22,17ZM21,3H4A2,2,0,0,0,2,5V19a2,2,0,0,0,2,2h9.54A5.99,5.99,0,0,1,22,12.54V8a1,1,0,0,0-1-1H5A1,1,0,0,1,5,5H22V4A1,1,0,0,0,21,3Z" />
+                            </svg>
+                        </span>
+                        <span class="span semibold">Minhas contas</span>
                     </a>
                 </li>
             </ul>

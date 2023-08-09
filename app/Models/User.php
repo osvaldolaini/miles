@@ -114,5 +114,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Chat::class,'send_to','id');
     }
-
+    public function accounts():HasMany
+    {
+        return $this->hasMany(Account::class,'user_id','id');
+    }
 }

@@ -14,7 +14,8 @@ class Demands extends Model
     protected $table = 'demands';
 
     protected $fillable = [
-        'id', 'status', 'user_id', 'qtd', 'end_date', 'value', 'value_max', 'miles', 'code'
+        'id', 'status', 'user_id', 'qtd', 'account_categorie_id',
+        'end_date', 'value', 'value_max', 'miles', 'code'
     ];
     protected $casts = [
         'end_date' => 'datetime:Y-m-d H:i:s',
@@ -99,6 +100,10 @@ class Demands extends Model
             return false;
         }
 
+    }
+    public function category():BelongsTo
+    {
+        return $this->belongsTo(AccountCategory::class,'account_categorie_id','id');
     }
     public function getRouteKeyName(): string
     {

@@ -1,4 +1,5 @@
 <div>
+    <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @foreach ($data as $item)
         @if ($item->demand->end_date >= date('Y-m-d H:i:s') && $item->demand->status == 1)
             <div

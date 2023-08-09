@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\Gate;
 class MyDemandLike extends Component
 {
     public $data;
+    public $breadcrumb;
     public function mount()
     {
         $this->data = Auth::user()->like;
+        $this->breadcrumb = 'Favoritos';
     }
     public function render()
     {

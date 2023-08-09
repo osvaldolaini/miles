@@ -2,11 +2,9 @@
 
 namespace App\Http\Livewire\App;
 
-use App\Events\DemandHasBeenCreated;
-use App\Models\Demands;
-use Illuminate\Support\Facades\Auth;
+use App\Models\AccountCategory;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
 
 use Livewire\Component;
 
@@ -23,11 +21,14 @@ class Demand extends Component
     public $value;
     public $value_max;
     public $end_date;
+    public $plans;
+    public $account_categorie_id;
+    public $demands = [];
 
     public function mount()
     {
-        $this->user_id = Auth::user()->id;
         $this->breadcrumb = 'Fazer pedido';
+        $this->plans = AccountCategory::select('title','id')->orderBy('title','asc')->where('active',1)->get();
     }
     //Ressetar as inputs
     public function resetAll()
@@ -36,7 +37,8 @@ class Demand extends Component
             'miles',
             'qtd',
             'value',
-            'value_max'
+            'value_max',
+            'account_categorie_id'
         );
     }
     public function render()
@@ -60,37 +62,20 @@ class Demand extends Component
             'value' => 'required|max:5',
             'miles' => 'required',
             'qtd' => 'required',
+            'account_categorie_id' => 'required',
         ];
         $this->validate();
 
-        Demands::create([
-            'value_max' => $this->value_max,
-            'value'     => $this->value,
-            'miles'     => $this->miles,
-            'end_date'  => $this->end_date,
-            'qtd'       => $this->qtd,
-            'user_id'   => $this->user_id,
-            'status'    => 1,
-            'code'      => Str::uuid(),
-        ]);
-
-        DemandHasBeenCreated::dispatch();
-
-        $this->openAlert('success','Pedido efetuado com sucesso.');
-
-        $this->alertSession = true;
+        $demands =[
+                'value_max' => $this->value_max,
+                'value'     => $this->value,
+                'miles'     => $this->miles,
+                'end_date'  => $this->end_date,
+                'qtd'       => $this->qtd,
+                'account_categorie_id'   => $this->account_categorie_id,
+        ];
+        Session::put('demands', $demands);
         $this->showModalCreate = false;
-        return redirect()->route('demand.user');
+        return redirect()->route('demand.pass');
     }
-    //Fecha a caixa da mensagem
-    public function closeAlert()
-    {
-        $this->emit('closeAlert');
-    }
-    //pega o status do registro
-    public function openAlert($status, $msg)
-    {
-        $this->emit('openAlert', $status, $msg);
-    }
-
 }

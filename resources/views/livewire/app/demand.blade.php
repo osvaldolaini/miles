@@ -2,10 +2,10 @@
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class="w-full space-y-2 my-3 ">
         <div class="w-full p-2 space-y-2 mt-5 lg:mt-0 bg-gray-100 dark:border-gray-800 dark:border-gray-100 rounded-lg shadow-lg">
-            <form action="#" wire:submit.prevent="showModalCreate()" wire.loading.attr='disable'>
+            <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>
                 <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-800">
-                    <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-4">
-                        <div class="col-span-full sm:col-span-3">
+                    <div class="grid grid-cols-8 gap-3 col-span-full lg:col-span-4">
+                        <div class="col-span-full sm:col-span-4">
                             <label for="miles" class="text-sm">
                                 Quantidade de Milhas
                             </label>
@@ -17,7 +17,7 @@
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-span-full sm:col-span-3">
+                        <div class="col-span-full sm:col-span-4">
                             <label for="qtd" class="text-sm">
                                 Quantidade de CPF
                             </label>
@@ -30,7 +30,25 @@
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-span-full sm:col-span-3" x-data x-init="Inputmask({
+                        <div class="col-span-full sm:col-span-4">
+                            <label for="account_categorie_id" class="text-sm">
+                                Plano
+                            </label>
+                            <select wire:model="account_categorie_id" name="account_categorie_id" id="account_categorie_id"
+                        placeholder="Plano"
+                        class="w-full rounded-md focus:ring
+                        focus:ring-opacity-75 focus:ring-violet-400
+                        dark:border-gray-700 dark:text-gray-800">
+                            <option value="">Selecione um plano</option>
+                            @foreach ($plans as $plan)
+                                <option value="{{ $plan->id }}" >{{ $plan->title }}</option>
+                            @endforeach
+                        </select>
+                            @error('account_categorie_id')
+                                <span class="error">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
                             'mask': '99,99'
                         }).mask($refs.value)">
                             <label for="value" class="text-sm">
@@ -44,7 +62,7 @@
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-span-full sm:col-span-3" x-data x-init="Inputmask({
+                        <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
                             'mask': '99,99'
                         }).mask($refs.value_max)">
                             <label for="value_max" class="text-sm">Valor máximo</label>
@@ -59,7 +77,7 @@
                         <div class="col-span-full ">
                             <h2 class="text-sm">Duração do pedido</label>
                         </div>
-                        <div class="col-span-full sm:col-span-3">
+                        <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
                                 value="{{ date('Y-m-d H:i:s', strtotime('+30 minutes')) }}" id="free_thirty_hour"
                                 class="peer hidden" checked/>
@@ -72,7 +90,7 @@
 
                             </label>
                         </div>
-                        <div class="col-span-full sm:col-span-3">
+                        <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
                                 value="{{ date('Y-m-d H:i:s', strtotime('+1 hour')) }}" id="free_one_hour"
                                 class="peer hidden" />
@@ -82,14 +100,15 @@
                                 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700
                                 dark:peer-checked:text-blue-500 peer-checked:border-blue-600
                                 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100
-                                dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700
+                                ">
                                 <div class="block">
                                     <div class="w-full text-lg font-semibold">1 hora</div>
                                     <div class="w-full">Free</div>
                                 </div>
                             </label>
                         </div>
-                        <div class="col-span-full sm:col-span-3">
+                        <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
                                 value="{{ date('Y-m-d H:i:s', strtotime('+2 hours')) }}" id="free_two_hour"
                                 class="peer hidden" />
@@ -101,7 +120,7 @@
                                 </div>
                             </label>
                         </div>
-                        <div class="col-span-full sm:col-span-3" >
+                        <div class="col-span-full sm:col-span-4" >
                             <input type="radio" wire:model="end_date"
                                 value="{{ date('Y-m-d H:i:s', strtotime('+24 hours')) }}" id="plus_one_day"
                                 class="peer hidden" />
@@ -136,19 +155,5 @@
             </form>
         </div>
     </div>
-        {{-- MODAL CREATE --}}
-        <x-confirmation-modal wire:model="showModalCreate">
-            <x-slot name="title">Inserir pedido</x-slot>
-            <x-slot name="content">
-                <h2 class="h2">Deseja realmente inserir o pedido?</h2>
-            </x-slot>
-            <x-slot name="footer">
-                <x-secondary-button wire:click="$toggle('showModalCreate')" class="mx-2">
-                    Cancelar
-                </x-secondary-button>
-                <x-danger-button wire:click.prevent="store()" wire.loading.attr='disable'>
-                    Inserir
-                </x-danger-button>
-            </x-slot>
-        </x-confirmation-modal>
+
 </div>

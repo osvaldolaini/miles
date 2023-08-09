@@ -21,7 +21,7 @@ class CreateOffersTable extends Migration
                 ->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-                $table->foreignId('demand_id')
+            $table->foreignId('demand_id')
                 ->constrained('demands')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

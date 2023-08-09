@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Livewire\App\Accounts;
 use App\Http\Livewire\App\Chats;
 use App\Http\Livewire\App\Dashboard;
 use App\Http\Livewire\App\Demand;
+use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
 use App\Http\Livewire\App\MyDemandLike;
 use App\Http\Livewire\App\OffersList;
@@ -34,10 +36,13 @@ Route::middleware([
     Route::get('/meus-dados', UserProfile::class)->name('profile.user');
     Route::get('/app', Dashboard::class)->name('app');
     Route::get('/fazer-pedido', Demand::class)->name('demand');
+    Route::get('/fazer-pedido/passageiros', DemandPassengers::class)->name('demand.pass');
     Route::get('/meus-pedido', DemandUser::class)->name('demand.user');
     Route::get('/meus-favoritos', MyDemandLike::class)->name('like.demand.user');
     Route::get('/ofertas-do-pedido/{demand:code}', OffersList::class)->name('all.offers.demand');
     Route::get('/negociar/{offers:code}', OfferUser::class)->name('offer.user');
+
+    Route::get('/minhas-contas', Accounts::class)->name('account.user');
 
 
     Route::get('/chats', Chats::class)->name('chats');

@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="px-3">
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-end sm:justify-between">
                         <div class="flex items-center space-x-2">
                             <button type="button" title="Compartilhar" class="flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"

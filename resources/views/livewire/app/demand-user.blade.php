@@ -27,8 +27,8 @@
                         </div>
                     @endif
                 </div>
-                <div class="flex items-center justify-between py-0 px-3">
-                    <div class="flex items-center space-x-2" wire:key="{{ $item->id }}">
+                <div class="flex items-center justify-between py-0 px-3" wire:key="{{ $item->id }}">
+                    <div class="flex items-center space-x-2" >
 
                     </div>
                     <div class="text-right">

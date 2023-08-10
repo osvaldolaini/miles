@@ -12,7 +12,6 @@ class FavoritePassenger extends Component
     public function mount(User $user)
     {
         $this->favorites = $user->passengers;
-        dd($this->favorites);
     }
     public function render()
     {
@@ -21,6 +20,7 @@ class FavoritePassenger extends Component
 
     public function showModalCreate()
     {
+        dd($this->favorites);
         $this->showModalCreate = true;
     }
 }

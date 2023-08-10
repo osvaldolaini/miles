@@ -53,7 +53,7 @@
                                 'mask': '999.999.999-99'
                             }).mask($refs.cpf)">
                                 <label for="cpf" class="text-sm block sm:hidden">
-                                    CPF
+                                    CPF {{ count($user->passengers) }}
                                 </label>
                                 <input wire:model="cpf.{{ $i }}" x-ref="cpf"  placeholder="CPF"
                                     class="w-full rounded-md focus:ring
@@ -63,10 +63,12 @@
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div>
-                                {{-- favorites --}}
-                                @livewire('app.favorite-passenger', ['user' => $user], key($user->id))
-                            </div>
+                            @if (count($user->passengers) < 0)
+                                <div>
+                                    {{-- favorites --}}
+                                    @livewire('app.favorite-passenger', ['user' => $user], key($user->id))
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </fieldset>

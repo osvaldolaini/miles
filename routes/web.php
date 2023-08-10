@@ -4,6 +4,7 @@ use App\Http\Livewire\App\Accounts;
 use App\Http\Livewire\App\Chats;
 use App\Http\Livewire\App\Dashboard;
 use App\Http\Livewire\App\Demand;
+use App\Http\Livewire\App\DemandCheckout;
 use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
 use App\Http\Livewire\App\MyDemandLike;
@@ -45,6 +46,8 @@ Route::middleware([
     Route::get('/meus-favoritos', MyDemandLike::class)->name('like.demand.user');
     Route::get('/minhas-ofertas', OffersListUser::class)->name('offer.list.user');
     Route::get('/minhas-contas', Accounts::class)->name('account.user');
+
+    Route::get('/finalizar/{offers:code}', DemandCheckout::class)->name('demand.checkout');
 
     Route::get('/chats', Chats::class)->name('chats');
 });

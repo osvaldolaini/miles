@@ -20,7 +20,6 @@
         <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
             {{ '@' . $user->username }}
         </span>
-        {{-- <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">Iniciante</span> --}}
         @if ($user->id != Auth::user()->id and $user->trade > 0)
             <span
                 class="flex items-center leading-none mx-0

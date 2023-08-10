@@ -16,51 +16,27 @@
                             </div>
                         </div>
                     @endif
+                    @if ($item->status == 2)
+                        <div class="absolute left-0 top-0 h-16 w-16">
+                            <div
+                                class="absolute transform -rotate-45 bg-green-600
+                                text-center text-white font-semibold
+                                py-1 left-[-34px] top-[32px] w-[170px]">
+                                Finalizado
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="flex items-center justify-between py-0 px-3">
                     <div class="flex items-center space-x-2" wire:key="{{ $item->id }}">
-                        @if ($item->user->profile_photo_url)
-                            <img src="{{ $item->user->profile_photo_url }}"
-                                alt="sistemilhas-avatar-{{ $item->user->username }}"
-                                class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
-                        @else
-                            <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
-                                class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
-                        @endif
-                        <div>
-                            <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
-                                <span>{{ $item->user->name }}</span>
-                                @if ($item->user->cpf)
-                                    <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke="#068bac"
-                                            d="M9 12L11 14L15 10M12 3L13.9101 4.87147L16.5 4.20577L17.2184 6.78155L19.7942 7.5L19.1285 10.0899L21 12L19.1285 13.9101L19.7942 16.5L17.2184 17.2184L16.5 19.7942L13.9101 19.1285L12 21L10.0899 19.1285L7.5 19.7942L6.78155 17.2184L4.20577 16.5L4.87147 13.9101L3 12L4.87147 10.0899L4.20577 7.5L6.78155 6.78155L7.5 4.20577L10.0899 4.87147L12 3Z"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                @endif
-                            </h2>
-                            <span class="flex text-xs leading-none dark:text-gray-400 my-0">
-                                {{ '@' . $item->user->username }}
-                            </span>
-                            <span class="text-xs leading-none dark:text-gray-400 my-0">
-                                Iniciante
-                            </span>
-                            @if ($item->user->id != Auth::user()->id and $item->user->trade > 0)
-                                <span
-                                    class="flex items-center leading-none mx-0
-                                    justify-center rounded-lg bg-emerald-200
-                                    px-2.5 py-0.5 text-emerald-700">
-                                    <p class="whitespace-nowrap text-xs">Comprou {{ $item->user->tradeConvert }}</p>
-                                </span>
-                            @endif
-                        </div>
+
                     </div>
                     <div class="text-right">
                         <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesConvert }} Milhas</h1>
                         <h2 class="text-lg font-bold mt-0 pt-0">{{ $item->qtd }} CPF</h2>
                         <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->value }}</h2>
                         <h2 class="text-md font-bold mt-0 pt-0 text-red-500">{{ $item->category->title }}</h2>
-                        @if ($item->end_date > date('Y-m-d H:i:s') or $item->status != 1)
+                        @if ($item->end_date > date('Y-m-d H:i:s') && $item->status == 1)
                             <div class="mt-0 pt-0">
                                 <button type='button' wire:click="showDeleteModal({{ $item->id }})"
                                     class="bg-red-500 cursor-pointer
@@ -80,16 +56,57 @@
                 <div class="px-3">
                     <div class="flex items-center justify-end sm:justify-between">
                         <div class="flex items-center space-x-2">
-                            <button type="button" title="Compartilhar" class="flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                    class="w-5 h-5 fill-current">
-                                    <path
-                                        d="M474.444,19.857a20.336,20.336,0,0,0-21.592-2.781L33.737,213.8v38.066l176.037,70.414L322.69,496h38.074l120.3-455.4A20.342,20.342,0,0,0,474.444,19.857ZM337.257,459.693,240.2,310.37,389.553,146.788l-23.631-21.576L215.4,290.069,70.257,232.012,443.7,56.72Z">
-                                    </path>
-                                </svg>
-                            </button>
-                            {{-- dropdown ofertas --}}
-                            @livewire('app.offers-to-demand', ['demand' => $item, 'linkOffer' => true], key($item->id))
+                            @if ($item->end_date > date('Y-m-d H:i:s') && $item->status == 1)
+                                <button type="button" title="Compartilhar" class="flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        class="w-5 h-5 fill-current">
+                                        <path
+                                            d="M474.444,19.857a20.336,20.336,0,0,0-21.592-2.781L33.737,213.8v38.066l176.037,70.414L322.69,496h38.074l120.3-455.4A20.342,20.342,0,0,0,474.444,19.857ZM337.257,459.693,240.2,310.37,389.553,146.788l-23.631-21.576L215.4,290.069,70.257,232.012,443.7,56.72Z">
+                                        </path>
+                                    </svg>
+                                </button>
+
+                                {{-- dropdown ofertas --}}
+                                @livewire('app.offers-to-demand', ['demand' => $item, 'linkOffer' => true], key($item->id))
+                            @else
+                                <div class="flex items-center space-x-2">
+                                    @if ($item->offer->user->profile_photo_url)
+                                        <img src="{{ $item->offer->user->profile_photo_url }}"
+                                            alt="sistemilhas-avatar-{{ $item->offer->user->username }}"
+                                            class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
+                                    @else
+                                        <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
+                                            class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
+                                    @endif
+                                    <div>
+                                        <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
+                                            <span>{{ $item->offer->user->name }}</span>
+                                            @if ($item->offer->user->cpf)
+                                                <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke="#068bac"
+                                                        d="M9 12L11 14L15 10M12 3L13.9101 4.87147L16.5 4.20577L17.2184 6.78155L19.7942 7.5L19.1285 10.0899L21 12L19.1285 13.9101L19.7942 16.5L17.2184 17.2184L16.5 19.7942L13.9101 19.1285L12 21L10.0899 19.1285L7.5 19.7942L6.78155 17.2184L4.20577 16.5L4.87147 13.9101L3 12L4.87147 10.0899L4.20577 7.5L6.78155 6.78155L7.5 4.20577L10.0899 4.87147L12 3Z"
+                                                        stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            @endif
+                                        </h2>
+                                        <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
+                                            {{ '@' . $item->offer->user->username }}
+                                        </span>
+                                        {{-- <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">Iniciante</span> --}}
+                                        @if ($item->offer->user->id != Auth::user()->id and $item->offer->user->trade > 0)
+                                            <span
+                                                class="flex items-center leading-none mx-0
+                                            justify-center rounded-lg bg-emerald-200
+                                            px-2.5 py-0.5 text-emerald-700">
+                                                <p class="whitespace-nowrap text-xs">Comprou {{ $user->tradeConvert }}
+                                                </p>
+                                            </span>
+                                        @endif
+                                    </div>
+                            @endif
+
                         </div>
                     </div>
 

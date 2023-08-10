@@ -11,16 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('demand_passengers', function (Blueprint $table) {
+        Schema::create('rating_users', function (Blueprint $table) {
             $table->id();
-            $table->string('cpf')->nullable();
-            $table->string('name')->nullable();
-            $table->foreignId('demand_id')
-                ->constrained('demands')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->tinyText('text')->nullable();
+            $table->integer('rate')->nullable();
             $table->foreignId('user_id')
                 ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('offer_id')
+                ->nullable()
+                ->constrained('offers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('demand_id')
+                ->nullable()
+                ->constrained('demands')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('code')->nullable();
@@ -33,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('demand_passengers');
+        Schema::dropIfExists('rating_users');
     }
 };

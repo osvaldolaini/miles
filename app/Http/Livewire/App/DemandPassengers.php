@@ -64,6 +64,7 @@ class DemandPassengers extends Component
                 DemandPassenger::create([
                     'name'      => $this->name[$i],
                     'cpf'       => $this->cpf[$i],
+                    'user_id'   => Auth::user()->id,
                     'demand_id' => $demand_id,
                     'code'      => Str::uuid(),
                 ]);

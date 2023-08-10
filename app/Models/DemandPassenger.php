@@ -13,7 +13,7 @@ class DemandPassenger extends Model
     protected $table = 'demand_passengers';
 
     protected $fillable = [
-        'id','demand_id','name','cpf','code'
+        'id','demand_id','user_id','name','cpf','code'
     ];
     public function demand():BelongsTo
     {

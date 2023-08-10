@@ -91,6 +91,10 @@ class Demands extends Model
     {
         return $this->hasMany(Offers::class,'demand_id','id');
     }
+    public function offer(): BelongsTo
+    {
+        return $this->belongsTo(Offers::class,'offer_id','id');
+    }
     public function like($user)
     {
         $like = DemandLike::where('demand_id',$this->id)->where('user_id',$user)->first();
@@ -99,11 +103,14 @@ class Demands extends Model
         }else{
             return false;
         }
-
     }
     public function category():BelongsTo
     {
         return $this->belongsTo(AccountCategory::class,'account_categorie_id','id');
+    }
+    public function passengers():HasMany
+    {
+        return $this->hasMany(DemandPassenger::class,'demand_id','id');
     }
     public function getRouteKeyName(): string
     {

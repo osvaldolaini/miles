@@ -69,7 +69,7 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="{{ route('offer.user', [$offer->code]) }}">
+                                    <a class="btn btn-info btn-sm" href="{{ route('demand.checkout', [$offer->code]) }}">
                                         <svg class="w-5 h-5" fill="currentColor" focusable="false"
                                             aria-hidden="true" viewBox="0 -64 640 640"
                                             xmlns="http://www.w3.org/2000/svg">

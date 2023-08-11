@@ -74,7 +74,7 @@ class DemandPassengers extends Component
     public function store()
     {
         $demand_id = $this->setDemand();
-        dd($this->name);
+        // dd($this->name);
         $count = count($this->name);
 
         for ($i=0; $i < $count; $i++) {

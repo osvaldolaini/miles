@@ -44,10 +44,12 @@ class Demands extends Model
                 $m = $this->miles;
                 break;
             case $k >= 1 && $k < 1000:
-                $m =  $k . 'K';
+                $kk = explode('.',$k);
+                $m =  $kk[0] . 'K';
                 break;
             default:
-                $m =  $k . 'K';
+                $kk = explode('.',$k);
+                $m =  $kk[0] . 'K';
                 break;
         }
         return $m;

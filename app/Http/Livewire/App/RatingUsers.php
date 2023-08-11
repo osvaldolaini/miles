@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class RatingUsers extends Component
 {
     public $demand;
-    public $offer_id;
+    public $offer;
     public $rated;
     public $text;
     public $rate = 5;
@@ -21,7 +21,7 @@ class RatingUsers extends Component
     public function mount(Demands $demands,$rated)
     {
         $this->demand       = $demands;
-        $this->offer_id     = $demands->offer_id;
+        $this->offer        = $demands->offer;
         $this->rated        = $rated;
     }
     public function render()
@@ -35,25 +35,33 @@ class RatingUsers extends Component
 
     public function store()
     {
-
+        // dd($this->rated);
         $r = RatingUser::create([
             'text'      => $this->text,
             'rate'      => $this->rate,
             'demand_id' => $this->demand->id,
-            'offer_id'  => $this->offer_id,
+            'offer_id'  => $this->offer->id,
             'user_id'   => Auth::user()->id,
             'evaluted'  => $this->rated,
             'code'      => Str::uuid(),
         ]);
-        if ($r) {
-            $this->demand->status = 3;
-            $this->demand->save();
+        if (Auth::user()->id == $this->demand->user_id) {
+            if ($r) {
+                $this->demand->status = 3;
+                $this->demand->save();
+            }
+        } else {
+            if ($r) {
+                $this->offer->status = 3;
+                $this->offer->save();
+            }
         }
+
 
         $this->openAlert('success', 'Avaliação realizada com sucesso.');
 
         $this->showModalCreate = false;
-        return redirect()->route('demand.user');
+        // return redirect()->route('demand.user');
     }
     public function closeAlert()
     {

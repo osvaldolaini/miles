@@ -70,7 +70,7 @@ class User extends Authenticatable
     }
     public function offers():HasMany
     {
-        return $this->hasMany(Offers::class,'user_id','id');
+        return $this->hasMany(Offers::class);
     }
     public function getBuyAttribute()
     {
@@ -84,21 +84,21 @@ class User extends Authenticatable
 
         return $buys;
     }
-    // public function getSellAttribute()
-    // {
-    //     if ($this->offers) {
-    //         $trades = $this->offers->demand->where('status',3);
-    //         $sells = 0;
-    //         if ($trades) {
-    //             foreach ($trades as $sell) {
-    //                 $sells += $sell->demand->miles;
-    //             }
-    //         }
+    public function getSellAttribute()
+    {
+        if ($this->offers) {
+            $trades = $this->offers->where('status',3);
+            $sells = 0;
+            if ($trades) {
+                foreach ($trades as $sell) {
+                    $sells += $sell->demand->miles;
+                }
+            }
 
-    //         return $sells;
-    //     }
+            return $sells;
+        }
 
-    // }
+    }
     public function getBuyConvertAttribute()
     {
         if ($this->buy > 0) {
@@ -108,33 +108,55 @@ class User extends Authenticatable
                     $m = $this->buy;
                     break;
                 case $k >= 1 && $k < 1000:
-                    $m =  $k . 'K';
+                $kk = explode('.',$k);
+                $m =  $kk[0] . 'K';
+                break;
+                case $k >= 1000000 && $k < 1000000000:
+                    $k = $k / 1000;
+                    $kk = explode('.',$k);
+                    $m =  $kk[0] . 'M';
                     break;
-                default:
-                    $m =  $k . 'K';
-                    break;
+                case $k > 1000000000:
+                        $k = $k / 1000;
+                        $kk = explode('.',$k);
+                        $m =  $kk[0] . 'B';
+                        break;
+            default:
+                $m = $this->buy;
+                break;
             }
         }
         return $m;
     }
-    // public function getSellConvertAttribute()
-    // {
-    //     if ($this->sell > 0) {
-    //         $k = $this->sell / 1000;
-    //         switch ($k) {
-    //             case $k < 1:
-    //                 $m = $this->sell;
-    //                 break;
-    //             case $k >= 1 && $k < 1000:
-    //                 $m =  $k . 'K';
-    //                 break;
-    //             default:
-    //                 $m =  $k . 'K';
-    //                 break;
-    //         }
-    //     }
-    //     return $m;
-    // }
+    public function getSellConvertAttribute()
+    {
+        if ($this->sell > 0) {
+            $k = $this->sell / 1000;
+            switch ($k) {
+                case $k < 1:
+                    $m = $this->sell;
+                    break;
+                case $k >= 1 && $k < 1000:
+                $kk = explode('.',$k);
+                $m =  $kk[0] . 'K';
+                break;
+                case $k >= 1000000 && $k < 1000000000:
+                    $k = $k / 1000;
+                    $kk = explode('.',$k);
+                    $m =  $kk[0] . 'M';
+                    break;
+                case $k > 1000000000:
+                        $k = $k / 1000;
+                        $kk = explode('.',$k);
+                        $m =  $kk[0] . 'B';
+                        break;
+            default:
+                $m = $this->sell;
+                break;
+            }
+        }
+        return $m;
+    }
     public function like(): HasMany
     {
         return $this->hasMany(DemandLike::class,'user_id','id');

@@ -7,13 +7,13 @@ use Livewire\Component;
 
 class UserCard extends Component
 {
-    public $user;
+    public $user = '';
     public function mount(User $user)
     {
         $this->user = $user;
     }
     public function render()
     {
-        return view('livewire.app.user-card');
+        return view('livewire.app.user-card',['user'=>$this->user]);
     }
 }

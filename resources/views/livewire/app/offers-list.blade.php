@@ -6,7 +6,8 @@
                 <div class="stat">
                     <div class="stat-title">Usuário</div>
                     <div class="stat-title">
-                        @livewire('app.user-card', ['user' => $offer->user], key($offer->user->id))
+                        <x-user-card :user="$offer->user">
+                        </x-user-card>
                     </div>
                 </div>
                 <div class="stat">

@@ -26,6 +26,11 @@ class CreateOffersTable extends Migration
                 ->constrained('demands')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreignId('account_id')
+                ->nullable()
+                ->constrained('accounts')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('code')->nullable();
             $table->timestamps();
         });

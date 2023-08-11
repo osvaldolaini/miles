@@ -7,10 +7,11 @@
                 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 mx-2 mb-4">
                 <div class="flex items-center justify-between py-0 px-3 ">
                     <div >
-                        @livewire('app.user-card', ['user' => $item->demand->user], key($item->user->id))
+                        <x-user-card :user="$item->demand->user">
+                        </x-user-card>
                     </div>
                     <div class="text-right">
-                        <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->demand->milesConvert }} Milhas</h1>
+                        <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->demand->miles }} Milhas</h1>
                         <h2 class="text-lg font-bold mt-0 pt-0">{{ $item->demand->qtd }} CPF</h2>
                         <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->demand->value }}
                         </h2>

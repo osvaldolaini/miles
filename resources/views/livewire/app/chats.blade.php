@@ -1,15 +1,18 @@
 <div>
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class=" p-3 space-y-2 bg-gray-100
-        dark:bg-gray-800 dark:text-white text-semibold rounded-lg">
+        dark:bg-gray-800 dark:text-white text-semibold rounded-lg
+        ">
         <div class="overflow-x-auto">
             @foreach ($listChats as $chat)
             <a href="{{ route('offer.user', [$chat->offer->code]) }}">
-                <div class="stats bg-gray-200 stats-vertical lg:stats-horizontal shadow-md w-full my-2">
+                <div class="stats  stats-vertical lg:stats-horizontal shadow-md w-full my-2
+                bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
                     <div class="stat">
                         <div class="stat-title">Usuário</div>
                         <div class="stat-title">
-                            @livewire('app.user-card', ['user' => $chat->user], key($chat->user->id))
+                            <x-user-card :user="$chat->user">
+                            </x-user-card>
                         </div>
                     </div>
                     <div class="stat">

@@ -18,7 +18,7 @@ class Account extends Model
 
     public function category():BelongsTo
     {
-        return $this->belongsTo(AccountCategory::class);
+        return $this->belongsTo(AccountCategory::class,'account_categorie_id','id');
     }
     public function getNameAttribute($value)
     {

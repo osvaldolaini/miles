@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\SearchBar;
 
-
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -113,6 +113,7 @@ class SearchBar extends Component
         }
         $query->select($selects);
         $query->where('status','!=',2);
+        $query->where('user_id',Auth::user()->id);
 
         if($this->relationTables != ""){
             $query = $this->relationTables($query);

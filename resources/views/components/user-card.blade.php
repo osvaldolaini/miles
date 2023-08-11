@@ -1,3 +1,4 @@
+@props(['user' => null])
 <div>
     <div class="flex items-center space-x-2" wire:key="{{ $user->id }}-user">
         @if ($user->profile_photo_url)
@@ -29,14 +30,14 @@
                     <p class="whitespace-nowrap text-xs">Comprou {{ $user->buyConvert }}</p>
                 </span>
             @endif
-            {{-- @if ($user->id != Auth::user()->id && $user->sell > 0)
+            @if ($user->id != Auth::user()->id && $user->sell > 0)
             <span
                 class="flex items-center leading-none mx-0
                 justify-center rounded-lg bg-red-200
                 px-2.5 py-0.5 text-red-700">
                 <p class="whitespace-nowrap text-xs">Vendeu {{ $user->sellConvert }}</p>
             </span>
-        @endif --}}
+        @endif
         </div>
     </div>
 </div>

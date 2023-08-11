@@ -1,5 +1,5 @@
 <div>
-    <div class="stats stats-vertical lg:stats-horizontal w-full">
+    <div class="stats stats-vertical lg:stats-horizontal w-full border-none">
         <div class="stat">
             <div class="stat-actions">
                 @if ($demand->status == 1)

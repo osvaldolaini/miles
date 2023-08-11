@@ -44,7 +44,8 @@
                          p-0.5 bg-transparent border-b-2 sm:border-none">
                             <div class="stat p-0.5 border-none">
                                 <div class="stat-title">
-                                    @livewire('app.user-card', ['user' => $offer->user], key($offer->user->id))
+                                    <x-user-card :user="$offer->user">
+                                    </x-user-card>
                                 </div>
                             </div>
                             <div class="stat p-1 border-none sm:text-right">
@@ -87,7 +88,8 @@
                             -mx-2 transition-colors duration-300 transform border-b
                             border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-700">
                             <div>
-                                @livewire('app.user-card', ['user' => $offer->user], key($offer->user->id))
+                                <x-user-card :user="$offer->user">
+                                </x-user-card>
                             </div>
                             <button class="btn btn-outline btn-success btn-sm">
                                 {{ $offer->value }}

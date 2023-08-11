@@ -17,7 +17,6 @@ class DemandCheckout extends Component
     protected $listeners =
     [
         'updatePassengers',
-        // ['some-event' => '$refresh']
     ];
 
     public $showCheckoutModel = false;
@@ -25,8 +24,7 @@ class DemandCheckout extends Component
     //OPEN MESSAGE
     public function updatePassengers()
     {
-        $this->btn    = count($this->demand->passengers->where('cpf',''));
-
+        $this->btn = count($this->demand->passengers->where('cpf',''));
     }
 
     public function mount(Offers $offers)
@@ -57,6 +55,8 @@ class DemandCheckout extends Component
         $this->openAlert('success', 'Pedido concluído com sucesso.');
 
         $this->showCheckoutModel = false;
+
+        return redirect()->route('demand.user');
     }
     public function closeAlert()
     {

@@ -27,6 +27,8 @@ class Demand extends Component
 
     public function mount()
     {
+        $this->demands = Session::put('demands');
+        $this->demands = Session::forget('demands');
         $this->breadcrumb = 'Fazer pedido';
         $this->plans = AccountCategory::select('title','id')->orderBy('title','asc')->where('active',1)->get();
     }

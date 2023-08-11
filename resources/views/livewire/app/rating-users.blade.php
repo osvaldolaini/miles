@@ -14,6 +14,15 @@
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>
                 <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5">
                     <div class="col-span-1">
+                        <div class="rating rating-lg">
+                            <input type="radio" name="rate" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rate" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rate" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rate" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rate" class="mask mask-star-2 bg-orange-400" />
+                        </div>
+                    </div>
+                    <div class="col-span-1">
                         <textarea wire:model="text" maxlength="255"
                         class="w-full rounded-md focus:ring
                         focus:ring-opacity-75 focus:ring-violet-400

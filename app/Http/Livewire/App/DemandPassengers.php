@@ -14,6 +14,7 @@ class DemandPassengers extends Component
 {
     public $rules;
 
+    public $showFavotitesModel = false;
     public $showModalCreate = false;
     public $breadcrumb;
     public $miles;
@@ -22,10 +23,13 @@ class DemandPassengers extends Component
     public $value_max;
     public $end_date;
     public $plans;
+    public $order;
     public $user;
     public $account_categorie_id;
 
     public $demands;
+    public $passengers;
+    public $favorites;
 
     public $name = [];
     public $cpf = [];
@@ -42,11 +46,24 @@ class DemandPassengers extends Component
         $this->qtd = $this->demands['qtd'];
         $this->account_categorie_id = $this->demands['account_categorie_id'];
         $this->user = Auth::user();
+        $this->favorites = $this->user->passengers->unique('cpf');
+        // dd($this->passengers);
     }
 
     public function render()
     {
         return view('livewire.app.demand-passengers');
+    }
+    public function showFavotitesModel($order)
+    {
+        $this->showFavotitesModel = true;
+        $this->order = $order;
+    }
+    public function checkbox($item)
+    {
+        $this->cpf[$this->order] = $item['cpf'];
+        $this->name[$this->order] = $item['name'];
+        $this->showFavotitesModel = false;
     }
 
     public function showModalCreate()
@@ -57,8 +74,9 @@ class DemandPassengers extends Component
     public function store()
     {
         $demand_id = $this->setDemand();
-
+        dd($this->name);
         $count = count($this->name);
+
         for ($i=0; $i < $count; $i++) {
             if ($this->cpf[$i]) {
                 DemandPassenger::create([

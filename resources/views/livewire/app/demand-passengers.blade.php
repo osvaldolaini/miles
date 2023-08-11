@@ -2,7 +2,6 @@
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class="container-fluid rounded-lg shadow-md py-2
             dark:bg-gray-900 bg-gray-200 my-3">
-
         <div class="p-6 grid grid-cols-3 gap-3 col-span-full lg:col-span-4">
             <div
                 class="container-fluid rounded-lg shadow-md py-2

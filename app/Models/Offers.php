@@ -31,7 +31,7 @@ class Offers extends Model
     }
     public function demand():BelongsTo
     {
-        return $this->belongsTo(Demands::class);
+        return $this->belongsTo(Demands::class,'demand_id','id');
     }
     public function getRouteKeyName(): string
     {

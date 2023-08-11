@@ -47,7 +47,6 @@ class DemandPassengers extends Component
         $this->account_categorie_id = $this->demands['account_categorie_id'];
         $this->user = Auth::user();
         $this->favorites = $this->user->passengers->unique('cpf');
-        // dd($this->passengers);
     }
 
     public function render()
@@ -73,17 +72,26 @@ class DemandPassengers extends Component
 
     public function store()
     {
-        $demand_id = $this->setDemand();
-        // dd($this->name);
+        $demand = $this->setDemand();
         $count = count($this->name);
 
-        for ($i=0; $i < $count; $i++) {
-            if ($this->cpf[$i]) {
+        for ($i = 0; $i < $count; $i++) {
+            DemandPassenger::create([
+                'name'      => $this->name[$i],
+                'cpf'       => $this->cpf[$i],
+                'user_id'   => Auth::user()->id,
+                'demand_id' => $demand->id,
+                'code'      => Str::uuid(),
+            ]);
+        }
+        $rest = $demand->qtd - $count;
+        if ($rest > 0) {
+            for ($r = 0; $r < $rest; $r++) {
                 DemandPassenger::create([
-                    'name'      => $this->name[$i],
-                    'cpf'       => $this->cpf[$i],
+                    'name'      => '',
+                    'cpf'       => '',
                     'user_id'   => Auth::user()->id,
-                    'demand_id' => $demand_id,
+                    'demand_id' => $demand->id,
                     'code'      => Str::uuid(),
                 ]);
             }
@@ -109,7 +117,7 @@ class DemandPassengers extends Component
             'code'      => Str::uuid(),
         ]);
 
-        return $demand->id;
+        return $demand;
     }
     //Fecha a caixa da mensagem
     public function closeAlert()

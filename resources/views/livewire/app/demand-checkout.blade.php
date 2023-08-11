@@ -3,7 +3,9 @@
         <div class="stat">
             <div class="stat-actions">
                 @if ($demand->status == 1)
-                    <button wire:click="showCheckoutModel()" class="btn btn-info btn-sm">
+                    <button wire:click="showCheckoutModel()"
+                    {{ ($btn == 1 ? 'disabled="disabled"':"") }}
+                            class="btn btn-info btn-sm">
                         <svg class="w-5 h-5" fill="currentColor" focusable="false" aria-hidden="true" viewBox="0 -64 640 640"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -26,10 +28,20 @@
                             <span class="badge badge-lg">Finalizado</span>
                         </h2>
                         {{-- Rating --}}
-                        @livewire('app.rating-users', ['demand' => $demand,'rated'=>$offer->user_id], key($demand->id))
+                        @livewire('app.rating-users', ['demands' => $demand, 'rated' => $offer->user_id], key($demand->id))
                     @endif
                 @endif
             </div>
+        </div>
+        <div class="stat">
+            @if($btn == 1)
+                <div class="stat-title text-red-500 font-extrabold">
+                    Preencher todo os passageiros
+                </div>
+                <div class="stat-title text-red-500 font-extrabold">
+                    para librerar o botão de finalizar.
+                </div>
+            @endif
         </div>
     </div>
     <div class="pb-2">
@@ -59,39 +71,38 @@
             </div>
         </div>
     </div>
-    @foreach ($demand->passengers as $passenger)
-        <div class="py-2">
-            <div
-                class="stats stats-vertical lg:stats-horizontal w-full
+
+    <div class="py-2 w-full">
+        <div
+            class="w-full
+                ">
+                <div class="stats stats-vertical py-0 w-full
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
-                <div class="stat">
-                    <div class="stat-title font-bold">Passageiro</div>
-                    <div class="stat-title text-lg font-extrabold">
-                        {{ $passenger->name }}
+                    <div class="stat py-1">
+                        <div class="stat-title text-lg font-extrabold">
+                            Passageiros
+                        </div>
                     </div>
+                    @foreach ($demand->passengers as $passenger)
+                        @livewire('app.favorite-passenger', ['passenger' => $passenger], key($passenger->id))
+                    @endforeach
                 </div>
-                <div class="stat">
-                    <div class="stat-title font-bold">CPF</div>
-                    <div class="stat-title text-lg font-extrabold">
-                        {{ $passenger->cpf }}
-                    </div>
-                </div>
-            </div>
+
         </div>
-    @endforeach
-        {{-- MODAL DELETE --}}
-        <x-confirmation-modal wire:model="showCheckoutModel">
-            <x-slot name="title">Finalizar</x-slot>
-            <x-slot name="content">
-                <h2 class="h2">Deseja realmente finalizar o pedido?</h2>
-            </x-slot>
-            <x-slot name="footer">
-                <x-secondary-button wire:click="$toggle('showCheckoutModel')" class="mx-2">
-                    Cancelar
-                </x-secondary-button>
-                <x-danger-button wire:click.prevent="checkout()" wire.loading.attr='disable'>
-                    Finalizar
-                </x-danger-button>
-            </x-slot>
-        </x-confirmation-modal>
+    </div>
+    {{-- MODAL DELETE --}}
+    <x-confirmation-modal wire:model="showCheckoutModel">
+        <x-slot name="title">Finalizar</x-slot>
+        <x-slot name="content">
+            <h2 class="h2">Deseja realmente finalizar o pedido?</h2>
+        </x-slot>
+        <x-slot name="footer">
+            <x-secondary-button wire:click="$toggle('showCheckoutModel')" class="mx-2">
+                Cancelar
+            </x-secondary-button>
+            <x-danger-button wire:click.prevent="checkout()" wire.loading.attr='disable'>
+                Finalizar
+            </x-danger-button>
+        </x-slot>
+    </x-confirmation-modal>
 </div>

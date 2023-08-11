@@ -11,17 +11,35 @@ class DemandCheckout extends Component
 {
     public $demand;
     public $offer;
+    public $favorites;
+    public $btn;
+
+    protected $listeners =
+    [
+        'updatePassengers',
+        // ['some-event' => '$refresh']
+    ];
 
     public $showCheckoutModel = false;
+
+    //OPEN MESSAGE
+    public function updatePassengers()
+    {
+        $this->btn    = count($this->demand->passengers->where('cpf',''));
+
+    }
 
     public function mount(Offers $offers)
     {
         $this->demand = $offers->demand;
         $this->offer  = $offers;
+        $this->btn    = count($this->demand->passengers->where('cpf',''));
     }
     public function render()
     {
-        return view('livewire.app.demand-checkout');
+        return view('livewire.app.demand-checkout',[
+            'demand' =>$this->demand
+        ]);
     }
     //DELETE
     public function showCheckoutModel()
@@ -30,10 +48,10 @@ class DemandCheckout extends Component
     }
     public function checkout()
     {
-        $data = $this->demand;
-        $data->status = 2;
-        $data->offer_id =  $this->offer->id;
-        $data->save();
+        // $data = $this->demand;
+        $this->demand->status = 2;
+        $this->demand->offer_id =  $this->offer->id;
+        $this->demand->save();
 
         DemandHasBeenCreated::dispatch();
         $this->openAlert('success', 'Pedido concluído com sucesso.');

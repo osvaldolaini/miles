@@ -112,6 +112,15 @@ class Demands extends Model
     {
         return $this->hasMany(DemandPassenger::class,'demand_id','id');
     }
+    public function rated()
+    {
+        $rated = RatingUser::select('id')->where('demand_id',$this->id)->where('user_id',$this->user_id)->first();
+        if($rated){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public function getRouteKeyName(): string
     {
         return 'code';

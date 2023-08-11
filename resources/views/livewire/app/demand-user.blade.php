@@ -8,6 +8,16 @@
                 dark:bg-gray-900  mb-4
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
                 <div class="absolute overflow-hidden h-full w-1/2 -mt-2">
+                    @if ($item->status == 0)
+                        <div class="absolute left-0 top-0 h-16 w-16">
+                            <div
+                                class="absolute transform -rotate-45 bg-red-600
+                                text-center text-white font-semibold
+                                py-1 left-[-34px] top-[32px] w-[170px]">
+                                Excluido
+                            </div>
+                        </div>
+                    @endif
                     @if ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)
                         <div class="absolute left-0 top-0 h-16 w-16">
                             <div
@@ -19,26 +29,27 @@
                     @if ($item->status == 2)
                         <div class="absolute left-0 top-0 h-16 w-16">
                             <div
+                                class="absolute transform -rotate-45 bg-yellow-600
+                                    text-center text-white font-semibold
+                                    py-1 left-[-34px] top-[32px] w-[170px]">
+                                Avaliar
+                            </div>
+                        </div>
+                    @endif
+                    @if ($item->status == 3)
+                        <div class="absolute left-0 top-0 h-16 w-16">
+                            <div
                                 class="absolute transform -rotate-45 bg-green-600
-                                text-center text-white font-semibold
-                                py-1 left-[-34px] top-[32px] w-[170px]">
+                                    text-center text-white font-semibold
+                                    py-1 left-[-34px] top-[32px] w-[170px]">
                                 Finalizado
                             </div>
                         </div>
                     @endif
-                    @if ($item->status == 0)
-                        <div class="absolute left-0 top-0 h-16 w-16">
-                            <div
-                                class="absolute transform -rotate-45 bg-red-600
-                                text-center text-white font-semibold
-                                py-1 left-[-34px] top-[32px] w-[170px]">
-                                Excluido
-                            </div>
-                        </div>
-                    @endif
+
                 </div>
                 <div class="flex items-center justify-between py-0 px-3" wire:key="{{ $item->id }}">
-                    <div class="flex items-center space-x-2" >
+                    <div class="flex items-center space-x-2">
 
                     </div>
                     <div class="text-right">
@@ -59,6 +70,10 @@
                                     Excluir <span class="fa-solid fa-trash"></span>
                                 </button>
                             </div>
+                        @endif
+                        @if ($item->status == 2)
+                            {{-- Rating --}}
+                            @livewire('app.rating-users', ['demands' => $item, 'rated' => $item->offer_id], key($item->id))
                         @endif
 
                     </div>
@@ -81,42 +96,44 @@
                             @else
                                 <div class="flex items-center space-x-2">
                                     @if ($item->status != 0)
-
-                                    @if ($item->offer->user->profile_photo_url)
-                                    <img src="{{ $item->offer->user->profile_photo_url }}"
-                                        alt="sistemilhas-avatar-{{ $item->offer->user->username }}"
-                                        class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
-                                @else
-                                    <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
-                                        class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
-                                @endif
-                                <div>
-                                    <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
-                                        <span>{{ $item->offer->user->name }}</span>
-                                        @if ($item->offer->user->cpf)
-                                            <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke="#068bac"
-                                                    d="M9 12L11 14L15 10M12 3L13.9101 4.87147L16.5 4.20577L17.2184 6.78155L19.7942 7.5L19.1285 10.0899L21 12L19.1285 13.9101L19.7942 16.5L17.2184 17.2184L16.5 19.7942L13.9101 19.1285L12 21L10.0899 19.1285L7.5 19.7942L6.78155 17.2184L4.20577 16.5L4.87147 13.9101L3 12L4.87147 10.0899L4.20577 7.5L6.78155 6.78155L7.5 4.20577L10.0899 4.87147L12 3Z"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
+                                        @if ($item->offer->user->profile_photo_url)
+                                            <img src="{{ $item->offer->user->profile_photo_url }}"
+                                                alt="sistemilhas-avatar-{{ $item->offer->user->username }}"
+                                                class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
+                                        @else
+                                            <img src="{{ url('storage/profiles/avatar.jpg') }}"
+                                                alt="sistemilhas-avatar"
+                                                class="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700">
                                         @endif
-                                    </h2>
-                                    <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
-                                        {{ '@' . $item->offer->user->username }}
-                                    </span>
-                                    {{-- <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">Iniciante</span> --}}
-                                    @if ($item->offer->user->id != Auth::user()->id and $item->offer->user->trade > 0)
-                                        <span
-                                            class="flex items-center leading-none mx-0
-                                        justify-center rounded-lg bg-emerald-200
-                                        px-2.5 py-0.5 text-emerald-700">
-                                            <p class="whitespace-nowrap text-xs">Comprou {{ $user->tradeConvert }}
-                                            </p>
-                                        </span>
-                                    @endif
-                                </div>
+                                        <div>
+                                            <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
+                                                <span>{{ $item->offer->user->name }}</span>
+                                                @if ($item->offer->user->cpf)
+                                                    <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke="#068bac"
+                                                            d="M9 12L11 14L15 10M12 3L13.9101 4.87147L16.5 4.20577L17.2184 6.78155L19.7942 7.5L19.1285 10.0899L21 12L19.1285 13.9101L19.7942 16.5L17.2184 17.2184L16.5 19.7942L13.9101 19.1285L12 21L10.0899 19.1285L7.5 19.7942L6.78155 17.2184L4.20577 16.5L4.87147 13.9101L3 12L4.87147 10.0899L4.20577 7.5L6.78155 6.78155L7.5 4.20577L10.0899 4.87147L12 3Z"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                @endif
+                                            </h2>
+                                            <span
+                                                class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
+                                                {{ '@' . $item->offer->user->username }}
+                                            </span>
+                                            {{-- <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">Iniciante</span> --}}
+                                            @if ($item->offer->user->id != Auth::user()->id and $item->offer->user->trade > 0)
+                                                <span
+                                                    class="flex items-center leading-none mx-0
+                                                        justify-center rounded-lg bg-emerald-200
+                                                        px-2.5 py-0.5 text-emerald-700">
+                                                    <p class="whitespace-nowrap text-xs">Comprou
+                                                        {{ $user->tradeConvert }}
+                                                    </p>
+                                                </span>
+                                            @endif
+                                        </div>
                                     @endif
                             @endif
 

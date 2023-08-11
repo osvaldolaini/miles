@@ -15,14 +15,14 @@ class RatingUsers extends Component
     public $offer_id;
     public $rated;
     public $text;
-    public $rate;
+    public $rate = 5;
 
     public $showModalCreate = false;
     public function mount(Demands $demands,$rated)
     {
-        $this->demand = $demands;
-        $this->offer_id  = $demands->offer_id;
-        $this->rated  = $rated;
+        $this->demand       = $demands;
+        $this->offer_id     = $demands->offer_id;
+        $this->rated        = $rated;
     }
     public function render()
     {
@@ -35,15 +35,21 @@ class RatingUsers extends Component
 
     public function store()
     {
-        RatingUser::create([
+
+        $r = RatingUser::create([
             'text'      => $this->text,
             'rate'      => $this->rate,
             'demand_id' => $this->demand->id,
             'offer_id'  => $this->offer_id,
-            'user_id'   => $this->rated,
-            'evaluted'  => Auth::user()->id,
+            'user_id'   => Auth::user()->id,
+            'evaluted'  => $this->rated,
             'code'      => Str::uuid(),
         ]);
+        if ($r) {
+            $this->demand->status = 3;
+            $this->demand->save();
+        }
+
         $this->openAlert('success', 'Avaliação realizada com sucesso.');
 
         $this->showModalCreate = false;

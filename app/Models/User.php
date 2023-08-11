@@ -70,11 +70,11 @@ class User extends Authenticatable
     }
     public function offers():HasMany
     {
-        return $this->hasMany(Offers::class);
+        return $this->hasMany(Offers::class,'user_id','id');
     }
-    public function getTradeAttribute()
+    public function getBuyAttribute()
     {
-        $trades = $this->demands->where('status',2);
+        $trades = $this->demands->where('status',3);
         $buys = 0;
         if ($trades) {
             foreach ($trades as $buy) {
@@ -84,13 +84,28 @@ class User extends Authenticatable
 
         return $buys;
     }
-    public function getTradeConvertAttribute()
+    // public function getSellAttribute()
+    // {
+    //     if ($this->offers) {
+    //         $trades = $this->offers->demand->where('status',3);
+    //         $sells = 0;
+    //         if ($trades) {
+    //             foreach ($trades as $sell) {
+    //                 $sells += $sell->demand->miles;
+    //             }
+    //         }
+
+    //         return $sells;
+    //     }
+
+    // }
+    public function getBuyConvertAttribute()
     {
-        if ($this->trade > 0) {
-            $k = $this->trade / 1000;
+        if ($this->buy > 0) {
+            $k = $this->buy / 1000;
             switch ($k) {
                 case $k < 1:
-                    $m = $this->trade;
+                    $m = $this->buy;
                     break;
                 case $k >= 1 && $k < 1000:
                     $m =  $k . 'K';
@@ -102,6 +117,24 @@ class User extends Authenticatable
         }
         return $m;
     }
+    // public function getSellConvertAttribute()
+    // {
+    //     if ($this->sell > 0) {
+    //         $k = $this->sell / 1000;
+    //         switch ($k) {
+    //             case $k < 1:
+    //                 $m = $this->sell;
+    //                 break;
+    //             case $k >= 1 && $k < 1000:
+    //                 $m =  $k . 'K';
+    //                 break;
+    //             default:
+    //                 $m =  $k . 'K';
+    //                 break;
+    //         }
+    //     }
+    //     return $m;
+    // }
     public function like(): HasMany
     {
         return $this->hasMany(DemandLike::class,'user_id','id');

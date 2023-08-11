@@ -20,13 +20,21 @@
         <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
             {{ '@' . $user->username }}
         </span>
-        @if ($user->id != Auth::user()->id and $user->trade > 0)
+        @if ($user->id != Auth::user()->id && $user->buy > 0)
             <span
                 class="flex items-center leading-none mx-0
                 justify-center rounded-lg bg-emerald-200
                 px-2.5 py-0.5 text-emerald-700">
-                <p class="whitespace-nowrap text-xs">Comprou {{ $user->tradeConvert }}</p>
+                <p class="whitespace-nowrap text-xs">Comprou {{ $user->buyConvert }}</p>
             </span>
         @endif
+        {{-- @if ($user->id != Auth::user()->id && $user->sell > 0)
+            <span
+                class="flex items-center leading-none mx-0
+                justify-center rounded-lg bg-red-200
+                px-2.5 py-0.5 text-red-700">
+                <p class="whitespace-nowrap text-xs">Vendeu {{ $user->sellConvert }}</p>
+            </span>
+        @endif --}}
     </div>
 </div>

@@ -10,7 +10,7 @@
             </div>
         </div>
     @else
-        <details class="dropdown dropdown-bottom sm:dropdown-right dark:bg-gray-900">
+        <details class="dropdown dropdown-bottom sm:dropdown-right ">
             <summary class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
@@ -21,7 +21,7 @@
                             @foreach ($offers->take(3) as $offer)
                                 @php $i += 1; @endphp
                                 <img alt="sistemilhas-avatar-{{ $offer->username }}"
-                                    class="w-6 h-6 border rounded-full dark:bg-gray-500 dark:border-gray-800"
+                                    class="w-6 h-6 border rounded-full"
                                     src="{{ $offer->user->profile_photo_url ? url($offer->user->profile_photo_url) : url('storage/profiles/avatar.jpg') }}">
                                 @if ($i == 3)
                                 @break

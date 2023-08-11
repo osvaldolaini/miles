@@ -90,7 +90,7 @@
                     Cancelar
                 </x-secondary-button>
                 <x-danger-button wire:click.prevent="checkout()" wire.loading.attr='disable'>
-                    Excluir
+                    Finalizar
                 </x-danger-button>
             </x-slot>
         </x-confirmation-modal>

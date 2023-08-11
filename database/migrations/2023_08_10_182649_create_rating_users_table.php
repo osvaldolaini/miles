@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->tinyText('text')->nullable();
             $table->integer('rate')->nullable();
+            $table->foreignId('evaluted')
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onUpdate('cascade')

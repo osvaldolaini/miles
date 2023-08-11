@@ -28,7 +28,7 @@
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>
                 <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5">
                     <div class="col-span-1" x-data x-init="Inputmask({
-                        'mask': '99,99'
+                        'mask': '99,90'
                     }).mask($refs.value)">
                         <label for="value" class="text-sm">
                             Valor

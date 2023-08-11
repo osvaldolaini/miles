@@ -13,7 +13,7 @@ class RatingUser extends Model
     protected $table = 'rating_users';
 
     protected $fillable = [
-        'id','user_id','rate','demand_id','offer_id','code','text'
+        'id','user_id','rate','demand_id','offer_id','code','text','evaluted'
     ];
     public function demand():BelongsTo
     {

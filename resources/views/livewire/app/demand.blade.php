@@ -49,7 +49,7 @@
                             @enderror
                         </div>
                         <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
-                            'mask': '99,99'
+                            'mask': '99,90'
                         }).mask($refs.value)">
                             <label for="value" class="text-sm">
                                 Valor
@@ -63,7 +63,7 @@
                             @enderror
                         </div>
                         <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
-                            'mask': '99,99'
+                            'mask': '99,90'
                         }).mask($refs.value_max)">
                             <label for="value_max" class="text-sm">Valor máximo</label>
                             <input x-ref="value_max" wire:model="value_max" required type="text" maxlength="7" placeholder="Valor"

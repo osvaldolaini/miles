@@ -63,6 +63,13 @@
             <x-input-error for="name" class="mt-2" />
         </div>
 
+        <!-- Nickname -->
+        <div class="col-span-6 sm:col-span-6">
+            <x-label for="username" value="{{ __('Nick ') }} (25 caracteres)" />
+            <x-input id="username" type="text" class="mt-1 block w-full" wire:model.defer="state.username" required autocomplete="username" />
+            <x-input-error for="username" class="mt-2" />
+        </div>
+
         <!-- CPF -->
         <div class="col-span-6 sm:col-span-6" x-data x-init="Inputmask({
             'mask': '999.999.999-99'

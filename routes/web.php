@@ -50,5 +50,7 @@ Route::middleware([
 
     Route::get('/finalizar/{offers:code}', DemandCheckout::class)->name('demand.checkout');
 
+    Route::get('/perfil-do-usuario/{user:username}', UserBio::class)->name('user.bio');
+
     Route::get('/chats', Chats::class)->name('chats');
 });

@@ -177,4 +177,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(DemandPassenger::class,'user_id','id');
     }
+    public function getRouteKeyName(): string
+    {
+        return 'username';
+    }
 }

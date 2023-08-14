@@ -1,25 +1,80 @@
-<div class="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
-	<div class="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-		<img src="https://source.unsplash.com/100x100/?portrait?1" alt="" class="object-cover object-center w-full h-full rounded dark:bg-gray-500">
-	</div>
-	<div class="flex flex-col space-y-4">
-		<div>
-			<h2 class="text-2xl font-semibold">Leroy Jenkins</h2>
-			<span class="text-sm dark:text-gray-400">General manager</span>
-		</div>
-		<div class="space-y-1">
-			<span class="flex items-center space-x-2">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" class="w-4 h-4">
-					<path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
-				</svg>
-				<span class="dark:text-gray-400">leroy.jenkins@company.com</span>
-			</span>
-			<span class="flex items-center space-x-2">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Phonenumber" class="w-4 h-4">
-					<path fill="currentColor" d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"></path>
-				</svg>
-				<span class="dark:text-gray-400">+25 381 77 983</span>
-			</span>
-		</div>
-	</div>
+<div class="w-full p-1 sm:px-8 pt-0 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
+    <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
+        <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500" ></div>
+        <div class="flex flex-col items-center justify-center p-2 sm:p-8 -mt-16 sm:-mt-20">
+            <span class="relative block">
+                @if ($user->profile_photo_url)
+                    <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
+                        class="mx-auto object-cover rounded-full h-16 w-16 sm:h-20 sm:w-20  border-2 border-white dark:border-gray-800">
+                @else
+                    <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
+                        class="mx-auto object-cover rounded-full h-16 w-16 sm:h-20 sm:w-20  border-2 border-white dark:border-gray-800">
+                @endif
+            </span>
+            <p class="mt-2 text-xl font-medium text-gray-800 dark:text-white">
+                {{ $user->name }}
+            </p>
+            <div class="flex space-x-2">
+                @if ($user->id != Auth::user()->id && $user->buy > 0)
+                    <p class="p-2 px-4 text-xs text-white bg-emerald-500 rounded-full">
+                        Comprou {{ $user->buyConvert }}
+                    </p>
+                @endif
+                @if ($user->id != Auth::user()->id && $user->sell > 0)
+                    <p class="p-2 px-4 text-xs text-white bg-red-500 rounded-full">
+                        Vendeu {{ $user->sellConvert }}
+                    </p>
+                @endif
+            </div>
+            {{-- <p class="p-2 px-4 text-xs text-white bg-pink-500 rounded-full">
+                Professional
+            </p> --}}
+            <div class="w-full p-2 mt-4 rounded-lg">
+                <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-200">
+                    <p class="flex flex-col text-center ">
+                        Membro desde
+                        <span class="font-bold text-black dark:text-white">
+                            {{ $user->since }} ({{ $user->since() }})
+                        </span>
+                    </p>
+                    <p class="flex flex-col text-center">
+                        Pedidos
+                        <span class="font-bold text-black dark:text-white">
+                            {{ $user->demands->where('status',3)->count() }} /  {{ $user->demands->count() }}
+                        </span>
+                    </p>
+                    <p class="flex flex-col text-center">
+                        Ofertas
+                        <span class="font-bold text-black dark:text-white">
+                            {{ $user->offers->where('status',3)->count() }} /  {{ $user->offers->count() }}
+                        </span>
+                    </p>
+                    <p class="flex flex-col text-center">
+                        Avaliações
+                        <span class="font-bold text-black dark:text-white">
+                            {{ $user->rating }} / 5
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="w-full px-2 mt-4 rounded-lg">
+                <div class="flex flex-row items-center text-sm
+                text-gray-600 dark:text-gray-200">
+                    <p class="text-left">
+                        Bio
+                    </p>
+                </div>
+            </div>
+            <div class="w-full px-2 mt-0 rounded-lg">
+                <div class="flex flex-row items-center text-sm
+                text-gray-600 dark:text-gray-200">
+                    <p class="text-justify font-bold text-black dark:text-white">
+                        {{ $user->bio }}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

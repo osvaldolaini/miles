@@ -97,7 +97,7 @@
                                 <div class="flex items-center space-x-2">
                                     @if ($item->status != 0)
                                         <div>
-                                            <x-user-card :user="$item->offer->user">
+                                            <x-user-card :user="$item->user">
                                             </x-user-card>
                                         </div>
                                     @endif

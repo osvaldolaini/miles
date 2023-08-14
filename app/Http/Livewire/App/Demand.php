@@ -59,25 +59,41 @@ class Demand extends Component
 
     public function store()
     {
-        $this->rules = [
-            'value_max' => 'required|max:5',
-            'value' => 'required|max:5',
-            'miles' => 'required',
-            'qtd' => 'required',
-            'account_categorie_id' => 'required',
-        ];
-        $this->validate();
+        if ($this->value > $this->value_max) {
+            $this->openAlert('error', 'O valor não pode ser maior que o valor máximo.');
+            $this->value = '';
+            $this->value_max = '';
+        }else{
+            $this->rules = [
+                'value_max' => 'required|max:5',
+                'value' => 'required|max:5',
+                'miles' => 'required',
+                'qtd' => 'required',
+                'account_categorie_id' => 'required',
+            ];
+            $this->validate();
 
-        $demands =[
-                'value_max' => $this->value_max,
-                'value'     => $this->value,
-                'miles'     => $this->miles,
-                'end_date'  => $this->end_date,
-                'qtd'       => $this->qtd,
-                'account_categorie_id'   => $this->account_categorie_id,
-        ];
-        Session::put('demands', $demands);
-        $this->showModalCreate = false;
-        return redirect()->route('demand.pass');
+            $demands =[
+                    'value_max' => $this->value_max,
+                    'value'     => $this->value,
+                    'miles'     => $this->miles,
+                    'end_date'  => $this->end_date,
+                    'qtd'       => $this->qtd,
+                    'account_categorie_id'   => $this->account_categorie_id,
+            ];
+            Session::put('demands', $demands);
+            $this->showModalCreate = false;
+            return redirect()->route('demand.pass');
+        }
+
+    }
+    public function closeAlert()
+    {
+        $this->emit('closeAlert');
+    }
+    //pega o status do registro
+    public function openAlert($status, $msg)
+    {
+        $this->emit('openAlert', $status, $msg);
     }
 }

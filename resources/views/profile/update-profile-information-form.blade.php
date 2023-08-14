@@ -101,6 +101,16 @@
                 @endif
             @endif
         </div>
+
+        <!-- Bio -->
+        <div class="col-span-6 sm:col-span-6">
+            <x-label for="bio" value="Bio (255 caracteres)" />
+            <textarea maxlength="255" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900
+            dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600
+            focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+             wire:model.defer="state.bio" id="bio" rows="10"></textarea>
+            <x-input-error for="bio" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

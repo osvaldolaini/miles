@@ -11,6 +11,7 @@
                 @livewire('profile.update-profile-information-form')
 
                 <x-section-border />
+
             @endif
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))

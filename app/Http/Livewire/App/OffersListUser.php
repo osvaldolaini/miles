@@ -16,6 +16,9 @@ class OffersListUser extends Component
     public $offer_id;
     public $account_id;
     public $showModalUpdate = false;
+
+    public $rules;
+
     public function mount()
     {
         $this->breadcrumb = 'Minhas ofertas';
@@ -39,6 +42,11 @@ class OffersListUser extends Component
 
     public function update()
     {
+        $this->rules = [
+            'account_id' => 'required'
+        ];
+        $this->validate();
+
         Offers::updateOrCreate([
             'id' => $this->offer_id,
         ], [

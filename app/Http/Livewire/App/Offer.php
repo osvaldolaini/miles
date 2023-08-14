@@ -51,31 +51,37 @@ class Offer extends Component
 
     public function store()
     {
-        $this->validate();
-        $number = $this->demand->offers->count();
+        if ($this->value > $this->demand->value_max) {
+            $this->openAlert('error', 'O valor não pode ser maior que o solicitado.');
+            $this->showModalCreate = false;
+        }else{
+            $this->validate();
+            $number = $this->demand->offers->count();
 
-        Offers::create([
-            'value'     => $this->value,
-            'demand_id' => $this->demand->id,
-            'user_id'   => $this->user_id,
-            'status'    => 1,
-            'order'     => ($number + 1),
-            'code'      => Str::uuid(),
-        ]);
-        $this->openAlert('success', 'Oferta realizada com sucesso.');
+            Offers::create([
+                'value'     => $this->value,
+                'demand_id' => $this->demand->id,
+                'user_id'   => $this->user_id,
+                'status'    => 1,
+                'order'     => ($number + 1),
+                'code'      => Str::uuid(),
+            ]);
+            $this->openAlert('success', 'Oferta realizada com sucesso.');
+            $this->showModalCreate = false;
+            return redirect()->route('app');
+        }
 
-        $this->showModalCreate = false;
-        return redirect()->route('app');
+
+
+
     }
-    //CLOSE MESSAGE
     public function closeAlert()
     {
-        $this->alertSession = false;
+        $this->emit('closeAlert');
     }
-    //OPEN MESSAGE
+    //pega o status do registro
     public function openAlert($status, $msg)
     {
-        session()->flash($status, $msg);
-        $this->alertSession = true;
+        $this->emit('openAlert', $status, $msg);
     }
 }

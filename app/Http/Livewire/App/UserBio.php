@@ -7,9 +7,10 @@ use Livewire\Component;
 
 class UserBio extends Component
 {
+    public $user;
     public function mount(User $user)
     {
-      //
+      $this->user = $user;
     }
     public function render()
     {

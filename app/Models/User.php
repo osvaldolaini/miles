@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,6 +30,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'bio',
         'email',
         'password',
         'username',
@@ -158,6 +160,42 @@ class User extends Authenticatable
         }
         return $m;
     }
+    public function getSinceAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
+                ->format('m/Y');
+    }
+    public function since()
+    {
+        $d1 = strtotime($this->created_at);
+        $d2 = strtotime(date('Y-m-d H:i:s'));
+        $diff = abs($d1 - $d2);
+
+        $years      = floor($diff / (365 * 60 * 60 * 24));
+        $months     = floor(($diff - $years * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
+        $days       = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24) / (60 * 60 * 24));
+        $hours      = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24 - $days * 60 * 60 * 24) / (60 * 60));
+        $minutes    = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24 - $days * 60 * 60 * 24 - $hours * 60 * 60) / 60);
+        $seconds    = floor(($diff - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 * 24 - $days * 60 * 60 * 24 - $hours * 60 * 60 - $minutes * 60));
+
+        if ($years > 0) {
+            return $years . ' anos';
+        } else {
+            if ($months > 0) {
+                return $months . ' meses';
+            } else {
+                if ($days > 0) {
+                    return $days . ' dias';
+                } else {
+                    if ($hours > 0) {
+                        return $hours . ' horas';
+                    } else {
+                        return $minutes . ' min e ' . $seconds . ' s';
+                    }
+                }
+            }
+        }
+    }
     public function like(): HasMany
     {
         return $this->hasMany(DemandLike::class,'user_id','id');
@@ -181,5 +219,23 @@ class User extends Authenticatable
     public function getRouteKeyName(): string
     {
         return 'username';
+    }
+    public function getRatingAttribute()
+    {
+        $ratings = RatingUser::where('evaluted',$this->id)->get();
+        $n=0;
+        $r=0;
+        foreach ($ratings as $rating) {
+            $r+=$rating->rate;
+            $n+=1;
+        }
+
+        if ($n > 0) {
+            $q = $r/$n;
+            return  number_format($q, 1, ',', '');
+        }else{
+            return  'N/A';
+        }
+
     }
 }

@@ -20,9 +20,12 @@
                         <div class="flex -space-x-4">
                             @foreach ($offers->take(3) as $offer)
                                 @php $i += 1; @endphp
-                                <img alt="sistemilhas-avatar-{{ $offer->username }}"
+                                <a class="cursor-pointer"
+                                     href="{{ route('user.bio', [$offer->user->username]) }}">
+                                <img alt="sistemilhas-avatar-{{ $offer->user->username }}"
                                     class="w-6 h-6 border rounded-full"
                                     src="{{ $offer->user->profile_photo_url ? url($offer->user->profile_photo_url) : url('storage/profiles/avatar.jpg') }}">
+                                </a>
                                 @if ($i == 3)
                                 @break
                             @endif

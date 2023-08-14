@@ -11,6 +11,7 @@ use App\Http\Livewire\App\MyDemandLike;
 use App\Http\Livewire\App\OffersList;
 use App\Http\Livewire\App\OffersListUser;
 use App\Http\Livewire\App\OfferUser;
+use App\Http\Livewire\App\UserBio;
 use Illuminate\Support\Facades\Route;
 //Usuário
 use App\Http\Livewire\App\UserProfile;
@@ -48,6 +49,8 @@ Route::middleware([
     Route::get('/minhas-contas', Accounts::class)->name('account.user');
 
     Route::get('/finalizar/{offers:code}', DemandCheckout::class)->name('demand.checkout');
+
+    Route::get('/perfil-do-usuario/{user:username}', UserBio::class)->name('user.bio');
 
     Route::get('/chats', Chats::class)->name('chats');
 });

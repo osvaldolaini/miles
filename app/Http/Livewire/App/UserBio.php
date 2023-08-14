@@ -9,7 +9,7 @@ class UserBio extends Component
 {
     public function mount(User $user)
     {
-
+      //
     }
     public function render()
     {

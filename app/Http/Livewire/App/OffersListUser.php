@@ -28,15 +28,18 @@ class OffersListUser extends Component
         $offers = Offers::with(['user','demand'])
         ->where('user_id',Auth::user()->id)
         ->orderBy('status','desc')->orderBy('id','desc')->get();
-        $this->accounts = Account::select('name','id','account_categorie_id')
-        ->where('user_id',Auth::user()->id)
-        ->where('status',1)->get();
+
         return view('livewire.app.offers-list-user',
     ['offers'=>$offers]);
         }
         public function showModalUpdate($id)
         {
             $this->offer_id = $id;
+            $o = Offers::find($id);
+            $this->accounts = Account::select('name','id','account_categorie_id')
+            ->where('account_categorie_id',$o->demand->account_categorie_id)
+            ->where('user_id',Auth::user()->id)
+            ->where('status',1)->get();
             $this->showModalUpdate = true;
         }
 

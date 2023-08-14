@@ -1,6 +1,6 @@
 <!-- component -->
 <section>
-	<div class="bg-black text-white pb-20 pt-12">
+	<div class="bg-black dark:bg-black text-white pb-20 pt-12">
         <div class="container mx-auto flex flex-col md:flex-row items-center my-10 md:my-24">
             <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
                 {{-- <h1 class="text-3xl md:text-5xl p-2 text-teal-500 tracking-loose">SisteMilhas</h1> --}}

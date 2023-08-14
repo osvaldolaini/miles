@@ -198,7 +198,7 @@
             </p>
 
             <p class="mt-4 text-center lg:text-left">
-              &copy; 2022 SisteMilhas. All rights reserved.
+              &copy; 2023 SisteMilhas. All rights reserved.
             </p>
           </div>
         </div>

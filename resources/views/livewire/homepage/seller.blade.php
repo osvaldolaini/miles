@@ -20,7 +20,8 @@
         encontrar pessoas para oferecer suas milhas
       </h2>
       <p class="text-base text-gray-700 md:text-lg">
-       Faça ofertas, para as pessoas que buscam milhas, de foram agil e inteligente com banco de dados de todas as suas negociações.
+       Faça ofertas, para as pessoas que buscam milhas, de foram agil e
+       inteligente com banco de dados de todas as suas negociações.
     </div>
     <div class="grid gap-10 lg:grid-cols-4 sm:grid-cols-2">
       <div>

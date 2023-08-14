@@ -11,6 +11,7 @@ use App\Http\Livewire\App\MyDemandLike;
 use App\Http\Livewire\App\OffersList;
 use App\Http\Livewire\App\OffersListUser;
 use App\Http\Livewire\App\OfferUser;
+use App\Http\Livewire\App\UserBio;
 use Illuminate\Support\Facades\Route;
 //Usuário
 use App\Http\Livewire\App\UserProfile;

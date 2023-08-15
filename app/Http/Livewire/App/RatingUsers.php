@@ -50,7 +50,7 @@ class RatingUsers extends Component
                 $this->demand->status = 3;
                 $this->demand->save();
             }
-            return redirect()->route('demand.pass');
+            return redirect()->route('demand.user');
         } else {
             if ($r) {
                 $this->offer->status = 3;

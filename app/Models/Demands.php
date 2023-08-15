@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -35,6 +36,11 @@ class Demands extends Model
     public function getValueAttribute($value)
     {
         return str_replace(".", ",", $value);
+    }
+    public function getFinishedAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
+                ->format('d/m/Y H:i:s');
     }
     public function getMilesConvertAttribute()
     {

@@ -36,7 +36,7 @@
                                     <h2 class="font-bold mt-0 pt-0">{{ $offer->demand->qtd }} CPF</h2>
                                     <h2 class="font-bold mt-0 pt-0 text-red-500">{{ $offer->demand->category->title }}
                                     </h2>
-                                    <h2 class="font-bold mt-0 pt-0 text-red-500">Finalizado em: {{ $offer->demand->Finished }}</h2>
+                                    <h2 class="font-bold mt-0 pt-0 text-red-500">Finalizado: {{ $offer->demand->Finished }}</h2>
                                 </div>
                             </div>
                         </div>

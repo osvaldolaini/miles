@@ -30,7 +30,7 @@ class Received extends Component
     public function openReceived($id)
     {
         $this->demand = Demands::find($id);
-        $this->offers = $this->demand->offers;
+        $this->offers = $this->demand->offers->where('id','!=',$this->demand->offer_id);
         $this->winner = Offers::find($this->demand->offer_id);
         $this->showModalReceived = true;
     }

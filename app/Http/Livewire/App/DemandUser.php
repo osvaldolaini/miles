@@ -62,7 +62,7 @@ class DemandUser extends Component
     //recibo
     public function openReceived($id)
     {
-        dd($id);
+        // dd($id);
         $this->emit('openReceived', $id);
     }
 

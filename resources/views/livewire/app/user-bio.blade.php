@@ -84,7 +84,8 @@
             <div class="grid grid-cols-2 gap-3">
                 @foreach ($user->ratings->sortByDesc('id')->take(10) as $rating)
                     <div wire:click="openReceived({{ $rating->demand->id }})"
-                        class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 mx-auto p-4 cursor-pointer">
+                        class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800
+                        items-center sm:items-start p-4 cursor-pointer">
                         <div class="flex items-center sm:items-start mt-4">
                             <a href="#" class="relative block">
                                 @if ($rating->rated->profile_photo_url)

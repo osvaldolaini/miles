@@ -64,7 +64,7 @@
                                     ease-linear transition-all duration-150">
                                         Finalizado
                                     </span>
-                                        <button type='button' wire:click="openReceived({{ $item->id }})"
+                                        <button type='button' wire:click="openReceived({{ $item->demand->id }})"
                                             class="bg-gray-500 cursor-pointer
                                             hover:bg-gray-900 border-2 border-gray-500
                                             active:bg-gray-300 text-white text-xs

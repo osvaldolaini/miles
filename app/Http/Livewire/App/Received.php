@@ -29,6 +29,7 @@ class Received extends Component
     //OPEN MESSAGE
     public function openReceived($id)
     {
+        dd($this->id);
         $this->demand = Demands::find($id);
         dd($this->demand);
         $this->offers = $this->demand->offers;

@@ -14,7 +14,7 @@ class AccountPassengers extends Component
     {
         $this->breadcrumb = 'Passageiros vinculados';
         $this->account  = $account;
-        $this->offers   = $this->account->offers->where('active',3)->sortBy('updated_at');
+        $this->offers   = $this->account->offers;
     }
     public function render()
     {

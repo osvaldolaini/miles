@@ -114,12 +114,12 @@ class User extends Authenticatable
                 $kk = explode('.',$k);
                 $m =  $kk[0] . 'K';
                 break;
-                case $k >= 100000 && $k < 100000000:
+                case $k >= 1000 && $k < 1000000:
                     $k = $k / 1000;
                     $kk = explode('.',$k);
                     $m =  $kk[0] . 'M';
                     break;
-                case $k > 100000000:
+                case $k > 1000000:
                         $k = $k / 1000;
                         $kk = explode('.',$k);
                         $m =  $kk[0] . 'B';
@@ -143,18 +143,18 @@ class User extends Authenticatable
                 $kk = explode('.',$k);
                 $m =  $kk[0] . 'K';
                 break;
-                case $k >= 100000 && $k < 100000000:
+                case $k >= 1000 && $k < 1000000:
                     $k = $k / 1000;
                     $kk = explode('.',$k);
                     $m =  $kk[0] . 'M';
                     break;
-                case $k > 100000000:
+                case $k > 1000000:
                         $k = $k / 1000;
                         $kk = explode('.',$k);
                         $m =  $kk[0] . 'B';
                         break;
             default:
-                $m = $this->sell;
+                $m = $this->buy;
                 break;
             }
         }

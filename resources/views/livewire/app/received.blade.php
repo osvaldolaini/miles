@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="stat-actions">
-                            <x-user-card :user="$demand->user">
+                            <x-user-card :user="$demand->user" notdetail="true">
                             </x-user-card>
                     </div>
                     <div class="stat-title text-right text-xs mt-5">{{ $demand->code }}</div>

@@ -15,7 +15,7 @@
             {{-- OK --}} showButtons="Ações" {{-- Botões --}}
             {{-- OK --}} sort="accounts.status , desc | accounts.name , asc" {{-- Ordenação da tabela --}}
             {{-- OK --}} paginate="6" {{-- Qtd de registros por página --}}
-            {{-- OK --}} extraButtons="" {{-- route,id,model --}}
+            {{-- OK --}} extraButtons="account.passengers,code,Passageiros" {{-- route,id,model --}}
             {{-- OK --}} foreingKey=""
         />
     {{-- MODAL DELETE --}}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\App\AccountPassengers;
 use App\Http\Livewire\App\Accounts;
 use App\Http\Livewire\App\Chats;
 use App\Http\Livewire\App\Dashboard;
@@ -47,6 +48,7 @@ Route::middleware([
     Route::get('/meus-favoritos', MyDemandLike::class)->name('like.demand.user');
     Route::get('/minhas-ofertas', OffersListUser::class)->name('offer.list.user');
     Route::get('/minhas-contas', Accounts::class)->name('account.user');
+    Route::get('/passageiros-vinculados-a-conta/{account:code}', AccountPassengers::class)->name('account.passengers');
 
     Route::get('/finalizar/{offers:code}', DemandCheckout::class)->name('demand.checkout');
 

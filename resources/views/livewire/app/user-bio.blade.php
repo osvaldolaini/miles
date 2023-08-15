@@ -1,4 +1,6 @@
 <div class="w-full p-1 sm:px-2 pt-0 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
+
+    @livewire('app.received')
     <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
         <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500"></div>
         <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-16
@@ -79,7 +81,8 @@
 
         <div class="grid grid-cols-2 gap-3">
             @foreach ($user->ratings->sortByDesc('id')->take(10) as $rating)
-                <div class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 mx-auto p-4">
+
+            <div wire:click="openReceived({{ $rating->demand->id }})" class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 mx-auto p-4 cursor-pointer">
                     <div class="flex items-center mt-4">
                         <a href="#" class="relative block">
                             @if ($rating->rated->profile_photo_url)

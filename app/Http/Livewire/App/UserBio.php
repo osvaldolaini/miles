@@ -16,4 +16,9 @@ class UserBio extends Component
     {
         return view('livewire.app.user-bio');
     }
+     //recibo
+     public function openReceived($id)
+     {
+         $this->emit('openReceived', $id);
+     }
 }

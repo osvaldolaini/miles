@@ -29,11 +29,8 @@ class Received extends Component
     //OPEN MESSAGE
     public function openReceived($id)
     {
-        dd($this->id);
         $this->demand = Demands::find($id);
-        dd($this->demand);
         $this->offers = $this->demand->offers;
-        dd($this->demand->offers);
         $this->winner = Offers::find($this->demand->offer_id);
         $this->showModalReceived = true;
     }

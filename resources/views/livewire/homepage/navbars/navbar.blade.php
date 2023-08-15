@@ -155,8 +155,7 @@
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                            <a href="{{ route('like.demand.user') }}"
-                                class="a flex items-center p-2 space-x-3 rounded-md">
+                            <a href="{{ route('like.demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -193,15 +192,32 @@
                                 <span class="span semibold">Minhas contas</span>
                             </a>
                         </li>
-
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                            <a href="{{ route('profile.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                                <span class="span ">
+                                    <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="span semibold">Perfil</span>
+                            </a>
+                        </li>
+                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <a class="a flex items-center p-2 space-x-3 rounded-md" href="{{ route('logout') }}"
-                                    @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                <a  href="{{ route('logout') }}" @click.prevent="$root.submit();" class="a flex items-center p-2 space-x-3 rounded-md ">
+                                    <span class="span ">
+                                        <svg class="w-4 h-4" focusable="false" aria-hidden="true"
+                                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14 7.63636L14 4.5C14 4.22386 13.7761 4 13.5 4L4.5 4C4.22386 4 4 4.22386 4 4.5L4 19.5C4 19.7761 4.22386 20 4.5 20L13.5 20C13.7761 20 14 19.7761 14 19.5L14 16.3636" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10 12L21 12M21 12L18.0004 8.5M21 12L18 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                    <span class="span semibold">Sair</span>
                                 </a>
                             </form>
                         </li>

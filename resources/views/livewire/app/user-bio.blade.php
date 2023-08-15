@@ -1,7 +1,8 @@
-<div class="w-full p-1 sm:px-8 pt-0 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
+<div class="w-full p-1 sm:px-2 pt-0 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
     <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
         <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500"></div>
-        <div class="flex flex-col items-center justify-center p-2 sm:p-8 -mt-16 sm:-mt-20">
+        <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-16
+        sm:-mt-20">
             <span class="relative block">
                 @if ($user->profile_photo_url)
                     <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
@@ -77,17 +78,8 @@
         <x-section-border />
 
         <div class="grid grid-cols-2 gap-3">
-            @foreach ($user->ratings->take(10) as $rating)
-                <div class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 w-72 mx-auto p-4">
-                    <p class="text-gray-600 dark:text-white">
-                        <span class="text-lg font-bold text-indigo-500">
-                            “
-                        </span>
-                        {{ $rating->text }}
-                        <span class="text-lg font-bold text-indigo-500">
-                            ”
-                        </span>
-                    </p>
+            @foreach ($user->ratings->sortByDesc('id')->take(10) as $rating)
+                <div class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 mx-auto p-4">
                     <div class="flex items-center mt-4">
                         <a href="#" class="relative block">
                             @if ($rating->rated->profile_photo_url)
@@ -104,19 +96,30 @@
                                 {{ $rating->rated->name }}
                             </span>
                             <span class="flex items-center text-xs dark:text-gray-400">
-                                Usuário avaliou em &nbsp;
+                                Avaliado em {{ $rating->since }}
+                            </span>
+                            <span class="flex items-center text-xs dark:text-gray-400">
                                 @for ($i = 0; $i < $rating->rate; $i++)
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M6.71 15.116l3.357-1.658.892.452 2.327 1.178-.56-3.912.708-.707 1.29-1.29-3.235-.576-.445-.915-1.059-2.176L8.4 8.683l-1.005.168-2.098.35 1.975 1.975-.141.99-.422 2.95zM5.2 18a.8.8 0 01-.792-.914l.743-5.203-2.917-2.917a.8.8 0 01.434-1.355l4.398-.733 2.218-4.435a.8.8 0 011.435.008l2.123 4.361 4.498.801a.8.8 0 01.425 1.353l-2.917 2.917.744 5.203a.8.8 0 01-1.154.828l-4.382-2.22-4.502 2.223A.792.792 0 015.2 18z"
-                                            fill="currentColor" />
-                                    </svg>
-                                @endfor
-
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.71 15.116l3.357-1.658.892.452 2.327 1.178-.56-3.912.708-.707 1.29-1.29-3.235-.576-.445-.915-1.059-2.176L8.4 8.683l-1.005.168-2.098.35 1.975 1.975-.141.99-.422 2.95zM5.2 18a.8.8 0 01-.792-.914l.743-5.203-2.917-2.917a.8.8 0 01.434-1.355l4.398-.733 2.218-4.435a.8.8 0 011.435.008l2.123 4.361 4.498.801a.8.8 0 01.425 1.353l-2.917 2.917.744 5.203a.8.8 0 01-1.154.828l-4.382-2.22-4.502 2.223A.792.792 0 015.2 18z"
+                                        fill="currentColor" />
+                                </svg>
+                            @endfor
                             </span>
                         </div>
                     </div>
+                    <p class="text-gray-600 dark:text-white">
+                        <span class="text-lg font-bold text-indigo-500">
+                            “
+                        </span>
+                        {{ $rating->text }}
+                        <span class="text-lg font-bold text-indigo-500">
+                            ”
+                        </span>
+                    </p>
+
                 </div>
             @endforeach
         </div>

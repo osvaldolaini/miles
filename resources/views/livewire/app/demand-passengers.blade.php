@@ -6,7 +6,7 @@
             <div
                 class="container-fluid rounded-lg shadow-md py-2
                 dark:bg-gray-900 mb-4 col-span-full
-                bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
+                bg-teal-500 text-white">
                 <div class="flex items-center justify-between py-0 px-3 ">
                     <div>
                         <x-user-card :user="$user">
@@ -30,7 +30,7 @@
 
                 <div class="grid col-span-full lg:col-span-4 justify-end mt-4">
                     <button type="submit"
-                        class="bg-teal-500
+                        class="bg-teal-500 text-white
                         hover:bg-gray-900 border-2 border-teal-500
                         active:bg-teal-300 text-white text-xs
                         font-bold uppercase px-6 py-2.5 rounded-full

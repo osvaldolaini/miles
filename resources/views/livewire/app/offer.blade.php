@@ -22,7 +22,12 @@
                 <span class="items-center leading-none ml-2
                     justify-center rounded-md bg-red-100
                     px-2.5 py-1 text-red-700">
-                    <p class="whitespace-nowrap text-sm">Valor máximo {{ $demand->value_max }}</p>
+                    <p class="whitespace-nowrap text-sm">Valor mínimo: {{ $demand->value }}</p>
+                </span>
+                <span class="items-center leading-none ml-2
+                    justify-center rounded-md bg-red-100
+                    px-2.5 py-1 text-red-700">
+                    <p class="whitespace-nowrap text-sm">Valor máximo: {{ $demand->value_max }}</p>
                 </span>
             </label>
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>

@@ -2,15 +2,16 @@
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class="overflow-x-auto">
         @foreach ($offers as $offer)
-            <div class="stats bg-gray-200 stats-vertical lg:stats-horizontal shadow-md w-full my-2">
-                <div class="stat">
+            <div class="stats bg-teal-500 text-white stats-vertical
+            lg:stats-horizontal shadow-md w-full my-2">
+                <div class="stat px-2">
                     <div class="stat-title">Usuário</div>
                     <div class="stat-title">
                         <x-user-card :user="$offer->user">
                         </x-user-card>
                     </div>
                 </div>
-                <div class="stat">
+                <div class="stat px-2">
                     <div class="stat-title">Oferta </div>
                     <div class="stat-value">
                         R$ {{ $offer->value }}
@@ -20,7 +21,7 @@
                         {{ $offer->order }}ª
                     </div>
                 </div>
-                <div class="stat">
+                <div class="stat px-2">
                     <div class="stat-title">Ações</div>
                     <div class="stat-actions flex flex-col space-y-2">
                         <a class="btn btn-success btn-sm" href="{{ route('offer.user', [$offer->code]) }}">

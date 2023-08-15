@@ -1,6 +1,6 @@
 <div>
     <div class="stats stats-vertical lg:stats-horizontal w-full border-none">
-        <div class="stat">
+        <div class="stat px-2">
             <div class="stat-actions">
                 @if ($demand->status == 1)
                     <button wire:click="showCheckoutModel()"
@@ -33,7 +33,7 @@
                 @endif
             </div>
         </div>
-        <div class="stat">
+        <div class="stat px-2">
             @if($btn == 1)
                 <div class="stat-title text-red-500 font-extrabold">
                     Preencher todo os passageiros
@@ -47,7 +47,7 @@
     <div class="pb-2">
         <div
             class="stats stats-vertical lg:stats-horizontal w-full
-            bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
+            bg-teal-500 text-white">
             <div class="stat">
                 <div class="stat-title font-bold">Dados do pedido</div>
                 <div class="stat-title text-lg font-extrabold">

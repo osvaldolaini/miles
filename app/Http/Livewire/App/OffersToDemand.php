@@ -23,11 +23,12 @@ class OffersToDemand extends Component
         $this->user_id = Auth::user()->id;
         $this->demand = $demand;
         $this->linkOffer = $linkOffer;
-        $this->offers = Offers::where('demand_id',$demand->id)->orderBy('value','asc')->paginate(10);
+        // $this->offers = Offers::where('demand_id',$demand->id)
+        // ->orderBy('value','asc')->paginate(10);
     }
     public function render()
     {
-        $this->offers = $this->demand->offers->sortByDesc('value');
+        $this->offers = $this->demand->offers->sortBy(['value','id']);
         return view('livewire.app.offers-to-demand');
     }
 }

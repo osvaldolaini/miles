@@ -54,6 +54,15 @@ class Offer extends Component
         if ($this->value > $this->demand->value_max) {
             $this->openAlert('error', 'O valor não pode ser maior que o solicitado.');
             $this->showModalCreate = false;
+            $this->reset(
+                'value',
+            );
+        }elseif($this->value < $this->demand->value){
+            $this->openAlert('error', 'O valor não pode ser menor que o solicitado.');
+            $this->showModalCreate = false;
+            $this->reset(
+                'value',
+            );
         }else{
             $this->validate();
             $number = $this->demand->offers->count();

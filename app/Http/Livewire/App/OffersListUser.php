@@ -14,6 +14,7 @@ class OffersListUser extends Component
     public $accounts;
     public $breadcrumb;
     public $offer_id;
+    public $passengers;
     public $account_id;
     public $showModalUpdate = false;
 
@@ -40,6 +41,8 @@ class OffersListUser extends Component
             ->where('account_categorie_id',$o->demand->account_categorie_id)
             ->where('user_id',Auth::user()->id)
             ->where('status',1)->get();
+            $this->passengers = $o->demand->passengers;
+            // dd($this->passengers);
             $this->showModalUpdate = true;
         }
 
@@ -70,4 +73,9 @@ class OffersListUser extends Component
     {
         $this->emit('openAlert', $status, $msg);
     }
+     //recibo
+     public function openReceived($id)
+     {
+         $this->emit('openReceived', $id);
+     }
 }

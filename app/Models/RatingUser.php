@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,6 +28,10 @@ class RatingUser extends Model
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
-
+    public function getSinceAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
+                ->format('d/m/Y');
+    }
 
 }

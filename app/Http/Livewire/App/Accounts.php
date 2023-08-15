@@ -87,7 +87,7 @@ class Accounts extends Component
     public function update()
     {
         $this->rules = [
-            'name' => ['required', Rule::unique('accounts')->ignore(Auth::user()->id)],
+            'name' => ['required', Rule::unique('accounts')->ignore($this->model_id)],
         ];
         $this->validate();
 

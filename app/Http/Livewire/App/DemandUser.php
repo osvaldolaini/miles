@@ -59,4 +59,10 @@ class DemandUser extends Component
         $this->emit('openAlert', $status, $msg);
     }
 
+    //recibo
+    public function openReceived($id)
+    {
+        $this->emit('openReceived', $id);
+    }
+
 }

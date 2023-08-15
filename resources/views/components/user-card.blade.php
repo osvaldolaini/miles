@@ -1,6 +1,6 @@
-@props(['user' => null])
+@props(['user' => null,'notdetail'=>false])
 <div>
-    <a class="cursor-pointer" href="{{ route('user.bio', [$user->username]) }}">
+    <a class="cursor-pointer text-gray-800" href="{{ route('user.bio', [$user->username]) }}">
         <div class="flex items-center space-x-2" wire:key="{{ $user->id }}-user">
             @if ($user->profile_photo_url)
                 <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
@@ -11,7 +11,7 @@
             @endif
             <div>
                 <h2 class="flex text-sm font-semibold leading-none items-center my-0 py-0">
-                    <span>{{ $user->name }}</span>
+                    <span class="my-0 py-0">{{ $user->name }}</span>
                     @if ($user->cpf)
                         <svg class="w-5 h-5 my-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path stroke="#068bac"
@@ -20,25 +20,28 @@
                         </svg>
                     @endif
                 </h2>
-                <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0">
+                <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0 py-0">
                     {{ '@' . $user->username }}
                 </span>
-                @if ($user->id != Auth::user()->id && $user->buy > 0)
-                    <span
-                        class="flex items-center leading-none mx-0
-                    justify-center rounded-lg bg-emerald-200
-                    px-2.5 py-0.5 text-emerald-700">
-                        <p class="whitespace-nowrap text-xs">Comprou {{ $user->buyConvert }}</p>
-                    </span>
+                @if ($notdetail == false)
+                    @if ($user->id != Auth::user()->id && $user->buy > 0)
+                        <span
+                            class="flex items-center leading-none mx-0
+                        justify-center rounded-lg bg-emerald-200
+                        px-2.5 py-0.5 text-emerald-700">
+                            <p class="whitespace-nowrap text-xs">Comprou {{ $user->buyConvert }}</p>
+                        </span>
+                    @endif
+                    @if ($user->id != Auth::user()->id && $user->sell > 0)
+                        <span
+                            class="flex items-center leading-none mx-0
+                        justify-center rounded-lg bg-red-200
+                        px-2.5 py-0.5 text-red-700">
+                            <p class="whitespace-nowrap text-xs">Vendeu {{ $user->sellConvert }}</p>
+                        </span>
+                    @endif
                 @endif
-                @if ($user->id != Auth::user()->id && $user->sell > 0)
-                    <span
-                        class="flex items-center leading-none mx-0
-                    justify-center rounded-lg bg-red-200
-                    px-2.5 py-0.5 text-red-700">
-                        <p class="whitespace-nowrap text-xs">Vendeu {{ $user->sellConvert }}</p>
-                    </span>
-                @endif
+
             </div>
         </div>
     </a>

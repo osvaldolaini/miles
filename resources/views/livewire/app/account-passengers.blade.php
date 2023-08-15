@@ -7,12 +7,17 @@
                     class="stats stats-vertical lg:stats-horizontal shadow-md w-full my-2
                         bg-teal-500 text-white px-0 mx-0">
                     <div class="stat px-2">
-                        <div class="stat-title">Passageiro </div>
-                        <div class="stat-title text-sm font-extrabold">
-                            João
-                        </div>
-                        <div class="stat-title text-sm font-extrabold">
-                            CPF
+                        <div class="stats stats-vertical w-full bg-transparent text-white px-0 mx-0">
+                            @foreach ($offer->demand->passengers as $passenger)
+                                @if ($passenger->cpf != '')
+                                    <div class="stat px-2">
+                                        <div class="stat-title font-bold">{{ $passenger->name }}</div>
+                                        <div class="stat-title text-lg font-extrabold">
+                                            {{ $passenger->cpf }}
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="stat px-2">

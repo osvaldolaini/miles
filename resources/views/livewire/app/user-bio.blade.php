@@ -77,7 +77,7 @@
         <x-section-border />
 
         <div class="grid grid-cols-2 gap-3">
-            @foreach ($user->ratings->take(2) as $rating)
+            @foreach ($user->ratings->take(10) as $rating)
                 <div class="col-span-full sm:col-span-1 bg-white dark:bg-gray-800 w-72 mx-auto p-4">
                     <p class="text-gray-600 dark:text-white">
                         <span class="text-lg font-bold text-indigo-500">

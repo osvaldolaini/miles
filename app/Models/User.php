@@ -238,4 +238,8 @@ class User extends Authenticatable
         }
 
     }
+    public function ratings():HasMany
+    {
+        return $this->hasMany(RatingUser::class,'evaluted','id');
+    }
 }

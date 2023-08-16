@@ -76,8 +76,9 @@ class Accounts extends Component
     }
 
     //UPDATE
-    public function showModalUpdate(Account $accounts)
+    public function showModalUpdate($id)
     {
+        $accounts = Account::find($id);
         $this->model_id = $accounts->id;
         $this->name     = $accounts->name;
         $this->account_categorie_id     = $accounts->account_categorie_id;

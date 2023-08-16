@@ -86,7 +86,7 @@
                                 shadow hover:shadow-md outline-none focus:outline-none
                                 mr-0 mb-0 ml-2 m2-4 ease-linear transition-all
                                 duration-150">
-                                Recibo
+                                Detalhes
                             </button>
                         </div>
                         @endif

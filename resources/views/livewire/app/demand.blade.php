@@ -10,8 +10,8 @@
                             <label for="miles" class="text-sm">
                                 Quantidade de Milhas
                             </label>
-                            <input x-mask:dynamic="$money($input, ',', '.', 3)" wire:model="miles"
-                            required type="text" maxlength="15" placeholder="Milhas"
+                            <input x-mask:dynamic="$money($input,',')" wire:model="miles"
+                            required type="text" maxlength="9" placeholder="Milhas"
                                 class="w-full rounded-md focus:ring
                             focus:ring-opacity-75 focus:ring-violet-400
                             dark:border-gray-700 dark:text-gray-800">
@@ -79,9 +79,10 @@
                         <div class="col-span-full ">
                             <h2 class="text-sm">Duração do pedido</label>
                         </div>
+
                         <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
-                                value="{{ date('Y-m-d H:i:s', strtotime('+30 minutes')) }}" id="free_thirty_hour"
+                                value="{{date('Y-m-d H:i:s', strtotime('+30 minutes'))}}" id="free_thirty_hour"
                                 class="peer hidden" checked/>
                             <label for="free_thirty_hour"
                                 class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -89,12 +90,11 @@
                                     <div class="w-full text-lg font-semibold">30 min</div>
                                     <div class="w-full">Free</div>
                                 </div>
-
                             </label>
                         </div>
                         <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
-                                value="{{ date('Y-m-d H:i:s', strtotime('+1 hour')) }}" id="free_one_hour"
+                                value="{{date('Y-m-d H:i:s', strtotime('+1 hour'))}}" id="free_one_hour"
                                 class="peer hidden" />
                             <label for="free_one_hour"
                                 class="inline-flex items-center justify-between w-full p-5

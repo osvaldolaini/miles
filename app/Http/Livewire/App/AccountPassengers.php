@@ -10,11 +10,21 @@ class AccountPassengers extends Component
     public $account;
     public $breadcrumb;
     public $offers;
+    public $passengers;
     public function mount(Account $account)
     {
         $this->breadcrumb = 'Passageiros vinculados';
         $this->account  = $account;
         $this->offers   = $this->account->offers->where('status',3)->sortBy('updated_at');
+
+        if ($this->offers) {
+            foreach ($this->offers as $offer) {
+                $this->passengers = $offer->demand->passengers->pluck('name','cpf');
+            }
+            // $this->passengers->unique('cpf');
+            dd($this->passengers);
+        }
+
     }
     public function render()
     {

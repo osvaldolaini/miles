@@ -11,7 +11,7 @@
         </div>
     @else
         <div class="dropdown dropdown-bottom sm:dropdown-right ">
-            <label class="m-1 inline-flex cursor-pointer">
+            <label tabindex="0" class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
                         @php
@@ -36,7 +36,7 @@
                     </span>
                 </div>
         </label>
-        <div
+        <div tabindex="0"
             class="dropdown-content z-[1] ml-5 menu py-2 px-1 shadow bg-base-100 rounded-box
              absolute right-0 z-20 w-64 mt-2 overflow-hidden bg-white rounded-md shadow-lg sm:w-96
              dark:bg-gray-900">

@@ -44,20 +44,32 @@ class Demands extends Model
     }
     public function getMilesConvertAttribute()
     {
-        $k = $this->miles / 1000;
-        switch ($k) {
-            case $k < 1:
-                $m = $this->miles;
-                break;
-            case $k >= 1 && $k < 1000:
+        if ($this->miles > 0) {
+            $k = $this->miles / 1000;
+            switch ($k) {
+                case $k < 1:
+                    $m = $this->miles;
+                    break;
+                case $k >= 1 && $k < 1000:
                 $kk = explode('.',$k);
                 $m =  $kk[0] . 'K';
                 break;
+                case $k >= 1000 && $k < 1000000:
+                    $k = $k / 1000;
+                    $kk = explode('.',$k);
+                    $m =  $kk[0] . 'M';
+                    break;
+                case $k > 1000000:
+                        $k = $k / 1000;
+                        $kk = explode('.',$k);
+                        $m =  $kk[0] . 'B';
+                        break;
             default:
-                $kk = explode('.',$k);
-                $m =  $kk[0] . 'K';
+                $m = $this->buy;
                 break;
+            }
         }
+
         return $m;
     }
     public function getTimeCreateAttribute()

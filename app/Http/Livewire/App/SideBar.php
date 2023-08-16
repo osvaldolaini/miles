@@ -10,4 +10,8 @@ class SideBar extends Component
     {
         return view('livewire.app.side-bar');
     }
+    public function openModalSearch()
+    {
+        $this->emit('openModalSearch');
+    }
 }

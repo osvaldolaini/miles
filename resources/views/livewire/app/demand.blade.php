@@ -6,14 +6,12 @@
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>
                 <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-800">
                     <div class="grid grid-cols-8 gap-3 col-span-full lg:col-span-4">
-                        <div class="col-span-full sm:col-span-4"
-                        x-data x-init="Inputmask({
-                            'mask': '999.999.999,99'
-                        }).mask($refs.miles)">
+                        <div x-data class="col-span-full sm:col-span-4">
                             <label for="miles" class="text-sm">
                                 Quantidade de Milhas
                             </label>
-                            <input  x-ref="miles" wire:model="miles" required type="text" maxlength="10" placeholder="Milhas"
+                            <input x-mask:dynamic="$money($input, ',', '.', 3)" wire:model="miles"
+                            required type="text" maxlength="15" placeholder="Milhas"
                                 class="w-full rounded-md focus:ring
                             focus:ring-opacity-75 focus:ring-violet-400
                             dark:border-gray-700 dark:text-gray-800">
@@ -25,8 +23,8 @@
                             <label for="qtd" class="text-sm">
                                 Quantidade de CPF
                             </label>
-                            <input wire:model="qtd" required type="number" maxlength="2"
-                                placeholder="Quantidade de CPF"
+                            <input wire:model="qtd" required type="text" maxlength="2"
+                                placeholder="Quantidade de CPF" x-mask="99"
                                 class="w-full rounded-md focus:ring
                             focus:ring-opacity-75 focus:ring-violet-400
                             dark:border-gray-700 dark:text-gray-800">

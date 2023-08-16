@@ -9,6 +9,9 @@
             </div>
         </div>
     </div>
+    <div class="navbar-center block sm:hidden">
+        @livewire('app.search-user')
+    </div>
     <div class="navbar-end">
         <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0
         lg:shadow-none hidden bg-gray-900">

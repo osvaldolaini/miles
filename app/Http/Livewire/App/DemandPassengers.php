@@ -108,7 +108,7 @@ class DemandPassengers extends Component
         $demand = Demands::create([
             'value_max' => $this->value_max,
             'value'     => $this->value,
-            'miles'     => $this->miles,
+            'miles'     => str_replace( array( ',', '.' ), '', $this->miles),
             'end_date'  => $this->end_date,
             'qtd'       => $this->qtd,
             'user_id'   => Auth::user()->id,

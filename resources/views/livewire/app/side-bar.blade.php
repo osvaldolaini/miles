@@ -3,6 +3,9 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
     <div class="divide-y divide-gray-700">
         <div class="Sidebar">
             <ul class="ul pt-2 pb-4 space-y-1 text-sm">
+                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer hidden sm:block">
+                    @livewire('app.search-user')
+                </li>
                 <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                     <a href="{{ route('app') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         <span class="span ">

@@ -73,12 +73,12 @@ class Demand extends Component
             ];
             $this->validate();
 
-            $demands =[
+            $demands = [
                     'value_max' => $this->value_max,
                     'value'     => $this->value,
                     'miles'     => $this->miles,
                     'end_date'  => $this->end_date,
-                    'qtd'       => str_replace( array( ',', '.' ), '', $this->qtd),
+                    'qtd'       => $this->qtd,
                     'account_categorie_id'   => $this->account_categorie_id,
             ];
             Session::put('demands', $demands);

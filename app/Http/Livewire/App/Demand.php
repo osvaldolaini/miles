@@ -66,9 +66,9 @@ class Demand extends Component
         }else{
             $this->rules = [
                 'value_max' => 'required|max:5',
-                'value' => 'required|max:5',
-                'miles' => 'required',
-                'qtd' => 'required',
+                'value'     => 'required|max:5',
+                'miles'     => 'required',
+                'qtd'       => 'required',
                 'account_categorie_id' => 'required',
             ];
             $this->validate();
@@ -78,7 +78,7 @@ class Demand extends Component
                     'value'     => $this->value,
                     'miles'     => $this->miles,
                     'end_date'  => $this->end_date,
-                    'qtd'       => $this->qtd,
+                    'qtd'       => str_replace( array( ',', '.' ), '', $this->qtd),
                     'account_categorie_id'   => $this->account_categorie_id,
             ];
             Session::put('demands', $demands);

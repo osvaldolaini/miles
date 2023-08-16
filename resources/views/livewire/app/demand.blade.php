@@ -6,11 +6,14 @@
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>
                 <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-800">
                     <div class="grid grid-cols-8 gap-3 col-span-full lg:col-span-4">
-                        <div class="col-span-full sm:col-span-4">
+                        <div class="col-span-full sm:col-span-4"
+                        x-data x-init="Inputmask({
+                            'mask': '999.999.999,99'
+                        }).mask($refs.miles)">
                             <label for="miles" class="text-sm">
                                 Quantidade de Milhas
                             </label>
-                            <input wire:model="miles" required type="text" maxlength="10" placeholder="Milhas"
+                            <input  x-ref="miles" wire:model="miles" required type="text" maxlength="10" placeholder="Milhas"
                                 class="w-full rounded-md focus:ring
                             focus:ring-opacity-75 focus:ring-violet-400
                             dark:border-gray-700 dark:text-gray-800">
@@ -50,7 +53,7 @@
                             @enderror
                         </div>
                         <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
-                            'mask': '99,90'
+                            'mask': '9[9],90'
                         }).mask($refs.value)">
                             <label for="value" class="text-sm">
                                 Valor
@@ -64,7 +67,7 @@
                             @enderror
                         </div>
                         <div class="col-span-full sm:col-span-2" x-data x-init="Inputmask({
-                            'mask': '99,90'
+                            'mask': '9[9],90'
                         }).mask($refs.value_max)">
                             <label for="value_max" class="text-sm">Valor máximo</label>
                             <input x-ref="value_max" wire:model="value_max" required type="text" maxlength="7" placeholder="Valor"

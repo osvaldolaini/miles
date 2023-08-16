@@ -17,14 +17,6 @@ class AccountPassengers extends Component
         $this->account  = $account;
         $this->offers   = $this->account->offers->where('status',3)->sortBy('updated_at');
 
-        if ($this->offers) {
-            foreach ($this->offers as $offer) {
-                $this->passengers = $offer->demand->passengers->pluck('name','cpf');
-            }
-            // $this->passengers->unique('cpf');
-            dd($this->passengers);
-        }
-
     }
     public function render()
     {

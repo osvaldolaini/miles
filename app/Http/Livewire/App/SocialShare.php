@@ -10,7 +10,11 @@ class SocialShare extends Component
     public $shareComponent;
     public function mount(Demands $demand)
     {
-        $this->shareComponent = \Share::page('Acabei de fazer um pedido de '.$demand->milesConvert. ' milhas da '. $demand->category->title.' '.
+        $this->shareComponent = \Share::page(
+            'Acabei de fazer um pedido de '.$demand->milesConvert.
+            ' milhas da "</br>"'. $demand->category->title.'
+            para '.$demand->qtd.'
+            '.
             route('demand.view', [$demand->code]),
 
         )

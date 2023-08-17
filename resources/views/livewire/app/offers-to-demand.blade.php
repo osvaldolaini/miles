@@ -10,7 +10,7 @@
             </div>
         </div>
     @else
-        <div class="dropdown dropdown-bottom sm:dropdown-right ">
+        {{-- <div class="dropdown dropdown-bottom sm:dropdown-right ">
             <label tabindex="0" class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
@@ -109,6 +109,6 @@
                         lista completa ({{ $offers->count() }})</a>
                 @endif
             </div>
-        </div>
+        </div> --}}
     @endif
 </div>

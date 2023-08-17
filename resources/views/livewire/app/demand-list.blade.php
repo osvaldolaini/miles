@@ -6,8 +6,7 @@
     @foreach ($demands as $item)
         <div wire:key="{{ $item }}"
             class="container-fluid rounded-lg shadow-md py-2
-                dark:bg-gray-900 mb-4
-                bg-teal-500 text-white">
+                mb-4 bg-teal-500 text-white">
             <div class="flex items-center justify-between py-0 px-3 ">
                 <div>
                     <x-user-card :user="$item->user">

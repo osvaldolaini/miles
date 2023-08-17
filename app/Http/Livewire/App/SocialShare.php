@@ -22,7 +22,7 @@ class SocialShare extends Component
         ->whatsapp()
         ->facebook()
         ->twitter()->getRawLinks();
-        dd($this->shareComponent);
+        //dd($this->shareComponent);
     }
     public function render()
     {

@@ -12,7 +12,8 @@ class SocialShare extends Component
     {
         $this->shareComponent = \Share::page(
             'Acabei de fazer um pedido de '.$demand->milesConvert.
-            ' milhas da \n '. $demand->category->title.'
+            ' milhas da' . '
+            ' . $demand->category->title.'
             para '.$demand->qtd.'
             '.
             route('demand.view', [$demand->code]),
@@ -22,6 +23,7 @@ class SocialShare extends Component
         ->whatsapp()
         ->facebook()
         ->twitter()->getRawLinks();
+        dd($this->shareComponent);
     }
     public function render()
     {

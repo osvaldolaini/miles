@@ -19,10 +19,17 @@ class DemandView extends Component
             'create_at' => 'Criado à '.$demand->timeCreate,
             'url'       => route('demand.view', [$demand->code]),
         ];
-
+        // $this->changeSeo();
     }
+         //recibo
+         public function changeSeo()
+         {
+            $this->emit('changeSeo', $this->dataPage);
+         }
     public function render()
     {
+        // $this->changeSeo();
         return view('livewire.app.demand-view');
     }
+
 }

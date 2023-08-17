@@ -11,24 +11,20 @@ class DemandView extends Component
     public $demand;
     public function mount(Demands $demand)
     {
-        $this->demand = $demand;
+        $this->demand = $this->demand;
         $this->dataPage = [
-            'user'      => $demand->user->name,
-            'title'     => 'Solicitação de '.$demand->milesConvert. ' milhas da '. $demand->category->title,
-            'category'  => $demand->category->title,
-            'create_at' => 'Criado à '.$demand->timeCreate,
-            'url'       => route('demand.view', [$demand->code]),
+            'user'      => $this->demand->user->name,
+            'title'     => 'Solicitação de '.$this->demand->milesConvert. ' milhas da '. $this->demand->category->title,
+            'category'  => $this->demand->category->title,
+            'create_at' => 'Criado à '.$this->demand->timeCreate,
+            'url'       => route('demand.view', [$this->demand->code]),
         ];
         // $this->changeSeo();
     }
-         //recibo
-         public function changeSeo()
-         {
-            $this->emit('changeSeo', $this->dataPage);
-         }
+
     public function render()
     {
-        // $this->changeSeo();
+
         return view('livewire.app.demand-view');
     }
 

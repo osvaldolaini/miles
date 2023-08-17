@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="px-3">
-                <div class="flex items-center justify-end sm:justify-between">
+                <div class="flex items-center sm:justify-between">
                     <div class="flex items-center ">
                         @if ($item->user->id != Auth::user()->id)
                             @livewire('app.demand-likes', ['demands' => $item], key($item->id))

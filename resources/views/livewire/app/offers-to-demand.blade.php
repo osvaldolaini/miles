@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </label>
-            <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-90">
+            <div tabindex="0" class="dropdown-content z-[1] p-2 shadow bg-white rounded-box w-80 sm:w-96">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)
@@ -83,7 +83,7 @@
                             </div>
                         @else
                             <div
-                                class="stats stats-vertical rounded-none lg:stats-horizontal w-full
+                                class="stats  rounded-none stats-horizontal w-full
                                             p-0.5 bg-transparent border-b-2 sm:border-none">
                                 <div class="stat p-0.5 border-none">
                                     <div class="stat-title">

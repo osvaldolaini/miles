@@ -1,7 +1,5 @@
 <div>
-    @section('page-title')
-    {{ $dataPage['title'] }}
-    @endsection
+    @section('page-title'){{$dataPage['title']}} - @endsection
     <div >
         <div
             class="relative  rounded-lg shadow-md py-2

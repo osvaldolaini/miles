@@ -4,10 +4,11 @@
     @php
         $shareComponent = \Share::page(
             'Acabei de fazer um pedido de '.$demand->milesConvert.
-            ' milhas da ' . $demand->category->title.'
-            para '.$demand->qtd.' CPF(s) '.
+            ' milhas da ' . $demand->category->title.' para '.$demand->qtd.' CPF(s) '.
             route('demand.view', [$demand->code]),
-
+            'Pedido de '.$demand->milesConvert.
+            ' milhas da ' . $demand->category->title.'
+            para '.$demand->qtd.' CPF(s) '
         )
         ->telegram()
         ->whatsapp()

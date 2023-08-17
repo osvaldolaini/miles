@@ -14,8 +14,8 @@
     <meta property="og:title" content="{{ $dataPage['title'] }}">
     <meta property="og:site_name" content="{{ $dataPage['title'] }}">
 @else
-    <meta property="og:title" content="{{ config('app.name', 'Laravel') }}">
-    <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
+    <meta property="og:title" content="@yield('page-title') {{ config('app.name', 'Laravel') }}">
+    <meta property="og:site_name" content="@yield('page-title') {{ config('app.name', 'Laravel') }}">
 @endif
 <!--DESCRIÇÃO NÃO MAIOR QUE 200-->
 <meta property="og:description" content="{{ $meta_description }}">
@@ -66,7 +66,7 @@
     <meta name="twitter:url" content="{{ url($dataPage['url']) }}">
 @else
     <!--TITULO-->
-    <meta name="twitter:title" content="{{ config('app.name', 'Laravel') }}">
+    <meta name="twitter:title" content="@yield('page-title') {{ config('app.name', 'Laravel') }}">
     <!--DESCRIÇÃO NÃO MAIOR QUE 200-->
     <meta name="twitter:description" content="{{ $meta_description }}">
     <!--IMAGEM menores que 1 MB de tamanho de arquivo, > 60px por 60px e < 120px por 120px serão automaticamente redimensionadas.-->

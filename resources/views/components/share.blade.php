@@ -4,9 +4,7 @@
     @php
         $shareComponent = \Share::page(
             route('demand.view', [$demand->code]),
-            'Pedido de '.$demand->milesConvert.
-            ' milhas da ' . $demand->category->title.'
-            para '.$demand->qtd.' CPF(s) no valor de R$ '. $demand->value
+            'Olá! Acabei de fazer um pedido de '.$demand->milesConvert.' milhas da ' . $demand->category->title.' para '.$demand->qtd.' CPF(s) no valor de R$ '. $demand->value
         )
         ->telegram()
         ->whatsapp()

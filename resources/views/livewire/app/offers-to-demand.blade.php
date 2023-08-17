@@ -26,14 +26,14 @@
                                         src="{{ $offer->user->profile_photo_url ? url($offer->user->profile_photo_url) : url('storage/profiles/avatar.jpg') }}">
                                 </a>
                                 @if ($i == 3)
-                                @break;
-                            @endif
-                        @endforeach
+                                    @break;
+                                @endif
+                            @endforeach
+                        </div>
+                        <span class="text-sm">{{ $offers->count() > 1 ? 'Foram feitas' : 'Foi feita' }}
+                            <span class="font-semibold"> {{ $offers->count() }} oferta</span>
+                        </span>
                     </div>
-                    <span class="text-sm">{{ $offers->count() > 1 ? 'Foram feitas' : 'Foi feita' }}
-                        <span class="font-semibold"> {{ $offers->count() }} oferta</span>
-                    </span>
-                </div>
             </label>
             <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <div class="py-2">
@@ -41,7 +41,7 @@
                         @if ($linkOffer == true)
                             <div
                                 class="stats stats-vertical rounded-none lg:stats-horizontal w-full
-                                        p-0.5 bg-transparent border-b-2 sm:border-none">
+                                            p-0.5 bg-transparent border-b-2 sm:border-none">
                                 <div class="stat p-0.5 border-none">
                                     <div class="stat-title">
                                         <x-user-card :user="$offer->user">
@@ -90,8 +90,8 @@
                         @else
                             <span
                                 class="flex justify-between text-left items-center px-4 py-3
-                                            -mx-2 transition-colors duration-300 transform border-b
-                                            border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-700">
+                                                -mx-2 transition-colors duration-300 transform border-b
+                                                border-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 dark:border-gray-700">
                                 <div>
                                     <x-user-card :user="$offer->user">
                                     </x-user-card>
@@ -110,6 +110,5 @@
                 @endif
             </div>
         </div>
-
     @endif
 </div>

@@ -39,7 +39,7 @@ class Demands extends Model
     }
     public function getFinishedAttribute()
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)
                 ->format('d/m/Y');
     }
     public function getMilesConvertAttribute()

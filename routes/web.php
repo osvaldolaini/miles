@@ -8,6 +8,7 @@ use App\Http\Livewire\App\Demand;
 use App\Http\Livewire\App\DemandCheckout;
 use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
+use App\Http\Livewire\App\DemandView;
 use App\Http\Livewire\App\MyDemandLike;
 use App\Http\Livewire\App\OffersList;
 use App\Http\Livewire\App\OffersListUser;
@@ -55,4 +56,7 @@ Route::middleware([
     Route::get('/perfil-do-usuario/{user:username}', UserBio::class)->name('user.bio');
 
     Route::get('/chats', Chats::class)->name('chats');
+
+    Route::get('/pedido-de-milhas/{demand:code}', DemandView::class)->name('demand.view');
+
 });

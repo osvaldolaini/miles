@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </label>
-            <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-100">
+            <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-90">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)

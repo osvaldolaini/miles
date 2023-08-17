@@ -3,11 +3,10 @@
 <div class="w-full p-4 mb-3 rounded-xl bg-transparent  shadow-lg">
     @php
         $shareComponent = \Share::page(
-            nl2br(e('Acabei de fazer um pedido de '.$demand->milesConvert.' milhas da ' . $demand->category->title.' para '.$demand->qtd.' CPF(s)\n\n '.))
             route('demand.view', [$demand->code]),
             'Pedido de '.$demand->milesConvert.
             ' milhas da ' . $demand->category->title.'
-            para '.$demand->qtd.' CPF(s) '
+            para '.$demand->qtd.' CPF(s) no valor de R$ '. $demand->value
         )
         ->telegram()
         ->whatsapp()

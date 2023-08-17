@@ -1,4 +1,4 @@
-<div class=" p-3 space-y-2 bg-gray-100
+<div class="p-3 space-y-2 bg-gray-100
  dark:bg-gray-900 dark:text-white text-semibold rounded-lg ">
  @livewire('app.message-alert')
     <div >

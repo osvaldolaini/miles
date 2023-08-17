@@ -2,8 +2,6 @@
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div>
         <div class="overflow-x-auto">
-
-
             <div class="max-w-2xl overflow-hidden bg-white shadow sm:rounded-lg">
                 <div class="px-4 py-5 sm:px-6">
                     <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -45,11 +43,11 @@
                                                     @foreach ($passengers as $key => $value)
                                                         <tr>
                                                             <td
-                                                                class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                                                class="px-5 py-5 text-sm bg-white border-b border-gray-200 dark:text-gray-900">
                                                                 {{ $value }} <br> ({{ $key }})
                                                             </td>
                                                             <td
-                                                                class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                                                class="px-5 py-5 text-sm bg-white border-b border-gray-200 dark:text-gray-900">
                                                                 <p class="text-gray-900 whitespace-no-wrap">
                                                                     {{ $offer->since }}
                                                                 </p>

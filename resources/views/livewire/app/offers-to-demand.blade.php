@@ -35,7 +35,7 @@
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)
                             <div
-                                class="stats stats-vertical rounded-none lg:stats-horizontal w-full
+                                class="stats rounded-none stats-horizontal w-full
                                             p-0.5 bg-transparent border-b-2 sm:border-none">
                                 <div class="stat p-0.5 border-none">
                                     <div class="stat-title">

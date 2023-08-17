@@ -6,8 +6,7 @@
         <div wire:key="{{ $item->id }}">
             <div
                 class="relative  rounded-lg shadow-md py-2 mt-2
-                 mb-4
-                bg-teal-500 text-white">
+                 mb-4 bg-teal-500 text-white">
                 @if ($item->status == 0)
                     <div class="absolute overflow-hidden h-full w-1/2 -mt-2">
                         <div class="absolute left-0 top-0 h-16 w-16">

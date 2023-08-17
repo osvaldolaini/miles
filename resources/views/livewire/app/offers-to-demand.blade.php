@@ -10,8 +10,8 @@
             </div>
         </div>
     @else
-        {{-- <div class="dropdown dropdown-bottom sm:dropdown-right ">
-            <label tabindex="0" class="m-1 inline-flex cursor-pointer">
+        <div class="dropdown dropdown-bottom sm:dropdown-right ">
+            <label  class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
                         @php
@@ -35,7 +35,7 @@
                         </span>
                     </div>
             </label>
-            <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <div  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)
@@ -109,6 +109,6 @@
                         lista completa ({{ $offers->count() }})</a>
                 @endif
             </div>
-        </div> --}}
+        </div>
     @endif
 </div>

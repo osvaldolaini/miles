@@ -12,7 +12,7 @@ class SocialShare extends Component
     {
         $this->shareComponent = \Share::page(
             'Acabei de fazer um pedido de '.$demand->milesConvert.
-            ' milhas da "</br>"'. $demand->category->title.'
+            ' milhas da \n '. $demand->category->title.'
             para '.$demand->qtd.'
             '.
             route('demand.view', [$demand->code]),

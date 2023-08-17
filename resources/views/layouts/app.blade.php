@@ -4,7 +4,7 @@
 <head>
     @livewire('homepage.seo')
 
-    <title>@yield('page-title') - {{ config('app.name', 'Laravel') }}
+    <title>@yield('page-title') {{ config('app.name', 'Laravel') }}
 </title>
     <x-favicons></x-favicons>
     <!-- Fonts -->

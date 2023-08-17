@@ -11,23 +11,16 @@
         </div>
     @else
         <div class="dropdown dropdown-bottom sm:dropdown-right ">
-            <label  class="m-1 inline-flex cursor-pointer">
+            <label tabindex="0" class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
                     <div class="flex items-center space-x-2">
-                        @php
-                            $i = 0;
-                        @endphp
                         <div class="flex -space-x-4">
                             @foreach ($offers->take(3) as $offer)
-                                @php $i += 1; @endphp
                                 <a class="cursor-pointer" href="{{ route('user.bio', [$offer->user->username]) }}">
                                     <img alt="sistemilhas-avatar-{{ $offer->user->username }}"
                                         class="w-6 h-6 border rounded-full"
                                         src="{{ $offer->user->profile_photo_url ? url($offer->user->profile_photo_url) : url('storage/profiles/avatar.jpg') }}">
                                 </a>
-                                @if ($i == 3)
-                                    @break;
-                                @endif
                             @endforeach
                         </div>
                         <span class="text-sm">{{ $offers->count() > 1 ? 'Foram feitas' : 'Foi feita' }}
@@ -35,7 +28,7 @@
                         </span>
                     </div>
             </label>
-            <div  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <div tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)

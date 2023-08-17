@@ -49,7 +49,6 @@
 <!--URLs DA PAGINA-->
 <meta name="twitter:domain" content="{{ url('') }}">
 
-
 @if (isset($dataPage))
     <!--TITULO-->
     <meta name="twitter:title" content="{{ $dataPage['title'] }}">

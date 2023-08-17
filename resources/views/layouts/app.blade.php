@@ -9,7 +9,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta name="keywords" content="{{ $meta_tags }}">
+<meta name="keywords" content="SisteMilhas é um local onde o usuário pode negociar suas millhas, fazendo ofertas e gerando demandas de milhas.">
 <!--SMO FACEBOOK-->
 <!--IDIOMA-->
 <meta property="og:locale" content="pt_BR">
@@ -24,9 +24,9 @@
     <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
 @endif
 <!--DESCRIÇÃO NÃO MAIOR QUE 200-->
-<meta property="og:description" content="{{ $meta_description }}">
+<meta property="og:description" content="SisteMilhas é um local onde o usuário pode negociar suas millhas, fazendo ofertas e gerando demandas de milhas.">
 <!--TAG NÃO MAIOR QUE 80-->
-<meta property="og:keywords" content="{{ $meta_tags }}">
+<meta property="og:keywords" content="milhas, gestão de milhas, oferta de milhas, venda de milhas, vender milhas, negociar">
 
 <!--IMAGEM-->
 <meta property="og:image" content="{{ url('logo/sistemilhas-logo-principal.png') }}">
@@ -46,7 +46,7 @@
     <meta property="og:type" content="website">
 @endif
 <!-- CASO SEJA UM SITE NORMAL -->
-<meta name="description" content="{{ $meta_description }}">
+<meta name="description" content="SisteMilhas é um local onde o usuário pode negociar suas millhas, fazendo ofertas e gerando demandas de milhas.">
 
 <!--SMO TWITTER-->
 <!--TIPO DO SITE OU DA PÁGINA
@@ -74,7 +74,7 @@
     <!--TITULO-->
     <meta name="twitter:title" content="{{ config('app.name', 'Laravel') }}">
     <!--DESCRIÇÃO NÃO MAIOR QUE 200-->
-    <meta name="twitter:description" content="{{ $meta_description }}">
+    <meta name="twitter:description" content="SisteMilhas é um local onde o usuário pode negociar suas millhas, fazendo ofertas e gerando demandas de milhas.">
     <!--IMAGEM menores que 1 MB de tamanho de arquivo, > 60px por 60px e < 120px por 120px serão automaticamente redimensionadas.-->
     <meta name="twitter:image" content="{{ url('logo/sistemilhas-logo-principal.png') }}">
     <meta name="twitter:url" content="{{ url('') }}">

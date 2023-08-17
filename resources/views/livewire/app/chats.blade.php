@@ -7,8 +7,8 @@
                     class="stats stats-vertical lg:stats-horizontal shadow-md w-full my-2
                 bg-teal-500 text-white px-0 mx-0">
                     <div class="stat px-2">
-                        <div class="stat-title">Usuário</div>
-                        <div class="stat-title">
+                        <div class="stat-title text-white">Usuário</div>
+                        <div class="stat-title text-white">
                             <x-user-card :user="$chat->user">
                             </x-user-card>
                         </div>

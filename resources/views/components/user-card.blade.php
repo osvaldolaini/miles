@@ -1,6 +1,6 @@
 @props(['user' => null,'notdetail'=>false])
 <div>
-    <a class="cursor-pointer text-gray-800" href="{{ route('user.bio', [$user->username]) }}">
+    <a class="cursor-pointer text-gray-800 dark:text-white" href="{{ route('user.bio', [$user->username]) }}">
         <div class="flex items-center space-x-2" wire:key="{{ $user->id }}-user">
             @if ($user->profile_photo_url)
                 <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
@@ -20,7 +20,7 @@
                         </svg>
                     @endif
                 </h2>
-                <span class="inline-block text-xs leading-none dark:text-gray-400 mb-0 mt-0 py-0">
+                <span class="inline-block text-xs leading-none dark:text-white mb-0 mt-0 py-0">
                     {{ '@' . $user->username }}
                 </span>
                 @if ($notdetail == false)

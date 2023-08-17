@@ -58,7 +58,8 @@
                     <div class="flex items-center space-x-2">
                         @if ($item->end_date > date('Y-m-d H:i:s') && $item->status == 1)
                             <div class="flex">
-                                @livewire('app.social-share', ['demand' => $item], key($item->id))
+                                <x-share :demand="$item"></x-share>
+                                {{-- @livewire('app.social-share', ['demand' => $item], key($item->id)) --}}
                             </div>
                         @endif
                     </div>

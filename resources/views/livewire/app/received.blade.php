@@ -27,7 +27,7 @@
                     <div class="stat-title text-right text-xs mt-5">{{ $demand->code }}</div>
                 </div>
                 <div class="stat px-1 text-gray-900">
-                    <div class="stat-title font-bold">Oferta vencedora</div>
+                    <div class="stat-title font-bold text-gray-900">Oferta vencedora</div>
                     <div class="stat-value">R$ {{ $winner->value }}</div>
                     <div class="stat-actions">
                         <x-user-card :user="$winner->user" notdetail="true">

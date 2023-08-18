@@ -30,21 +30,22 @@
                     </div>
                 </div>
             </label>
-            <div tabindex="0" class="dropdown-content z-[1] p-2 shadow bg-white rounded-box w-80 sm:w-96">
+            <div tabindex="0" class="dropdown-content z-[1] p-2 shadow bg-white dark:bg-gray-900
+            rounded-box w-80 sm:w-96">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)
                             <div
-                                class="stats rounded-none stats-horizontal w-full
+                                class="stats rounded-none stats-horizontal w-full dark:text-white
                                             p-0.5 bg-transparent border-b-2 sm:border-none">
-                                <div class="stat p-0.5 border-none">
-                                    <div class="stat-title">
+                                <div class="stat p-0.5 border-none dark:text-white">
+                                    <div class="stat-title dark:text-white">
                                         <x-user-card :user="$offer->user">
                                         </x-user-card>
                                     </div>
                                 </div>
-                                <div class="stat p-1 border-none sm:text-right">
-                                    <div class="stat-title py-0 my-0">
+                                <div class="stat p-1 border-none sm:text-right dark:text-white">
+                                    <div class="stat-title py-0 my-0 dark:text-white">
                                         <button class="btn btn-outline btn-success btn-sm">
                                             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +55,7 @@
                                             {{ $offer->value }}
                                         </button>
                                     </div>
-                                    <div class="stat-actions py-0 my-1">
+                                    <div class="stat-actions py-0 my-1 dark:text-white">
                                         <div class="tooltip tooltip-top p-0" data-tip="Negociar">
                                             <a class="btn btn-info btn-sm"
                                                 href="{{ route('demand.checkout', [$offer->code]) }}">

@@ -13,7 +13,7 @@
                     </x-user-card>
                 </div>
                 <div class="text-right">
-                    <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesDemand }} Milhas</h1>
+                    <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->miles }} Milhas</h1>
                     <h2 class="text-lg font-bold mt-0 pt-0">{{ $item->qtd }} CPF</h2>
                     <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->value }}</h2>
                     <h2 class="text-md font-bold mt-0 pt-0 text-red-500">{{ $item->category->title }}</h2>

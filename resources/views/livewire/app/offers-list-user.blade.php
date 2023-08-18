@@ -18,7 +18,7 @@
                                 </x-user-card>
                             </div>
                             <div class="stat p-0 px-2 text-sm justify-end text-white">
-                                <h1 class="font-bold mt-0 pt-0">{{ $item->demand->milesConvert }} Milhas</h1>
+                                <h1 class="font-bold mt-0 pt-0">{{ $item->demand->milesDemand }} Milhas</h1>
                                 <h2 class="font-bold mt-0 pt-0">{{ $item->demand->qtd }} CPF</h2>
                                 <h2 class="font-bold mt-0 pt-0 text-red-500">{{ $item->demand->category->title }}</h2>
                             </div>

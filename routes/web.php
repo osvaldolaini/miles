@@ -6,6 +6,7 @@ use App\Http\Livewire\App\Chats;
 use App\Http\Livewire\App\Dashboard;
 use App\Http\Livewire\App\Demand;
 use App\Http\Livewire\App\DemandCheckout;
+use App\Http\Livewire\App\DemandNotification;
 use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
 use App\Http\Livewire\App\DemandView;
@@ -56,6 +57,7 @@ Route::middleware([
     Route::get('/perfil-do-usuario/{user:username}', UserBio::class)->name('user.bio');
 
     Route::get('/chats', Chats::class)->name('chats');
+    Route::get('/notificações', DemandNotification::class)->name('demand.alerts');
 
     Route::get('/pedido-de-milhas/{demand:code}', DemandView::class)->name('demand.view');
 

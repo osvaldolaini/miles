@@ -1,6 +1,6 @@
-<div class="navbar bg-gray-900 px-4">
+<div class="navbar bg-gray-900 px-2">
     <div class="navbar-start">
-        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div class="container px-2 mx-auto flex flex-wrap items-center justify-between">
             <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start ">
                 <a class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
                     href="{{ url('app') }}">
@@ -8,13 +8,22 @@
                 </a>
             </div>
         </div>
-    </div>
-    @if (!Request::is('/'))
-        <div class="navbar-center block sm:hidden">
+        @if (!Request::is('/'))
+        <div class="block sm:hidden">
             @livewire('app.search-user')
         </div>
-    @endif
-    <div class="navbar-end">
+        @endif
+    </div>
+
+
+    <div class="navbar-end ">
+        @if (!Request::is('/'))
+            <div class="text-teal-500 block sm:hidden border-e pr-2">
+                <a href="{{ route('demand.alerts') }}">
+                @livewire('app.demand-notification-button')
+                </a>
+            </div>
+        @endif
         <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0
         lg:shadow-none hidden bg-gray-900">
             <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center">

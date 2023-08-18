@@ -11,10 +11,10 @@ class DemandNotification extends Component
     public $notification = false;
     public $demands;
     public $breadcrumb;
+    public $categories = [];
     public function mount()
     {
         $this->breadcrumb = 'Minhas notificações';
-        $this->categories = [];
 
         $userAccounts = Auth::user()->accounts;
         foreach ($userAccounts as $userAccount) {

@@ -208,9 +208,22 @@
                                             d="M22,17a4,4,0,1,1-4-4A4,4,0,0,1,22,17ZM21,3H4A2,2,0,0,0,2,5V19a2,2,0,0,0,2,2h9.54A5.99,5.99,0,0,1,22,12.54V8a1,1,0,0,0-1-1H5A1,1,0,0,1,5,5H22V4A1,1,0,0,0,21,3Z" />
                                     </svg>
                                 </span>
-                                <span class="span semibold">Minhas contas</span>
+                                <span class="span semibold">Meu perfil</span>
                             </a>
                         </li>
+                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                            <a href="{{ route('user.bio', [auth()->user()->username]) }} class="a flex items-center p-2 space-x-3 rounded-md">
+                                <span class="span ">
+                                    <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22,17a4,4,0,1,1-4-4A4,4,0,0,1,22,17ZM21,3H4A2,2,0,0,0,2,5V19a2,2,0,0,0,2,2h9.54A5.99,5.99,0,0,1,22,12.54V8a1,1,0,0,0-1-1H5A1,1,0,0,1,5,5H22V4A1,1,0,0,0,21,3Z" />
+                                    </svg>
+                                </span>
+                                <span class="span semibold">Meus dados</span>
+                            </a>
+                        </li>
+
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
                             <a href="{{ route('profile.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">

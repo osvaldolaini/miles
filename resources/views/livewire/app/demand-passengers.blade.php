@@ -5,7 +5,7 @@
         <div class="p-6 grid grid-cols-3 gap-3 col-span-full lg:col-span-4">
             <div
                 class="container-fluid rounded-lg shadow-md py-2
-                dark:bg-gray-900 mb-4 col-span-full
+                mb-4 col-span-full
                 bg-teal-500 text-white">
                 <div class="flex items-center justify-between py-0 px-3 ">
                     <div>

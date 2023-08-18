@@ -5,17 +5,17 @@
             <x-slot name="title" >Recibo</x-slot>
             <x-slot name="content">
                 <div class="stats stats-vertical w-full
-                bg-white text-gray-800">
+                bg-white text-gray-900">
                 <div class="stat px-1">
-                    <div class="stat-title font-bold">Dados do pedido</div>
-                    <div class="stat-title text-lg font-extrabold">
-                        <div class="stats p-0 m-0 bg-transparent">
+                    <div class="stat-title font-bold text-gray-900">Dados do pedido</div>
+                    <div class="stat-title text-lg font-extrabold text-gray-800">
+                        <div class="stats p-0 m-0 bg-transparent text-gray-900">
                             <div class="stat p-0 px-1">
                                 R$ {{ $demand->value }} - R$ {{ $demand->value_max }}
                             </div>
                             <div class="stat p-0 px-1 text-sm justify-end">
-                                <h1 class="font-bold mt-0 pt-0">{{ $demand->milesConvert }} Milhas</h1>
-                                <h2 class="font-bold mt-0 pt-0">{{ $demand->qtd }} CPF</h2>
+                                <h1 class="font-bold mt-0 pt-0 text-gray-900">{{ $demand->milesConvert }} Milhas</h1>
+                                <h2 class="font-bold mt-0 pt-0 text-gray-900">{{ $demand->qtd }} CPF</h2>
                                 <h2 class="font-bold mt-0 pt-0 text-red-500">{{ $demand->category->title }}</h2>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="stat-title text-right text-xs mt-5">{{ $demand->code }}</div>
                 </div>
-                <div class="stat px-1">
+                <div class="stat px-1 text-gray-900">
                     <div class="stat-title font-bold">Oferta vencedora</div>
                     <div class="stat-value">R$ {{ $winner->value }}</div>
                     <div class="stat-actions">

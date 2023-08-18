@@ -5,10 +5,10 @@
     @foreach ($offers as $item)
         <div class="py-2">
             <div class="stats stats-vertical lg:stats-horizontal w-full
-                bg-teal-500 text-white">
+                bg-teal-500 text-white ">
                 <div class="stat px-2">
-                    <div class="stat-title font-bold">Dados do pedido</div>
-                    <div class="stat-title text-lg font-extrabold">
+                    <div class="stat-title font-bold text-white">Dados do pedido</div>
+                    <div class="stat-title text-lg font-extrabold text-white">
                         R$ {{ $item->demand->value }} - R$ {{ $item->demand->value_max }}
                     </div>
                     <div class="stat-actions">
@@ -17,7 +17,7 @@
                                 <x-user-card :user="$item->demand->user">
                                 </x-user-card>
                             </div>
-                            <div class="stat p-0 px-2 text-sm justify-end">
+                            <div class="stat p-0 px-2 text-sm justify-end text-white">
                                 <h1 class="font-bold mt-0 pt-0">{{ $item->demand->milesConvert }} Milhas</h1>
                                 <h2 class="font-bold mt-0 pt-0">{{ $item->demand->qtd }} CPF</h2>
                                 <h2 class="font-bold mt-0 pt-0 text-red-500">{{ $item->demand->category->title }}</h2>
@@ -26,8 +26,8 @@
                     </div>
                 </div>
                 <div class="stat px-2">
-                    <div class="stat-title font-bold">Minha oferta</div>
-                    <div class="stat-value">R$ {{ $item->value }}</div>
+                    <div class="stat-title font-bold text-white">Minha oferta</div>
+                    <div class="stat-value text-white">R$ {{ $item->value }}</div>
                     <div class="stat-actions">
                         @if ($item->demand->offer_id == $item->id)
                             @if ($item->demand->status >= 2 && $item->status == 1)

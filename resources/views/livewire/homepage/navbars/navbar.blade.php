@@ -59,7 +59,10 @@
 
 
                                         <x-dropdown-link href="{{ route('profile.user') }}">
-                                            {{ __('Profile') }}
+                                            Meu perfil
+                                        </x-dropdown-link>
+                                        <x-dropdown-link href="{{ route('user.bio', [auth()->user()->username]) }}">
+                                            Meus dados
                                         </x-dropdown-link>
 
                                         <div class="border-t border-gray-200 dark:border-gray-600"></div>

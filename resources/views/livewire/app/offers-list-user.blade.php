@@ -5,7 +5,7 @@
     @foreach ($offers as $item)
         <div class="py-2">
             <div class="stats stats-vertical lg:stats-horizontal w-full
-                bg-teal-500 text-white ">
+                bg-teal-500 text-white dark:bg-teal-500">
                 <div class="stat px-2">
                     <div class="stat-title font-bold text-white">Dados do pedido</div>
                     <div class="stat-title text-lg font-extrabold text-white">

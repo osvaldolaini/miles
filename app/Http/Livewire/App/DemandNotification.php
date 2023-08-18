@@ -14,13 +14,14 @@ class DemandNotification extends Component
     public function mount()
     {
         $this->breadcrumb = 'Minhas notificações';
+        $this->categories = [];
 
-        $userAccounts = Auth::user()->accounts;;
+        $userAccounts = Auth::user()->accounts;
         foreach ($userAccounts as $userAccount) {
-            $categories[]=$userAccount->category->id;
+            $this->categories[]=$userAccount->category->id;
         }
-        if ($categories) {
-            foreach ($categories as $key => $value) {
+        if ($this->categories) {
+            foreach ($this->categories as $key => $value) {
                 $demand = Demands::select('id','account_categorie_id','user_id')->where('status',1)
                 ->where('user_id', '!=', Auth::user()->id)
                 ->where('end_date','>=',date('Y-m-d H:i:s'))

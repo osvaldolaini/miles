@@ -74,7 +74,7 @@ class Demands extends Model
     }
     public function getMilesDemandAttribute()
     {
-        return number_format($this->miles,3,".",".");
+        return number_format($this->miles,0,".",".");
     }
     public function getTimeCreateAttribute()
     {

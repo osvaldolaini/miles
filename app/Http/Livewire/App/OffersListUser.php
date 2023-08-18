@@ -26,9 +26,12 @@ class OffersListUser extends Component
     }
     public function render()
     {
-        $offers = Offers::with(['user','demand'])
-        ->where('user_id',Auth::user()->id)
-        ->orderBy('status','desc')->orderBy('id','desc')->get();
+        // $offers = Offers::with(['user','demand'])
+        // ->where('user_id',Auth::user()->id)
+        // ->orderBy('status','desc')->orderBy('id','desc')->get();
+
+        $offers = Auth::user()->offers
+            ->sortByDesc('order');
 
         return view('livewire.app.offers-list-user',
     ['offers'=>$offers]);

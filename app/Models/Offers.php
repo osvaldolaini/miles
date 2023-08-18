@@ -51,5 +51,34 @@ class Offers extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)
                 ->format('d/m/Y');
     }
+    public function getOrderAttribute()
+    {
+
+        $status = $this->status;
+        if ($this->end_date < date('Y-m-d H:i:s') && $this->status == 1) {
+            $status = 4;
+        }
+
+        switch ($status) {
+            case 0:
+                return  0;
+                break;
+            case 1:
+                return  10;
+                break;
+            case 2:
+                return  2;
+                break;
+            case 3:
+                return  3;
+                break;
+            case 4:
+                return  1;
+                break;
+            default:
+                return  10;
+                break;
+        }
+    }
 
 }

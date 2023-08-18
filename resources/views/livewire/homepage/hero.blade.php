@@ -11,7 +11,7 @@
                     class="bg-transparent hover:bg-teal-500 text-teal-500 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-teal-500 hover:border-transparent">
                     Explore agora</a>
             </div>
-            <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3 justify-center">
+            <div class="dark:bg-[000000] p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3 justify-center">
                 <div class="h-48 flex flex-wrap content-center">
                     <div>
                         <img class="inline-block mt-28 hidden xl:block" src="{{ url('storage/images/hero/miles-hero-left.webp') }}">

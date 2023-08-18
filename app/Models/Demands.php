@@ -40,7 +40,7 @@ class Demands extends Model
     public function getFinishedAttribute()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)
-                ->format('d/m/Y');
+            ->format('d/m/Y');
     }
     public function getMilesConvertAttribute()
     {
@@ -51,22 +51,22 @@ class Demands extends Model
                     $m = $this->miles;
                     break;
                 case $k >= 1 && $k < 1000:
-                $kk = explode('.',$k);
-                $m =  $kk[0] . 'K';
-                break;
+                    $kk = explode('.', $k);
+                    $m =  $kk[0] . 'K';
+                    break;
                 case $k >= 1000 && $k < 1000000:
                     $k = $k / 1000;
-                    $kk = explode('.',$k);
+                    $kk = explode('.', $k);
                     $m =  $kk[0] . 'M';
                     break;
                 case $k > 1000000:
-                        $k = $k / 1000;
-                        $kk = explode('.',$k);
-                        $m =  $kk[0] . 'B';
-                        break;
-            default:
-                $m = $this->buy;
-                break;
+                    $k = $k / 1000;
+                    $kk = explode('.', $k);
+                    $m =  $kk[0] . 'B';
+                    break;
+                default:
+                    $m = $this->buy;
+                    break;
             }
         }
 
@@ -109,40 +109,69 @@ class Demands extends Model
     }
     public function offers(): HasMany
     {
-        return $this->hasMany(Offers::class,'demand_id','id');
+        return $this->hasMany(Offers::class, 'demand_id', 'id');
     }
     public function offer(): BelongsTo
     {
-        return $this->belongsTo(Offers::class,'offer_id','id');
+        return $this->belongsTo(Offers::class, 'offer_id', 'id');
     }
     public function like($user)
     {
-        $like = DemandLike::where('demand_id',$this->id)->where('user_id',$user)->first();
+        $like = DemandLike::where('demand_id', $this->id)->where('user_id', $user)->first();
         if (isset($like)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    public function category():BelongsTo
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(AccountCategory::class,'account_categorie_id','id');
+        return $this->belongsTo(AccountCategory::class, 'account_categorie_id', 'id');
     }
-    public function passengers():HasMany
+    public function passengers(): HasMany
     {
-        return $this->hasMany(DemandPassenger::class,'demand_id','id');
+        return $this->hasMany(DemandPassenger::class, 'demand_id', 'id');
     }
     public function rated()
     {
-        $rated = RatingUser::select('id')->where('demand_id',$this->id)->where('user_id',$this->user_id)->first();
-        if($rated){
+        $rated = RatingUser::select('id')->where('demand_id', $this->id)->where('user_id', $this->user_id)->first();
+        if ($rated) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
     public function getRouteKeyName(): string
     {
         return 'code';
+    }
+    public function getOrderAttribute()
+    {
+
+        $status = $this->status;
+        if ($this->end_date < date('Y-m-d H:i:s') && $this->status == 1) {
+            $status = 4;
+        }
+
+        switch ($status) {
+            case 0:
+                return  0;
+                break;
+            case 1:
+                return  10;
+                break;
+            case 2:
+                return  2;
+                break;
+            case 3:
+                return  3;
+                break;
+            case 4:
+                return  1;
+                break;
+            default:
+                return  10;
+                break;
+        }
     }
 }

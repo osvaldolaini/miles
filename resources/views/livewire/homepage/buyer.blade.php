@@ -19,7 +19,7 @@
             </span>
             comprar passagem utilizando milhas.
         </h2>
-        <p class="text-base text-gray-700 md:text-lg">
+        <p class="text-base text-gray-700 dark:text-white md:text-lg">
             O SisteMilhas funciona como uma rede social,
             aqui você vai encontrar diversas pessoas que lhe oferecerão suas milhas?
         </p>
@@ -28,7 +28,7 @@
         <div>
             <div class="flex items-center justify-between mb-6">
             <p class="text-2xl font-bold">Passo 1</p>
-            <svg class="w-6 text-gray-700 transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <svg class="w-6 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                 <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                 <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
             </svg>
@@ -40,7 +40,7 @@
       <div>
         <div class="flex items-center justify-between mb-6">
           <p class="text-2xl font-bold">Passo 2</p>
-          <svg class="w-6 text-gray-700 transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg class="w-6 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
@@ -52,7 +52,7 @@
       <div>
         <div class="flex items-center justify-between mb-6">
           <p class="text-2xl font-bold">Passo 3</p>
-          <svg class="w-6 text-gray-700 transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg class="w-6 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
@@ -68,7 +68,7 @@
             <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
           </svg>
         </div>
-        <p class="text-gray-600">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortavel.
+        <p class="text-gray-600">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortável.
         </p>
       </div>
     </div>

@@ -1,12 +1,13 @@
 <div>
     @livewire('app.message-alert')
+    <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @if ($demands->count() == 0)
         Nenhuma demanda
     @endif
     @foreach ($demands as $item)
         <div wire:key="{{ $item }}"
             class="container-fluid rounded-lg shadow-md py-2
-                 mb-4 bg-teal-500 text-white">
+                 mb-4 bg-teal-500 text-white mt-2" >
             <div class="flex items-center justify-between py-0 px-3 ">
                 <div>
                     <x-user-card :user="$item->user">
@@ -65,7 +66,7 @@
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <span class="text-base font-semibold text-xs mr-1">
-                            Publicado à
+                            Publicado há
                         </span> {{ $item->timeCreate }}
                     </p>
                 </div>

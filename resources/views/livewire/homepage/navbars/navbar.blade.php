@@ -18,7 +18,7 @@
 
     <div class="navbar-end ">
         @if (!Request::is('/'))
-            <div class="text-teal-500 block sm:hidden border-e pr-2">
+            <div class="text-teal-500 block sm:hidden border-e pr-3">
                 <a href="{{ route('demand.alerts') }}">
                 @livewire('app.demand-notification-button')
                 </a>
@@ -46,9 +46,9 @@
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
                                                 class="inline-flex border-2 border-teal-500 bg-gray-900 text-white
-                                        active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow
-                                        hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear
-                                        transition-all duration-150">
+                                                    active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow
+                                                    hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear
+                                                    transition-all duration-150">
                                                 {{ Auth::user()->name }}
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -68,10 +68,10 @@
 
 
                                         <x-dropdown-link href="{{ route('profile.user') }}">
-                                            Meu perfil
+                                            Meu dados
                                         </x-dropdown-link>
                                         <x-dropdown-link href="{{ route('user.bio', [auth()->user()->username]) }}">
-                                            Meus dados
+                                            Meus perfil
                                         </x-dropdown-link>
 
                                         <div class="border-t border-gray-200 dark:border-gray-600"></div>
@@ -129,7 +129,7 @@
                         clip-rule="evenodd" style="display: none"></path>
                 </svg>
             </label> --}}
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow bg-base-100 rounded-box w-52"
             {{-- <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"> --}}
                 @if (Route::has('login'))
                     @auth
@@ -228,7 +228,7 @@
                                     <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <span class="span semibold">Meus dados</span>
+                                <span class="span semibold">Perfil</span>
                             </a>
                         </li>
 
@@ -240,7 +240,7 @@
                                     <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <span class="span semibold">Perfil</span>
+                                <span class="span semibold">Meus dados</span>
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">

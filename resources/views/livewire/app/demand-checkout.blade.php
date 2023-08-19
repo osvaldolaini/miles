@@ -66,7 +66,8 @@
                 </div>
                 <div class="stat-title font-bold">Ordem na fila: {{ $offer->order }}º</div>
                 <div class="stat-actions">
-                    @livewire('app.user-card', ['user' => $offer->user], key($offer->user->id))
+                    <x-user-card :user="$offer->user">
+                    </x-user-card>
                 </div>
             </div>
         </div>

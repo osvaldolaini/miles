@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Gate;
 class DemandList extends Component
 {
     public $demands;
+    public $breadcrumb;
     public $model_id;
     public $showDeleteModal = false;
 
@@ -23,6 +24,7 @@ class DemandList extends Component
         ->where('user_id', '!=', Auth::user()->id)
         ->where('end_date','>=',date('Y-m-d H:i:s'))
         ->get();
+        $this->breadcrumb = 'Balcão de pedidos';
     }
 
     public function render()

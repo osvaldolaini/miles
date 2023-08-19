@@ -127,6 +127,8 @@ class User extends Authenticatable implements MustVerifyEmail
                 $m = $this->buy;
                 break;
             }
+        }else{
+            $m='0K';
         }
         return $m;
     }
@@ -156,6 +158,8 @@ class User extends Authenticatable implements MustVerifyEmail
                 $m = $this->buy;
                 break;
             }
+        }else{
+            $m='0K';
         }
         return $m;
     }

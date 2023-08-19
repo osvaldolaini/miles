@@ -15,7 +15,7 @@ class Demands extends Model
     protected $table = 'demands';
 
     protected $fillable = [
-        'id', 'status', 'user_id', 'qtd', 'account_categorie_id',
+        'id', 'status', 'user_id', 'qtd', 'account_categorie_id','account_id',
         'end_date', 'value', 'value_max', 'miles', 'code'
     ];
     protected $casts = [

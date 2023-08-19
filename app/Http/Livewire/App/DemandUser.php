@@ -25,7 +25,7 @@ class DemandUser extends Component
             abort(403);
         }
         $this->demands = Auth::user()->demands
-            ->sortByDesc('order')->sortByDesc('end_date');
+            ->sortBy('order')->sortByDesc('end_date');
         return view('livewire.app.demand-user');
     }
     //DELETE

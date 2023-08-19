@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\App;
 
 use App\Models\Demands;
+use App\Models\Offers;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -22,22 +23,34 @@ class DemandNotification extends Component
         }
         if ($this->categories) {
             foreach ($this->categories as $key => $value) {
-                $demand = Demands::select('id','account_categorie_id','user_id')->where('status',1)
-                ->where('user_id', '!=', Auth::user()->id)
+                $demand = Demands::select('id','account_categorie_id','user_id')
+                ->where('status',1)
+                // ->where('user_id', '!=', Auth::user()->id)
                 ->where('end_date','>=',date('Y-m-d H:i:s'))
                 ->where('account_categorie_id',$value)->first();
                 if ($demand != null) {
                     $this->notification = true;
                     $this->demands[] = Demands::where('status',1)
-                    ->where('user_id', '!=', Auth::user()->id)
+                    // ->where('user_id', '!=', Auth::user()->id)
+                    ->where('account_categorie_id',$value)
                     ->where('end_date','>=',date('Y-m-d H:i:s'))->first();
                 }
             }
+            dd($this->compare($this->demands));
         }
-
     }
     public function render()
     {
         return view('livewire.app.demand-notification');
     }
+    public function compare($demands)
+    {
+        foreach ($demands as $demand) {
+            $offers[] = Offers::where('account_id',$demand->account_id)
+            ->where('user_id', '!=', Auth::user()->id)
+            ->first();
+        }
+        return $offers;
+    }
+
 }

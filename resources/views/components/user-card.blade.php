@@ -1,4 +1,4 @@
-@props(['user' => null,'notdetail'=>false])
+@props(['user' => null, 'notdetail' => false])
 <div>
     <a class="cursor-pointer text-gray-800 dark:text-gray-900" href="{{ route('user.bio', [$user->username]) }}">
         <div class="flex items-center space-x-2" wire:key="{{ $user->id }}-user">
@@ -24,22 +24,24 @@
                     {{ '@' . $user->username }}
                 </span>
                 @if ($notdetail == false)
-                    @if ($user->id != Auth::user()->id && $user->buy > 0)
+                    <div class="flex space-x-2">
+                        {{-- @if ($user->id != Auth::user()->id && $user->buy > 0) --}}
                         <span
                             class="flex items-center leading-none mx-0
-                        justify-center rounded-lg bg-emerald-200
-                        px-2.5 py-0.5 text-emerald-700">
-                            <p class="whitespace-nowrap text-xs">Comprou {{ $user->buyConvert }}</p>
+                                justify-center rounded-lg bg-emerald-200
+                                px-2.5 py-0.5 text-emerald-700">
+                            <p class="whitespace-nowrap text-xs">{{ $user->buyConvert }}</p>
                         </span>
-                    @endif
-                    @if ($user->id != Auth::user()->id && $user->sell > 0)
+                        {{-- @endif
+                        @if ($user->id != Auth::user()->id && $user->sell > 0) --}}
                         <span
                             class="flex items-center leading-none mx-0
-                        justify-center rounded-lg bg-red-200
-                        px-2.5 py-0.5 text-red-700">
-                            <p class="whitespace-nowrap text-xs">Vendeu {{ $user->sellConvert }}</p>
+                                justify-center rounded-lg bg-red-200
+                                px-2.5 py-0.5 text-red-700">
+                            <p class="whitespace-nowrap text-xs">{{ $user->sellConvert }}</p>
                         </span>
-                    @endif
+                        {{-- @endif --}}
+                    </div>
                 @endif
 
             </div>

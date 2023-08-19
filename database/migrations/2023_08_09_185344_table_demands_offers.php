@@ -19,6 +19,11 @@ class TableDemandsOffers extends Migration
                 ->constrained('offers')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+                $table->foreignId('account_id')
+                ->nullable()
+                ->constrained('accounts')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
@@ -32,6 +37,8 @@ class TableDemandsOffers extends Migration
         Schema::table('demands', function (Blueprint $table) {
             $table->dropForeign('demands_offer_id_foreign');
             $table->dropColumn('offer_id');
+            $table->dropForeign('accounts_account_id_foreign');
+            $table->dropColumn('account_id');
         });
     }
 }

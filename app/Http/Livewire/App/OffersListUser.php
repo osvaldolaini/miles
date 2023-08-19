@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\App;
 
 use App\Models\Account;
+use App\Models\Demands;
 use App\Models\Offers;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -56,12 +57,19 @@ class OffersListUser extends Component
         ];
         $this->validate();
 
-        Offers::updateOrCreate([
+        $offer = Offers::updateOrCreate([
             'id' => $this->offer_id,
         ], [
             'status'      => 2,
             'account_id'  => $this->account_id,
         ]);
+
+        Demands::updateOrCreate([
+            'id' => $offer->demand_id,
+        ], [
+            'account_id'  => $this->account_id,
+        ]);
+
         $this->openAlert('success', 'Oferta finalizada com sucesso.');
 
         $this->showModalUpdate = false;

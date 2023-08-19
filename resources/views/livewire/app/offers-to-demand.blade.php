@@ -1,16 +1,15 @@
-<div class="relative inline-block ">
+<div class="relative inline-block ml-2">
     @if ($offers->count() == 0)
         <div class="flex justify-center items-center space-x-3 ">
             <div class="flex flex-wrap items-center pt-3 pb-1 ">
                 <div class="flex items-center space-x-2">
-                    <span class="text-sm">Nenhuma pessoa
-                        <span class="font-semibold">fez oferta</span>
+                    <span class="text-sm">
+                        <span class="font-semibold">0 oferta</span>
                     </span>
                 </div>
             </div>
         </div>
     @else
-
         <div class="dropdown dropdown-bottom sm:dropdown-right ">
             <label tabindex="0" class="m-1 inline-flex cursor-pointer">
                 <div class="flex flex-wrap items-center pt-3 pb-1 ">
@@ -31,13 +30,13 @@
                 </div>
             </label>
             <div tabindex="0" class="dropdown-content z-[1] p-2 shadow bg-white
-            rounded-box w-80 sm:w-96">
+        rounded-box w-80 sm:w-96">
                 <div class="py-2">
                     @foreach ($offers->take(3) as $offer)
                         @if ($linkOffer == true)
                             <div
                                 class="stats rounded-none stats-horizontal w-full dark:text-gray-900
-                                            p-0.5 bg-transparent border-b-2 sm:border-none">
+                                        p-0.5 bg-transparent border-b-2 sm:border-none">
                                 <div class="stat p-0.5 border-none dark:text-gray-900">
                                     <div class="stat-title dark:text-gray-900">
                                         <x-user-card :user="$offer->user">
@@ -85,7 +84,7 @@
                         @else
                             <div
                                 class="stats  rounded-none stats-horizontal w-full
-                                            p-0.5 bg-transparent border-b-2 sm:border-none">
+                                        p-0.5 bg-transparent border-b-2 sm:border-none">
                                 <div class="stat p-0.5 border-none">
                                     <div class="stat-title">
                                         <x-user-card :user="$offer->user">
@@ -110,5 +109,6 @@
                 @endif
             </div>
         </div>
+
     @endif
 </div>

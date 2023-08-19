@@ -25,13 +25,13 @@ class DemandNotification extends Component
             foreach ($this->categories as $key => $value) {
                 $demand = Demands::select('id','account_categorie_id','user_id')
                 ->where('status',1)
-                // ->where('user_id', '!=', Auth::user()->id)
+                ->where('user_id', '!=', Auth::user()->id)
                 ->where('end_date','>=',date('Y-m-d H:i:s'))
                 ->where('account_categorie_id',$value)->first();
                 if ($demand != null) {
                     $this->notification = true;
                     $this->demands[] = Demands::where('status',1)
-                    // ->where('user_id', '!=', Auth::user()->id)
+                    ->where('user_id', '!=', Auth::user()->id)
                     ->where('account_categorie_id',$value)
                     ->where('end_date','>=',date('Y-m-d H:i:s'))->first();
                 }
@@ -45,12 +45,17 @@ class DemandNotification extends Component
     }
     public function compare($demands)
     {
+
         foreach ($demands as $demand) {
-            $offers[] = Offers::where('account_id',$demand->account_id)
+            foreach ($demand->passengers as $passenger) {
+                $passa[] = $passenger->cpf;
+            }
+
+            $offers[] = Offers::where('account_id',$demand->account_categorie_id)
             ->where('user_id', '!=', Auth::user()->id)
             ->first();
         }
-        return $offers;
+        return array_unique($passa);
     }
 
 }

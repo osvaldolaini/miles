@@ -1,4 +1,5 @@
 <div>
+    @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div CLASS="mt-4 w-full">
         <div class="overflow-x-auto">
@@ -29,9 +30,9 @@
                                             class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                             Comprador
                                         </th>
-                                        {{-- <th scope="col" class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
+                                        <th scope="col" class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                             Detalhes
-                                        </th> --}}
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,7 +55,7 @@
                                                         <x-user-card :user="$offer->demand->user">
                                                         </x-user-card>
                                                     </td>
-                                                    {{-- <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                                    <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                                                         <button type='button' wire:click="openReceived({{ $offer->demand->id }})"
                                                             class="bg-gray-500 cursor-pointer
                                                             hover:bg-gray-900 border-2 border-gray-500
@@ -65,7 +66,7 @@
                                                             duration-150">
                                                             Detalhes
                                                         </button>
-                                                    </td> --}}
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         @endforeach

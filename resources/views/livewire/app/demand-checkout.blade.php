@@ -74,9 +74,7 @@
     </div>
 
     <div class="py-2 w-full">
-        <div
-            class="w-full
-                ">
+        <div class="w-full">
                 <div class="stats stats-vertical py-0 w-full
                 bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
                     <div class="stat py-1">

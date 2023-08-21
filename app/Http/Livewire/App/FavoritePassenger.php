@@ -35,6 +35,7 @@ class FavoritePassenger extends Component
     public function updateCpf()
     {
         $this->passenger->cpf = $this->cpf;
+
         $this->passenger->save();
         $this->emit('updatePassengers');
     }
@@ -50,5 +51,6 @@ class FavoritePassenger extends Component
         $this->name = $item['name'];
         $this->showFavotitesModel = false;
     }
+
 }
 

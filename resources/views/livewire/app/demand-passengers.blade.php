@@ -1,4 +1,5 @@
 <div>
+    @livewire('app.message-alert')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class="container-fluid rounded-lg shadow-md py-2
             dark:bg-gray-900 bg-gray-200 my-3">

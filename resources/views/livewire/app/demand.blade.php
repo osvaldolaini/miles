@@ -82,7 +82,7 @@
 
                         <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
-                                value="{{date('Y-m-d H:i:s', strtotime('+30 minutes'))}}" id="free_thirty_hour"
+                                value="+30 minutes" id="free_thirty_hour"
                                 class="peer hidden" checked/>
                             <label for="free_thirty_hour"
                                 class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
-                                value="{{date('Y-m-d H:i:s', strtotime('+1 hour'))}}" id="free_one_hour"
+                                value="+1 hour" id="free_one_hour"
                                 class="peer hidden" />
                             <label for="free_one_hour"
                                 class="inline-flex items-center justify-between w-full p-5
@@ -112,7 +112,7 @@
                         </div>
                         <div class="col-span-full sm:col-span-4">
                             <input type="radio" wire:model="end_date"
-                                value="{{ date('Y-m-d H:i:s', strtotime('+2 hours')) }}" id="free_two_hour"
+                                value="+2 hours" id="free_two_hour"
                                 class="peer hidden" />
                             <label for="free_two_hour"
                                 class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-span-full sm:col-span-4" >
                             <input type="radio" wire:model="end_date"
-                                value="{{ date('Y-m-d H:i:s', strtotime('+24 hours')) }}" id="plus_one_day"
+                                value="+24 hours" id="plus_one_day"
                                 class="peer hidden" />
                             <label for="plus_one_day"
                                 class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">

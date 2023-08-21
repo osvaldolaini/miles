@@ -36,7 +36,7 @@ class DemandNotification extends Component
                     ->where('end_date','>=',date('Y-m-d H:i:s'))->first();
                 }
             }
-            dd($this->compare($this->demands));
+            // dd($this->compareOffers($this->demands));
         }
     }
     public function render()
@@ -45,16 +45,45 @@ class DemandNotification extends Component
     }
     public function compare($demands)
     {
-
         foreach ($demands as $demand) {
             foreach ($demand->passengers as $passenger) {
                 $passa[] = $passenger->cpf;
             }
 
+
             $offers[] = Offers::where('account_id',$demand->account_categorie_id)
             ->where('user_id', '!=', Auth::user()->id)
             ->first();
+
         }
+
+        return array_unique($offers);
+    }
+
+    public function compareOffers($demands)
+    {
+        $offers = Auth::user()->offers->where('status',3);
+
+        foreach ($offers as $offer) {
+
+            foreach ($offer->demand->passengers as $passenger) {
+                $passa[] = $passenger->cpf;
+            }
+
+
+            // $offers[] = Offers::where('account_id',$demand->account_categorie_id)
+            // ->where('user_id', '!=', Auth::user()->id)
+            // ->first();
+        }
+
+        $passa = array_unique($passa);
+
+        foreach ($demands as $demand) {
+            foreach ($demand->passengers as $passenger) {
+                $passa[] = $passenger->cpf;
+            }
+        }
+
         return array_unique($passa);
     }
 

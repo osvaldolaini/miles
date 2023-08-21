@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Auth;
 
 class Demands extends Model
 {
@@ -177,5 +178,47 @@ class Demands extends Model
                 return  10;
                 break;
         }
+    }
+
+    public function reUse($category)
+    {
+        $passa = [];
+        $cpf=[];
+        $cpfs=0;
+        $c=0;
+        $offers = Auth::user()->offers->where('status',3);
+
+        foreach ($offers as $offer) {
+
+            if ($offer->demand && $offer->demand->account_categorie_id == $category) {
+                foreach ($offer->demand->passengers as $passenger) {
+                    $passa[] = $passenger->cpf;
+                }
+            }
+
+        }
+        if (!empty($passa)) {
+            foreach ($this->passengers as $passengers) {
+                if (in_array($passengers->cpf,$passa)) {
+                    $c += 1;
+                    $cpf[]=$this->cpfMask($passengers->cpf);
+                }
+            }
+            $cpf = array_unique($cpf);
+            $cpfs = [
+                'qtd'=>$c,
+                'cpfs'=>$cpf
+            ];
+        }
+
+        // dd($cpfs);
+        return $cpfs;
+    }
+    public function cpfMask($cpf)
+    {
+        $n = explode('-',$cpf);
+        $i = explode('.',$n[0]);
+
+        return '***.'.$i[1].'.'.$i[2].'-**';
     }
 }

@@ -20,7 +20,7 @@ class Demand extends Component
     public $qtd;
     public $value;
     public $value_max;
-    public $end_date;
+    public $end_date = '+30 minutes';
     public $plans;
     public $account_categorie_id;
     public $demands = [];
@@ -77,7 +77,7 @@ class Demand extends Component
                     'value_max' => $this->value_max,
                     'value'     => $this->value,
                     'miles'     => $this->miles,
-                    'end_date'  => $this->end_date,
+                    'end_date'  => (new \DateTime())->modify($this->end_date)->format('Y-m-d H:i:s'),
                     'qtd'       => $this->qtd,
                     'account_categorie_id'   => $this->account_categorie_id,
             ];

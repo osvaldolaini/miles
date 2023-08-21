@@ -20,7 +20,7 @@ class DemandList extends Component
     public function mount()
     {
         $this->demands = Demands::where('status', 1)
-        ->orderBy('end_date', 'desc')
+        ->orderBy('id', 'desc')
         ->where('user_id', '!=', Auth::user()->id)
         ->where('end_date','>=',date('Y-m-d H:i:s'))
         ->get();

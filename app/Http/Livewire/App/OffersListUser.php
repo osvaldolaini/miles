@@ -32,7 +32,7 @@ class OffersListUser extends Component
         // ->orderBy('status','desc')->orderBy('id','desc')->get();
 
         $offers = Auth::user()->offers
-            ->sortByDesc('order')->sortByDesc('end_date');
+            ->sortByDesc('order')->sortByDesc('id');
 
         return view('livewire.app.offers-list-user',
     ['offers'=>$offers]);

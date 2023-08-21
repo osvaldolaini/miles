@@ -2,7 +2,7 @@
     @if ($demand)
           {{-- MODAL CREATE --}}
         <x-dialog-modal wire:model="showModalReceived" class="mt-0">
-            <x-slot name="title" >Recibo</x-slot>
+            <x-slot name="title" >Detalhes</x-slot>
             <x-slot name="content">
                 <div class="stats stats-vertical w-full
                 bg-white text-gray-900">

@@ -24,8 +24,8 @@ class DemandUser extends Component
         if (Gate::allows('profile-user')) {
             abort(403);
         }
-        $this->demands = Auth::user()->demands
-            ->sortBy('order')->sortByDesc('id');
+        $this->demands = Auth::user()->demands->sortByDesc('id')
+            ->sortByDesc('order');
         return view('livewire.app.demand-user');
     }
     //DELETE

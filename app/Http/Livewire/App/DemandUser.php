@@ -20,6 +20,7 @@ class DemandUser extends Component
 
     public function loadPosts()
     {
+        sleep(2);
         $this->readyToLoad = true;
         $this->demands = Auth::user()->demands->sortByDesc('id')
             ->sortByDesc('order');

@@ -99,6 +99,16 @@
                         <path class="stroke-teal-500 fill-teal-500" fill-rule="evenodd" clip-rule="evenodd" d="M19.3762 9.393C19.169 9.60879 18.9157 9.77494 18.6352 9.879C17.9049 10.1477 17.0847 9.95673 16.5482 9.393C15.8174 8.62465 15.7645 7.4352 16.4242 6.605C16.4636 6.55633 16.5049 6.50933 16.5482 6.464L17.9622 5L19.3762 6.464C20.1576 7.28401 20.1576 8.57299 19.3762 9.393V9.393Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 <p class="text-3xl">Infelizmente não nenhum pedido foi encontrado.</p>
+                <div class="flex items-center mx-auto sm:hidden">
+                    <a href="{{ route('demand') }}"
+                        class="bg-teal-500
+                        hover:bg-gray-900 border-2 border-teal-500
+                        active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5
+                        rounded-full shadow hover:shadow-md outline-none focus:outline-none
+                        lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
+                        FAZER PEDIDO <span class="fa-solid fa-plus"></span>
+                    </a>
+                </div>
             </div>
         </section>
         @endif

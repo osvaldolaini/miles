@@ -6,7 +6,7 @@ use App\Models\DemandPassenger;
 use App\Models\User;
 use Livewire\Component;
 
-class FavoritePassenger extends Component
+class FavoritePassenge extends Component
 {
     public $showFavotitesModel = false;
     public $favorites;
@@ -31,7 +31,8 @@ class FavoritePassenger extends Component
                 return;
             }
         }
-        return view('livewire.app.favorite-passenger');
+        dd($this->showFavotitesModel);
+        return view('livewire.app.favorite-passenge');
     }
     public function updateName()
     {
@@ -44,10 +45,9 @@ class FavoritePassenger extends Component
         $this->passenger->save();
         $this->emit('updatePassengers');
     }
-
-
     public function showFavotitesModel()
     {
+        dd($this->showFavotitesModel);
         $this->showFavotitesModel = true;
     }
     public function checkbox($item)

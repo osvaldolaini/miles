@@ -127,7 +127,13 @@
                                 value="+24 hours" id="plus_one_day"
                                 class="peer hidden" />
                             <label for="plus_one_day"
-                                class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                class="inline-flex items-center justify-between w-full
+                                p-5 text-gray-500 bg-white border border-gray-200
+                                rounded-lg cursor-pointer dark:hover:text-gray-300
+                                dark:border-gray-700 dark:peer-checked:text-blue-500
+                                peer-checked:border-blue-600 peer-checked:text-blue-600
+                                hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400
+                                dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <div class="block">
                                     <div class="w-full text-lg font-semibold">1 dia</div>
                                     <div class="w-full">Plano plus</div>
@@ -149,7 +155,7 @@
                         font-bold uppercase px-6 py-2.5 rounded-full
                         shadow hover:shadow-md outline-none focus:outline-none
                         mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
-                        duration-150">
+                        duration-50">
                             Enviar
                         </button>
                     </div>

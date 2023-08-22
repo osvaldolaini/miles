@@ -1,8 +1,8 @@
-<div>
+<div >
     @livewire('app.message-alert')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     <div class="container-fluid rounded-lg shadow-md py-2
-            dark:bg-gray-900 bg-gray-200 my-3">
+            dark:bg-gray-900 bg-gray-200 my-3 overflow-y">
         <div class="p-6 grid grid-cols-3 gap-3 col-span-full lg:col-span-4">
             <div
                 class="container-fluid rounded-lg shadow-md py-2
@@ -22,8 +22,8 @@
                 </div>
             </div>
         </div>
-        <form action="#" class="w-full" wire:submit.prevent="showModalCreate()" wire.loading.attr='disable'>
-            <div class="grid grid-cols-4 px-6 py-2 rounded-md dark:bg-gray-800">
+        <form action="#" class="w-full overflow-y-auto" wire:submit.prevent="showModalCreate()" >
+            <div class="grid grid-cols-4 px-6 py-2 rounded-md dark:bg-gray-800 overflow-y-auto">
                 @for ($i = 0; $i < $qtd; $i++)
                      <x-favorite-passenger order='{{$i}}' :favorites="$favorites">
                      </x-favorite-passenger>
@@ -59,5 +59,9 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
-
+    @if (!$showFavotitesModel)
+    <script>
+        document.documentElement.style.overflow = 'auto'; // Restaura o estilo overflow
+    </script>
+    @endif
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
 
 <head>
     @livewire('homepage.seo')
@@ -18,7 +18,7 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-700  dark:text-white" >
+<body  class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-700  dark:text-white" >
     <div  class="min-h-screen bg-cover bg-center bg-fixed " >
         @livewire('homepage.navbar')
         <section class="w-full max-w-6xl mx-auto justify-center">

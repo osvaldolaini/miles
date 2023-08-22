@@ -57,7 +57,9 @@ class DemandPassengers extends Component
     {
         $this->showFavotitesModel = true;
         $this->order = $order;
+
     }
+
     public function checkbox($item)
     {
         $this->cpf[$this->order] = $item['cpf'];
@@ -69,6 +71,7 @@ class DemandPassengers extends Component
     {
         $this->showModalCreate = true;
     }
+
 
     public function store()
     {

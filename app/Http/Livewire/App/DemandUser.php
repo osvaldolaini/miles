@@ -15,6 +15,16 @@ class DemandUser extends Component
     public $model_id;
     public $showDeleteModal = false;
 
+
+    public $readyToLoad = false;
+
+    public function loadPosts()
+    {
+        $this->readyToLoad = true;
+        $this->demands = Auth::user()->demands->sortByDesc('id')
+            ->sortByDesc('order');
+    }
+
     public function mount()
     {
         $this->breadcrumb = 'Meus pedidos';
@@ -24,8 +34,6 @@ class DemandUser extends Component
         if (Gate::allows('profile-user')) {
             abort(403);
         }
-        $this->demands = Auth::user()->demands->sortByDesc('id')
-            ->sortByDesc('order');
         return view('livewire.app.demand-user');
     }
     //DELETE

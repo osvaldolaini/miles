@@ -17,13 +17,19 @@ class DemandList extends Component
 
     protected $listeners = ['echo:demand,DemandHasBeenCreated' => '$refresh'];
 
-    public function mount()
+    public $readyToLoad = false;
+
+    public function loadPosts()
     {
+        $this->readyToLoad = true;
         $this->demands = Demands::where('status', 1)
         ->orderBy('id', 'desc')
         ->where('user_id', '!=', Auth::user()->id)
         ->where('end_date','>=',date('Y-m-d H:i:s'))
         ->get();
+    }
+    public function mount()
+    {
         $this->breadcrumb = 'Balcão de pedidos';
     }
 

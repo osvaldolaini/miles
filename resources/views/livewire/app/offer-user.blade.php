@@ -1,5 +1,5 @@
 <div class="h-96 px-2 sm:px-0">
-    <div wire:model="chats"
+    <div wire:model="chats" wire:poll.10s
         class="w-full p-2 space-y-2 mt-0 flex flex-col-reverse
         lg:mt-0 bg-gray-100 dark:bg-gray-900 dark:border-gray-100
         rounded-t-lg shadow-lg overflow-y-scroll h-3/4">
@@ -46,7 +46,7 @@
                     <div class="chat-bubble dark:chat-bubble-info dark:text-white text-teal-500">
                         {{ $chat->status == 1 ? $chat->text : 'Mensagem apagada' }}</div>
                     {{-- <div class="chat-footer opacity-50">
-                        Delivered
+                        {{ now() }}
                     </div> --}}
                 </div>
             @endif

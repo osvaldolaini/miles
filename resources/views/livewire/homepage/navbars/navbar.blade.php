@@ -9,7 +9,7 @@
             </div>
         </div>
         @if (!Request::is('/'))
-        <div class="block sm:hidden">
+        <div class="block justify-left">
             @livewire('app.search-user')
         </div>
         @endif
@@ -89,15 +89,15 @@
                             @else
                                 <a href="{{ route('login') }}"
                                     class="bg-teal-500
-                            hover:bg-gray-900 border-2 border-teal-500
-                            active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
+                                    hover:bg-gray-900 border-2 border-teal-500
+                                    active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
                                     Entrar
                                 </a>
                                 <a href="{{ route('register') }}"
                                     class="
-                                border-2 border-teal-500 bg-gray-900 text-white
-                                hover:bg-teal-500
-                                active:bg-teal-300 active:text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
+                                        border-2 border-teal-500 bg-gray-900 text-white
+                                        hover:bg-teal-500
+                                        active:bg-teal-300 active:text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
                                     Registrar
                                 </a>
                             @endauth
@@ -129,11 +129,14 @@
                         clip-rule="evenodd" style="display: none"></path>
                 </svg>
             </label> --}}
-            <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow bg-base-100 rounded-box w-52">
+
             {{-- <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"> --}}
                 @if (Route::has('login'))
                     @auth
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                    <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow
+            bg-base-100 dark:bg-gray-900 dark:text-white rounded-box w-52">
+
+                        <li class="li  cursor-pointer">
                             <div class="flex items-center">
                                 <a href="{{ route('demand') }}"
                                     class="bg-teal-500
@@ -145,7 +148,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li cursor-pointer">
                             <a href="{{ route('app') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -262,6 +265,8 @@
                             </form>
                         </li>
                     @else
+                    <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow
+                    bg-transparent dark:text-white rounded-box w-52">
                         <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('login') }}"
                                 class="bg-teal-500

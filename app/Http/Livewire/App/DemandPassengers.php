@@ -72,7 +72,6 @@ class DemandPassengers extends Component
 
     public function store()
     {
-        $demand = $this->setDemand();
         $count = count($this->name);
 
         for ($i = 0; $i < $count; $i++) {
@@ -85,6 +84,7 @@ class DemandPassengers extends Component
                 }
             }
         }
+        $demand = $this->setDemand();
         for ($i = 0; $i < $count; $i++) {
 
             DemandPassenger::create([

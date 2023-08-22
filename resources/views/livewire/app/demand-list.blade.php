@@ -17,7 +17,7 @@
                             d="M19.3762 9.393C19.169 9.60879 18.9157 9.77494 18.6352 9.879C17.9049 10.1477 17.0847 9.95673 16.5482 9.393C15.8174 8.62465 15.7645 7.4352 16.4242 6.605C16.4636 6.55633 16.5049 6.50933 16.5482 6.464L17.9622 5L19.3762 6.464C20.1576 7.28401 20.1576 8.57299 19.3762 9.393V9.393Z"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <p class="text-3xl">Infelizmente não nenhum pedido foi encontrado.</p>
+                    <p class="text-3xl">Infelizmente nenhum pedido foi encontrado.</p>
                     <div class="flex items-center mx-auto sm:hidden">
                         <a href="{{ route('demand') }}"
                             class="bg-teal-500
@@ -42,7 +42,56 @@
                     </div>
                     <div class="text-right">
                         <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesDemand }} Milhas</h1>
-                        <h2 class="text-lg font-bold mt-0 pt-0">{{ $item->qtd }} CPF</h2>
+                        <h2 class="text-lg font-bold mt-0 pt-0">
+                            @if ($item->reUse($item->account_categorie_id) != 0)
+                            <div class="dropdown dropdown-bottom dropdown-end">
+                                <label tabindex="0">
+                                    <div class="cursor-pointer container-fluid mr-3">
+                                        <div
+                                            class="inline-flex flex-row items-center sm:border
+                                             sm:border-gray-700 gap-2 h-6 p-1 bg-transparent
+                                             rounded-[30px] text-sm tracking-[.00714em] text-gray-700">
+                                            <svg class="w-6 h-6 sm:w-4 sm:h-4" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none">
+                                                <path fill="currentColor" fill-rule="evenodd"
+                                                    d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm8-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm.01 8a1 1 0 102 0V9a1 1 0 10-2 0v5z" />
+                                            </svg>
+                                            <span class="hidden sm:block">Detalhes</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <ul tabindex="0"
+                                    class="dropdown-content z-[1] menu p-2 text-left
+                                shadow bg-white rounded-box w-52 text-gray-900">
+                                @if ($item->reUse($item->account_categorie_id)['qtd'] > 1)
+                                    {{ $item->reUse($item->account_categorie_id)['qtd'] }}
+                                    CPF dessa oferta já foram utilizados na carteira
+                                    {{ $item->category->title }}:
+                                    <ul>
+                                        @foreach ($item->reUse($item->account_categorie_id)['cpfs'] as $cpf)
+                                        <li> - &nbsp;
+                                            {{ $cpf }}
+                                        </li>
+                                        @endforeach
+
+                                    </ul>
+                                @else
+                                    {{ $item->reUse($item->account_categorie_id)['qtd'] }}
+                                    CPF dessa oferta já foi utilizado  na carteira
+                                    {{ $item->category->title }}:
+                                    <ul>
+                                        @foreach ($item->reUse($item->account_categorie_id)['cpfs'] as $cpf)
+                                        <li> - &nbsp;
+                                            {{ $cpf }}
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+
+                                </ul>
+                            </div>
+                        @endif
+                            {{ $item->qtd }} CPF</h2>
                         <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->value }}</h2>
                         <h2 class="text-md font-bold mt-0 pt-0 text-red-500">{{ $item->category->title }}</h2>
                         @if ($item->user->id == Auth::user()->id)

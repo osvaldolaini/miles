@@ -2,8 +2,6 @@
     @livewire('app.message-alert')
     @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
-
-
     @if ($readyToLoad == false)
         <x-skeleton></x-skeleton>
     @else

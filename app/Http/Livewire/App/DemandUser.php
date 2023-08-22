@@ -20,7 +20,7 @@ class DemandUser extends Component
 
     public function loadPosts()
     {
-        sleep(2);
+        // sleep(0.5);
         $this->readyToLoad = true;
         $this->demands = Auth::user()->demands->sortByDesc('id')
             ->sortByDesc('order');
@@ -55,8 +55,8 @@ class DemandUser extends Component
 
         DemandHasBeenCreated::dispatch();
         $this->openAlert('success','Pedido excluido com sucesso.');
-
         $this->showDeleteModal = false;
+        return redirect()->route('demand.user');
     }
     public function closeAlert()
     {

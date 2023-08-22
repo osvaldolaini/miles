@@ -21,7 +21,7 @@ class DemandList extends Component
 
     public function loadPosts()
     {
-        sleep(2);
+        // sleep(0.3);
         $this->readyToLoad = true;
         $this->demands = Demands::where('status', 1)
         ->orderBy('id', 'desc')

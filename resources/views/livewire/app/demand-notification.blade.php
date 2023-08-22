@@ -16,7 +16,7 @@
                         <div class="text-right">
                             <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesDemand }} Milhas</h1>
 
-                            <h2 class="text-lg font-bold mt-0 pt-0 flex">
+                            <h2 class="text-lg font-bold mt-0 pt-0 flex text-right">
                                 @if ($item->reUse($item->account_categorie_id) != 0)
                                     <div class="dropdown dropdown-bottom dropdown-end">
                                         <label tabindex="0">

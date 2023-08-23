@@ -18,6 +18,9 @@ use App\Http\Livewire\App\UserBio;
 use Illuminate\Support\Facades\Route;
 //Usuário
 use App\Http\Livewire\App\UserProfile;
+use App\Http\Livewire\Homepage\PrivacyPolicy;
+use App\Http\Livewire\Homepage\TermsOfUse;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +35,10 @@ use App\Http\Livewire\App\UserProfile;
 Route::get('/', function () {
     // return view('welcome');
     return view('livewire/homepage/welcome');
+
 });
+Route::get('/termo-de-uso', TermsOfUse::class)->name('term');
+Route::get('/politica-de-privacidade', PrivacyPolicy::class)->name('term');
 
 Route::middleware([
     'auth:sanctum',

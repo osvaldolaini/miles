@@ -12,7 +12,7 @@ class DemandNotificationButton extends Component
     public $categories = [];
     public function mount()
     {
-        $userAccounts = Auth::user()->accounts;;
+        $userAccounts = Auth::user()->accounts;
         foreach ($userAccounts as $userAccount) {
             $this->categories[]=$userAccount->category->id;
         }

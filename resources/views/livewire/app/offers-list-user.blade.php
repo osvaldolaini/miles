@@ -68,9 +68,9 @@
                                         class="bg-gray-500 cursor-pointer
                                             hover:bg-gray-900 border-2 border-gray-500
                                             active:bg-gray-300 text-white text-xs
-                                            font-bold uppercase px-6 py-2 rounded-full
+                                            font-bold uppercase px-6 py-2.5 rounded-full
                                             shadow hover:shadow-md outline-none focus:outline-none
-                                            mr-0 mb-0 ml-2 mb-4 ease-linear transition-all
+                                            ml-3 mb-4 ease-linear transition-all
                                             duration-150">
                                         Detalhes
                                     </button>

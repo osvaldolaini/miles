@@ -1,9 +1,7 @@
 
 <div class="w-full p-4 mb-3 rounded-xl bg-transparent  shadow-lg">
-
     <div>Compartilhe:</div>
     <div class="flex flex-row space-x-2">
-
         @foreach ($shareComponent as $share => $link)
             <div>
                 @if ($share == 'telegram')

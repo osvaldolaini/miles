@@ -37,8 +37,16 @@ Route::get('/', function () {
     return view('livewire/homepage/welcome');
 
 });
-Route::get('/termo-de-uso', TermsOfUse::class)->name('term');
-Route::get('/politica-de-privacidade', PrivacyPolicy::class)->name('term');
+Route::get('/politica-de-privacidade', function () {
+    // return view('welcome');
+    return view('livewire/homepage/privacy-policy');
+
+});
+Route::get('/termo-de-uso', function () {
+    // return view('welcome');
+    return view('livewire/homepage/terms-of-use');
+
+});
 
 Route::middleware([
     'auth:sanctum',

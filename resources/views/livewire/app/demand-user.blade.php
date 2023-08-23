@@ -122,7 +122,7 @@
                                         @livewire('app.offers-to-demand', ['demand' => $item, 'linkOffer' => true], key($item->id))
                                     </div>
                                 </div>
-                            @else
+                            {{-- @else
                                 <div class="flex items-center space-x-2">
                                     @if ($item->status != 0)
                                         <div>
@@ -130,7 +130,7 @@
                                             </x-user-card>
                                         </div>
                                     @endif
-                                </div>
+                                </div> --}}
                             @endif
                         </div>
 

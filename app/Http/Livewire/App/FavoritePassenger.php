@@ -6,7 +6,7 @@ use App\Models\DemandPassenger;
 use App\Models\User;
 use Livewire\Component;
 
-class FavoritePassenge extends Component
+class FavoritePassenger extends Component
 {
     public $showFavotitesModel = false;
     public $favorites;
@@ -25,14 +25,14 @@ class FavoritePassenge extends Component
     }
     public function render()
     {
-        if ($this->passenger->cpf) {
-            if ($this->validaCPF($this->passenger->cpf) == false) {
-                $this->openAlert('error', 'o CPF ' . $this->passenger->cpf . ' não está correto! ');
-                return;
-            }
-        }
-        dd($this->showFavotitesModel);
-        return view('livewire.app.favorite-passenge');
+        // if ($this->passenger->cpf) {
+        //     if ($this->validaCPF($this->passenger->cpf) == false) {
+        //         $this->openAlert('error', 'o CPF ' . $this->passenger->cpf . ' não está correto! ');
+        //         return;
+        //     }
+        // }
+        // dd($this->showFavotitesModel);
+        return view('livewire.app.favorite-passenger');
     }
     public function updateName()
     {
@@ -47,7 +47,7 @@ class FavoritePassenge extends Component
     }
     public function showFavotitesModel()
     {
-        dd($this->showFavotitesModel);
+        // dd($this->showFavotitesModel);
         $this->showFavotitesModel = true;
     }
     public function checkbox($item)

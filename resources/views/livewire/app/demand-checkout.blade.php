@@ -4,7 +4,7 @@
             <div class="stat-actions">
                 @if ($demand->status == 1)
                     <button wire:click="showCheckoutModel()"
-                    {{ ($btn == 1 ? 'disabled="disabled"':"") }}
+                    {{ ($btn > 1 ? 'disabled="disabled"':"") }}
                             class="btn btn-info btn-sm">
                         <svg class="w-5 h-5" fill="currentColor" focusable="false" aria-hidden="true" viewBox="0 -64 640 640"
                             xmlns="http://www.w3.org/2000/svg">

@@ -32,6 +32,8 @@ class DemandCheckout extends Component
         $this->demand = $offers->demand;
         $this->offer  = $offers;
         $this->btn    = count($this->demand->passengers->where('cpf',''));
+
+        // dd($this->btn);
     }
     public function render()
     {

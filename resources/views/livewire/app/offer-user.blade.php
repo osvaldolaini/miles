@@ -1,4 +1,4 @@
-<div class="h-96 px-2 sm:px-0">
+<div class="h-5/6 px-2 sm:px-0">
     <div wire:model="chats" wire:poll.10s
         class="w-full p-2 space-y-2 mt-0 flex flex-col-reverse
         lg:mt-0 bg-gray-100 dark:bg-gray-900 dark:border-gray-100

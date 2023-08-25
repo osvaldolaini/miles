@@ -30,7 +30,12 @@ class DemandList extends Component
     {
         // sleep(0.3);
         $this->readyToLoad = true;
-
+        $this->demands = Demands::where('status', 1)
+        ->orderBy('id', 'desc')
+        ->where('user_id', '!=', Auth::user()->id)
+        ->where('end_date','>=',date('Y-m-d H:i:s'))
+        ->limit($this->takeLimit)
+        ->get();
     }
     public function mount()
     {
@@ -40,12 +45,6 @@ class DemandList extends Component
     public function render()
     {
         return view('livewire.app.demand-list');
-        $this->demands = Demands::where('status', 1)
-        ->orderBy('id', 'desc')
-        ->where('user_id', '!=', Auth::user()->id)
-        ->where('end_date','>=',date('Y-m-d H:i:s'))
-        ->limit($this->takeLimit)
-        ->get();
     }
     public function closeAlert()
     {

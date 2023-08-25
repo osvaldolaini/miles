@@ -15,7 +15,7 @@ class DemandList extends Component
     public $model_id;
     public $showDeleteModal = false;
 
-    public $takeLimit = 4;
+    public $takeLimit = 1;
     public $totalRecords;
     public function takeMore()
     {

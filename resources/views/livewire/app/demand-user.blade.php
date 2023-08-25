@@ -158,6 +158,9 @@
                 </div>
             </div>
         @endforeach
+        @if ($takeLimit >= $totalRecords)
+        <p class="text-gray-800 font-bold text-2xl text-center my-10">Fim das seus pedidos!</p>
+    @endif
     @endif
     {{-- MODAL DELETE --}}
     <x-confirmation-modal wire:model="showDeleteModal">

@@ -222,9 +222,12 @@ class Demands extends Model
     }
     public function cpfMask($cpf)
     {
-        $n = explode('-',$cpf);
-        $i = explode('.',$n[0]);
+        if ($cpf !='') {
+            $n = explode('-',$cpf);
+            $i = explode('.',$n[0]);
 
-        return '***.'.$i[1].'.'.$i[2].'-**';
+            return '***.'.$i[1].'.'.$i[2].'-**';
+        }
+
     }
 }

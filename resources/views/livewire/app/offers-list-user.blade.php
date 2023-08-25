@@ -124,7 +124,7 @@
         </div>
     @endforeach
     @if ($takeLimit >= $totalRecords)
-        <p class="text-gray-800 font-bold text-2xl text-center my-10">Fim das suas ofertas!</p>
+        <p class="text-gray-800 font-bold text-2xl text-center my-10">...</p>
     @endif
     {{-- MODAL UPDATE --}}
     <x-dialog-modal wire:model="showModalUpdate" class="mt-0">

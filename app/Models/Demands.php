@@ -198,7 +198,10 @@ class Demands extends Model
 
             if ($offer->demand && $offer->demand->account_categorie_id == $category) {
                 foreach ($offer->demand->passengers as $passenger) {
+                    if ($passenger->cpf !='') {
+
                     $passa[] = $passenger->cpf;
+                    }
                 }
             }
 

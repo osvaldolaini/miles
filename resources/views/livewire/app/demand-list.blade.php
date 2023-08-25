@@ -32,8 +32,7 @@
             </section>
         @endif
         @foreach ($demands as $item)
-            <div wire:key="{{ $item }}" @if ($loop->last) id="last_record"
-                 wire:loading.delay.class="opacity-50" @endif
+            <div wire:key="{{ $item }}"
                 class="container-fluid rounded-lg shadow-md py-2
                     mb-4 bg-teal-500 text-white mt-2">
                 <div class="flex items-center justify-between py-0 px-3 ">
@@ -171,7 +170,7 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
-    <script>
+    {{-- <script>
         const lastRecord = document.getElementById('last_record');
         const options = {
             root: null,
@@ -186,5 +185,5 @@
             });
         });
         observer.observe(lastRecord);
-    </script>
+    </script> --}}
 </div>

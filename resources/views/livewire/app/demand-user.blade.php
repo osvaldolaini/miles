@@ -143,9 +143,15 @@
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
+                                @if ($item->end_date > date('Y-m-d H:i:s') && $item->status == 1)
                                 <span class="text-base font-semibold text-xs mr-1">
-                                    Publicado à
+                                    Publicado há
                                 </span> {{ $item->timeCreate }}
+                                @else
+                                <span class="text-base font-semibold text-xs mr-1">
+                                    Publicado em
+                                </span> {{ $item->createDate }}
+                                @endif
                             </p>
                         </div>
                     </div>

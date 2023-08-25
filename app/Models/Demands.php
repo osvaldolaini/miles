@@ -108,6 +108,11 @@ class Demands extends Model
             }
         }
     }
+    public function getCreateDateAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
+                ->format('d/m/Y');
+    }
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -186,6 +191,7 @@ class Demands extends Model
         $cpf=[];
         $cpfs=0;
         $c=0;
+
         $offers = Auth::user()->offers->where('status',3);
 
         foreach ($offers as $offer) {

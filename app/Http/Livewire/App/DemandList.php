@@ -34,7 +34,6 @@ class DemandList extends Component
         ->orderBy('id', 'desc')
         ->where('user_id', '!=', Auth::user()->id)
         ->where('end_date','>=',date('Y-m-d H:i:s'))
-        ->limit($this->takeLimit)
         ->get();
     }
     public function mount()

@@ -18,12 +18,19 @@ class DemandUser extends Component
 
     public $readyToLoad = false;
 
+    public $takeLimit = 4;
+    public $totalRecords;
+    public function takeMore()
+    {
+        $this->takeLimit += 1;
+    }
+
     public function loadPosts()
     {
         // sleep(0.5);
         $this->readyToLoad = true;
         $this->demands = Auth::user()->demands->sortByDesc('id')
-            ->sortByDesc('order');
+            ->sortByDesc('order')->take($this->takeLimit);
     }
 
     public function mount()

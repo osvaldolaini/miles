@@ -1,11 +1,11 @@
-<div>
+<div >
     @livewire('app.message-alert')
     @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @foreach ($offers as $item)
-        <div class="py-2">
+        <div class="py-2" @if ($loop->last) id="last_record"  wire:loading.delay.class="opacity-50" @endif>
             <div class="stats stats-vertical lg:stats-horizontal w-full
-                bg-teal-500 text-white dark:bg-teal-500">
+                bg-teal-500 text-white dark:bg-teal-500" >
                 <div class="stat px-2">
                     <div class="stat-title font-bold text-white">Dados do pedido</div>
                     <div class="stat-title text-lg font-extrabold text-white">
@@ -123,6 +123,9 @@
             </div>
         </div>
     @endforeach
+    @if ($takeLimit >= $totalRecords)
+        <p class="text-gray-800 font-bold text-2xl text-center my-10">Fim das suas ofertas!</p>
+    @endif
     {{-- MODAL UPDATE --}}
     <x-dialog-modal wire:model="showModalUpdate" class="mt-0">
         <x-slot name="title">Finalizar</x-slot>
@@ -182,4 +185,21 @@
             </x-secondary-button>
         </x-slot>
     </x-dialog-modal>
+
+    <script>
+        const lastRecord = document.getElementById('last_record');
+        const options = {
+            root: null,
+            threshold: 1,
+            rootMargin: '0px'
+        }
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    @this.takeMore()
+                }
+            });
+        });
+        observer.observe(lastRecord);
+    </script>
 </div>

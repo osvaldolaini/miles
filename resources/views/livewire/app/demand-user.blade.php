@@ -6,7 +6,7 @@
         <x-skeleton></x-skeleton>
     @else
         @foreach ($demands as $item)
-            <div wire:key="{{ $item->id }}">
+            <div wire:key="{{ $item->id }}" @if ($loop->last) id="last_record"  wire:loading.delay.class="opacity-50" @endif>
                 <div class="relative rounded-lg shadow-md py-2 mt-2
                     mb-4 bg-teal-500 text-white">
                     @if ($item->status == 0)
@@ -174,5 +174,21 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
+    <script>
+        const lastRecord = document.getElementById('last_record');
+        const options = {
+            root: null,
+            threshold: 1,
+            rootMargin: '0px'
+        }
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    @this.takeMore()
+                }
+            });
+        });
+        observer.observe(lastRecord);
+    </script>
 
 </div>

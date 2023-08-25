@@ -15,6 +15,13 @@ class DemandList extends Component
     public $model_id;
     public $showDeleteModal = false;
 
+    public $takeLimit = 4;
+    public $totalRecords;
+    public function takeMore()
+    {
+        $this->takeLimit += 1;
+    }
+
     protected $listeners = ['echo:demand,DemandHasBeenCreated' => '$refresh'];
 
     public $readyToLoad = false;
@@ -27,6 +34,7 @@ class DemandList extends Component
         ->orderBy('id', 'desc')
         ->where('user_id', '!=', Auth::user()->id)
         ->where('end_date','>=',date('Y-m-d H:i:s'))
+        ->limit($this->takeLimit)
         ->get();
     }
     public function mount()

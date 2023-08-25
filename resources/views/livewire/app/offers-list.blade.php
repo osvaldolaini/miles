@@ -4,7 +4,7 @@
         @foreach ($offers as $offer)
             <div class="stats bg-teal-500 text-white stats-vertical
             lg:stats-horizontal shadow-md w-full my-2">
-                <div class="stat px-2">
+                <div class="stat px-2" >
                     <div class="stat-title">Usuário</div>
                     <div class="stat-title">
                         <x-user-card :user="$offer->user">

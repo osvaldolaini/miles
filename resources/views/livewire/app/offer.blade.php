@@ -17,17 +17,18 @@
             <p class="my-4 text-sm text-gray-500 dark:text-gray-400">
                 *Após fazer a sua oferta você irá entrar na fila por order de valor e chegada respectivamente.
             </p>
+            <span>Oferta (R$) </span>
             <label class="flex text-sm text-gray-700 dark:text-gray-200" for="share link">
-                <span>Oferta (R$) </span>
+
                 <span class="items-center leading-none ml-2
                     justify-center rounded-md bg-red-100
                     px-2.5 py-1 text-red-700">
-                    <p class="whitespace-nowrap text-sm">Valor mínimo: {{ $demand->value }}</p>
+                    <p class="whitespace-nowrap text-sm">Valor mín: {{ $demand->value }}</p>
                 </span>
                 <span class="items-center leading-none ml-2
                     justify-center rounded-md bg-red-100
                     px-2.5 py-1 text-red-700">
-                    <p class="whitespace-nowrap text-sm">Valor máximo: {{ $demand->value_max }}</p>
+                    <p class="whitespace-nowrap text-sm">Valor máx: {{ $demand->value_max }}</p>
                 </span>
             </label>
             <form action="#" wire:submit.prevent="store()" wire.loading.attr='disable'>

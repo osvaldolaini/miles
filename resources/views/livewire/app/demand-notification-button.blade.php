@@ -1,7 +1,7 @@
 <div class="xs:pt-2">
     <div class="indicator  ">
         @if ($notification)
-            <span class="indicator-item badge bg-red-500 mr-1 sm:mr-0 sm:h-2 sm:p-1.5"></span>
+            <span class="animate-ping indicator-item badge bg-red-500 mr-1 sm:mr-0 sm:h-2 sm:p-1.5"></span>
         @endif
         <span class="span ">
             <svg class="w-7 h-7 sm:w-4 sm:h-4 " viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

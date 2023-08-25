@@ -43,6 +43,8 @@
                     <div class="text-right">
                         <h1 class="text-xl font-bold mt-0 pt-0">{{ $item->milesDemand }} Milhas</h1>
                         <h2 class="text-lg font-bold mt-0 pt-0">
+                            @if ($item->reUse($item->account_categorie_id) != 0)
+
                             @if ($item->reUse($item->account_categorie_id)['qtd'] != 0)
                             <div class="dropdown dropdown-bottom dropdown-end">
                                 <label tabindex="0">
@@ -90,6 +92,7 @@
 
                                 </ul>
                             </div>
+                        @endif
                         @endif
                             {{ $item->qtd }} CPF</h2>
                         <h2 class="text-md font-bold mt-0 pt-0">Valor R$ {{ $item->value }}</h2>

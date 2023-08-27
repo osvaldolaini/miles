@@ -67,7 +67,7 @@
                                     @if ($item->reUse($item->account_categorie_id)['qtd'] > 1)
                                         {{ $item->reUse($item->account_categorie_id)['qtd'] }}
                                         CPF dessa oferta já foram utilizados na carteira
-                                        {{ $item->category->title }}:
+                                        {{ $item->account->name }}:
                                         <ul>
                                             @foreach ($item->reUse($item->account_categorie_id)['cpfs'] as $cpf)
                                             <li> - &nbsp;
@@ -79,7 +79,7 @@
                                     @else
                                         {{ $item->reUse($item->account_categorie_id)['qtd'] }}
                                         CPF dessa oferta já foi utilizado  na carteira
-                                        {{ $item->category->title }}:
+                                        {{ $item->account->name }}:
                                         <ul>
                                             @foreach ($item->reUse($item->account_categorie_id)['cpfs'] as $cpf)
                                             <li> - &nbsp;

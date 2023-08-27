@@ -138,6 +138,10 @@ class Demands extends Model
     {
         return $this->belongsTo(AccountCategory::class, 'account_categorie_id', 'id');
     }
+    public function account(): BelongsTo
+    {
+        return $this->belongsTo(Account::class, 'account_categorie_id', 'id');
+    }
     public function passengers(): HasMany
     {
         return $this->hasMany(DemandPassenger::class, 'demand_id', 'id');

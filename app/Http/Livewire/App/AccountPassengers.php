@@ -26,4 +26,14 @@ class AccountPassengers extends Component
     {
         $this->emit('openReceived', $id);
     }
+    public function cpfMask($cpf)
+    {
+        if ($cpf !='') {
+            $n = explode('-',$cpf);
+            $i = explode('.',$n[0]);
+
+            return '***.'.$i[1].'.'.$i[2].'-**';
+        }
+
+    }
 }

@@ -29,7 +29,7 @@
                         <input type="text" placeholder="Pesquisar" wire:model.debounce.500ms="inputSearch"
                         class="w-full border-blue-500 py-3 pl-10 text-sm text-gray-900
                             rounded-2xl  focus:ring-primary-500 dark:bg-gray-700
-                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500" />
+                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500" autofocus/>
                     </div>
                 </fieldset>
 

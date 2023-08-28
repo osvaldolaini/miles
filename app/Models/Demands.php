@@ -111,7 +111,7 @@ class Demands extends Model
     public function getCreateDateAttribute()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)
-                ->format('d/m/Y');
+                ->format('d/m/Y à\s H:i:s');
     }
     public function user(): BelongsTo
     {

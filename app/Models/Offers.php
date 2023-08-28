@@ -49,7 +49,7 @@ class Offers extends Model
     public function getSinceAttribute()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)
-                ->format('d/m/Y');
+                ->format('d/m/Y à\s H:i:s');
     }
     public function getOrderAttribute()
     {

@@ -24,7 +24,7 @@
                             <x-user-card :user="$demand->user" notdetail="true">
                             </x-user-card>
                     </div>
-                    <div class="stat-title text-right text-xs mt-5">{{ $demand->code }}</div>
+                    <div class="stat-title text-right text-xs mt-5">Criado em {{ $demand->CreateDate }}</div>
                 </div>
                 <div class="stat px-1 text-gray-900">
                     <div class="stat-title font-bold text-gray-900">Oferta vencedora</div>
@@ -33,7 +33,8 @@
                         <x-user-card :user="$winner->user" notdetail="true">
                         </x-user-card>
                     </div>
-                    <div class="stat-title text-right text-xs mt-5">{{ $winner->code }}</div>
+                    <div class="stat-title text-right text-xs mt-5">Criada em {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $winner->created_at)
+                        ->format('d/m/Y à\s H:i:s') }}</div>
                 </div>
                 @if (count($offers) > 0)
                 <div class="stat px-1  border-dashed border-s">
@@ -46,7 +47,7 @@
                             <x-user-card :user="$offer->user" notdetail="true">
                             </x-user-card>
                         </div>
-                        <div class="stat-title text-right text-xs mt-5">{{ $offer->code }}</div>
+                        <div class="stat-title text-right text-xs mt-5">Criada em {{ $offer->Since }}</div>
                     </div>
                 @endforeach
                 @endif

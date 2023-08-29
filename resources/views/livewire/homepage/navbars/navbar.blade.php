@@ -8,7 +8,7 @@
                 </a>
             </div>
         </div>
-        @if (!Request::is('/'))
+        @if (Auth::check())
         <div class="block justify-left">
             @livewire('app.search-user')
         </div>

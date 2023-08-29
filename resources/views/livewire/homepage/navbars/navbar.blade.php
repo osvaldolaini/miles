@@ -17,7 +17,7 @@
 
 
     <div class="navbar-end ">
-        @if (!Request::is('/'))
+        @if (Auth::check())
             <div class="text-teal-500 block sm:hidden border-e pr-3">
                 <a href="{{ route('demand.alerts') }}">
                 @livewire('app.demand-notification-button')

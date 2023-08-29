@@ -9,7 +9,7 @@
                 <a href="{{ url('/explore') }}"
                     class="bg-transparent hover:bg-teal-500 text-teal-500 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-teal-500 hover:border-transparent">
                     Explore agora</a>
-                <p class="text-sm md:text-base text-gray-50 mb-4">Explore essa nova formas de se conectar a pessoas para negociar milhas.</p>
+                <p class="text-sm md:text-base text-gray-50 mb-4 mt-2">Explore essa nova formas de se conectar a pessoas para negociar milhas.</p>
 
             </div>
             <div class="dark:bg-[000000] p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3 justify-center">

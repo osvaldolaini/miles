@@ -42,6 +42,11 @@ Route::get('/politica-de-privacidade', function () {
     return view('livewire/homepage/privacy-policy');
 
 });
+Route::get('/explore', function () {
+    // return view('welcome');
+    return view('livewire/homepage/explore');
+
+});
 Route::get('/termo-de-uso', function () {
     // return view('welcome');
     return view('livewire/homepage/terms-of-use');

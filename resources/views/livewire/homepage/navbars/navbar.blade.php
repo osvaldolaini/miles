@@ -8,19 +8,20 @@
                 </a>
             </div>
         </div>
-        @if (Auth::check())
+
+    </div>
+
+    @if (Auth::check())
         <div class="block justify-left">
             @livewire('app.search-user')
         </div>
-        @endif
-    </div>
-
+    @endif
 
     <div class="navbar-end ">
         @if (Auth::check())
             <div class="text-teal-500 block sm:hidden border-e pr-3">
                 <a href="{{ route('demand.alerts') }}">
-                @livewire('app.demand-notification-button')
+                    @livewire('app.demand-notification-button')
                 </a>
             </div>
         @endif
@@ -118,7 +119,7 @@
                         clip-rule="evenodd" style="display: none"></path>
                 </svg>
             </label>
-        {{-- <details class="dropdown dropdown-end sm:hidden"> --}}
+            {{-- <details class="dropdown dropdown-end sm:hidden"> --}}
             {{-- <label tabindex="0" class="btn btn-ghost btn-circle">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8 text-teal-500">
                     <path x-show="!open" fill-rule="evenodd"
@@ -131,9 +132,10 @@
             </label> --}}
 
             {{-- <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"> --}}
-                @if (Route::has('login'))
-                    @auth
-                    <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow
+            @if (Route::has('login'))
+                @auth
+                    <ul tabindex="0"
+                        class="dropdown-content z-[2] menu p-2 shadow
             bg-base-100 dark:bg-gray-900 dark:text-white rounded-box w-52">
 
                         <li class="li  cursor-pointer">
@@ -186,7 +188,8 @@
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                            <a href="{{ route('like.demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                            <a href="{{ route('like.demand.user') }}"
+                                class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -199,7 +202,8 @@
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                            <a href="{{ route('offer.list.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                            <a href="{{ route('offer.list.user') }}"
+                                class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
                                         viewBox="0 0 24 24" data-testid="BookmarkAddIcon">
@@ -224,11 +228,15 @@
                             </a>
                         </li>
                         <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
-                            <a href="{{ route('user.bio', [auth()->user()->username]) }}" class="a flex items-center p-2 space-x-3 rounded-md">
+                            <a href="{{ route('user.bio', [auth()->user()->username]) }}"
+                                class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
-                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                                 </span>
                                 <span class="span semibold">Perfil</span>
@@ -239,8 +247,11 @@
                             <a href="{{ route('profile.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
-                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                                 </span>
                                 <span class="span semibold">Meus dados</span>
@@ -252,12 +263,17 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <a  href="{{ route('logout') }}" @click.prevent="$root.submit();" class="a flex items-center p-2 space-x-3 rounded-md ">
+                                <a href="{{ route('logout') }}" @click.prevent="$root.submit();"
+                                    class="a flex items-center p-2 space-x-3 rounded-md ">
                                     <span class="span ">
-                                        <svg class="w-4 h-4" focusable="false" aria-hidden="true"
-                                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14 7.63636L14 4.5C14 4.22386 13.7761 4 13.5 4L4.5 4C4.22386 4 4 4.22386 4 4.5L4 19.5C4 19.7761 4.22386 20 4.5 20L13.5 20C13.7761 20 14 19.7761 14 19.5L14 16.3636" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12L21 12M21 12L18.0004 8.5M21 12L18 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg class="w-4 h-4" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14 7.63636L14 4.5C14 4.22386 13.7761 4 13.5 4L4.5 4C4.22386 4 4 4.22386 4 4.5L4 19.5C4 19.7761 4.22386 20 4.5 20L13.5 20C13.7761 20 14 19.7761 14 19.5L14 16.3636"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 12L21 12M21 12L18.0004 8.5M21 12L18 15.5" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
                                     <span class="span semibold">Sair</span>
@@ -265,28 +281,29 @@
                             </form>
                         </li>
                     @else
-                    <ul tabindex="0" class="dropdown-content z-[2] menu p-2 shadow
+                        <ul tabindex="0"
+                            class="dropdown-content z-[2] menu p-2 shadow
                     bg-transparent dark:text-white rounded-box w-52">
-                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
-                            <a href="{{ route('login') }}"
-                                class="bg-teal-500
+                            <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
+                                <a href="{{ route('login') }}"
+                                    class="bg-teal-500
                             hover:bg-gray-900 border-2 border-teal-500
                             active:bg-teal-300 text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
-                                Entrar
-                            </a>
+                                    Entrar
+                                </a>
 
-                        </li>
-                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
-                            <a href="{{ route('register') }}"
-                                class="
+                            </li>
+                            <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
+                                <a href="{{ route('register') }}"
+                                    class="
                                 border-2 border-teal-500 bg-gray-900 text-white
                                 hover:bg-teal-500
                                 active:bg-teal-300 active:text-white text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear transition-all duration-150">
-                                Registrar
-                            </a>
-                        </li>
-                    @endauth
-                @endif
+                                    Registrar
+                                </a>
+                            </li>
+                        @endauth
+            @endif
             </ul>
         </div>
     </div>

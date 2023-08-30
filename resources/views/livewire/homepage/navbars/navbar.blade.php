@@ -3,7 +3,7 @@
         <div class="container px-2 mx-auto flex flex-wrap items-center justify-between">
             <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start ">
                 <a class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                    href="{{ url('app') }}">
+                href="{{ Auth::check() ? url('app') : url('') }}">
                     SISTE<span class="text-teal-500 font-bold">MILHAS</span>
                 </a>
             </div>

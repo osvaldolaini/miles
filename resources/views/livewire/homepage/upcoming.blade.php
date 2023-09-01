@@ -42,14 +42,14 @@
                     </p>
                 </div>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
                     Contador de ofertas, demandas e usuários no site
                 </p>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
@@ -65,14 +65,14 @@
                     </p>
                 </div>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
                     Ranking geral de compradores e vendedores
                 </p>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
@@ -88,14 +88,14 @@
                     </p>
                 </div>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
                     Ranking semanal de compradores e vendedores
                 </p>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>
@@ -111,7 +111,7 @@
                     </p>
                 </div>
                 <p class="flex text-sm text-gray-900">
-                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <svg class="w-6 pr-1 h-4 text-gray-900" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
                         <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
                     </svg>

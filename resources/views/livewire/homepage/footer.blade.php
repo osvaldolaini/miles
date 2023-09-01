@@ -127,19 +127,19 @@
                 <nav aria-label="Footer About Nav" class="mt-4">
                   <ul class="space-y-1.5 text-sm">
                     <li>
-                      <a class="text-white transition hover:text-white/75" href="/" aria-label="Conheça nossa missão">
+                      <a class="text-white transition hover:text-white/75 p-2" href="/" aria-label="Conheça nossa missão">
                         Missão
                       </a>
                     </li>
 
                     <li>
-                      <a class="text-white transition hover:text-white/75" href="/" aria-label="Conheça nossos cursos">
+                      <a class="text-white transition hover:text-white/75 p-2" href="/" aria-label="Conheça nossos cursos">
                         Cursos
                       </a>
                     </li>
 
                     <li>
-                      <a class="text-white transition hover:text-white/75" href="{{ url('/duvidas-frequentes') }}" aria-label="Veja as perguntas mais frequentes sobre o sistemilhas">
+                      <a class="text-white transition hover:text-white/75 p-2" href="{{ url('/duvidas-frequentes') }}" aria-label="Veja as perguntas mais frequentes sobre o sistemilhas">
                         Dúvidas
                       </a>
                     </li>
@@ -171,7 +171,7 @@
           >
 
             <p class="text-center lg:text-left">
-              <a aria-label="Conheça a Politica de privacidade do SisiteMilhas"
+              <a aria-label="Conheça a Politica de privacidade do SisteMilhas"
                 class="inline-block text-white underline transition hover:text-white/75"
                 href="{{ url('/politica-de-privacidade') }}"
               >
@@ -180,7 +180,7 @@
 
               <span>&middot;</span>
 
-              <a aria-label="Conheça os termos de uso do SisiteMilhas"
+              <a aria-label="Conheça os termos de uso do SisteMilhas"
                 class="inline-block text-white underline transition hover:text-white/75"
                 href="{{ url('/termo-de-uso') }}"
               >
@@ -189,7 +189,7 @@
 
               <span>&middot;</span>
 
-              <a aria-label="Conheça os cookies do SisiteMilhas"
+              <a aria-label="Conheça os cookies do SisteMilhas"
                 class="inline-block text-white underline transition hover:text-white/75"
                 href="{{ url('/termo-de-uso') }}"
               >

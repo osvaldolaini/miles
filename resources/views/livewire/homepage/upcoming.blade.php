@@ -37,7 +37,7 @@
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">200 usuários</p>
                     <p class="flex items-center justify-center h-6 px-1
-                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500 dark:text-gray-900">
                         Passo 1
                     </p>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">400 usuários</p>
                     <p class="flex items-center justify-center h-6 px-1
-                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500 dark:text-gray-900">
                         Passo 2
                     </p>
                 </div>
@@ -83,7 +83,7 @@
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">600 usuários</p>
                     <p class="flex items-center justify-center h-6 px-1
-                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500 dark:text-gray-900">
                         Passo 3
                     </p>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">1000 usuários</p>
                     <p class="flex items-center justify-center h-6 px-1
-                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500 dark:text-gray-900">
                         Passo 4
                     </p>
                 </div>

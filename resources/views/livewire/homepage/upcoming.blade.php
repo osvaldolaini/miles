@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <section class="bg-gray-800 text-gray-100">
+    {{-- <section class="bg-gray-800 text-gray-100">
         <div class="container mx-auto flex flex-col p-6">
             <h2 class="py-4 text-3xl font-bold text-center">O que vem por ai...</h2>
             <div class="divide-y divide-gray-700">
@@ -207,5 +207,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 </div>

@@ -23,7 +23,7 @@
                     </svg>
                     <span class="relative">Rota</span>
                 </span>
-                de evolução do nosso sistema.
+                de evolução do SisteMilhas.
             </h2>
             <p class="text-base text-gray-700 md:text-lg">
                 Ajude-nos a atingir essas metas e com isso destravar novas funcionalidades.
@@ -36,57 +36,85 @@
             <div class="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2">
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">200 usuários</p>
-                    <p
-                        class="flex items-center justify-center w-6 h-6 font-bold rounded text-deep-purple-accent-400 bg-indigo-50">
-                        1
+                    <p class="flex items-center justify-center h-6 px-1
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        Passo 1
                     </p>
                 </div>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Contador de ofertas, demandas e usuários no site
                 </p>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Grafico de preço
                 </p>
             </div>
             <div class="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2">
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">400 usuários</p>
-                    <p
-                        class="flex items-center justify-center w-6 h-6 font-bold rounded text-deep-purple-accent-400 bg-indigo-50">
-                        2
+                    <p class="flex items-center justify-center h-6 px-1
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        Passo 2
                     </p>
                 </div>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Ranking geral de compradores e vendedores
                 </p>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Grafico de preço de milhas por plano
                 </p>
             </div>
             <div class="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2">
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">600 usuários</p>
-                    <p
-                        class="flex items-center justify-center w-6 h-6 font-bold rounded text-deep-purple-accent-400 bg-indigo-50">
-                        3
+                    <p class="flex items-center justify-center h-6 px-1
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        Passo 3
                     </p>
                 </div>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Ranking semanal de compradores e vendedores
                 </p>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     Plano premium
                 </p>
             </div>
             <div class="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2">
                 <div class="flex items-center justify-between mb-2">
                     <p class="text-lg font-bold leading-5">1000 usuários</p>
-                    <p
-                        class="flex items-center justify-center w-6 h-6 font-bold rounded text-deep-purple-accent-400 bg-indigo-50">
-                        4
+                    <p class="flex items-center justify-center h-6 px-1
+                        font-bold rounded text-deep-purple-accent-400 bg-teal-500">
+                        Passo 4
                     </p>
                 </div>
-                <p class="text-sm text-gray-900">
+                <p class="flex text-sm text-gray-900">
+                    <svg class="w-6 pr-1 h-4 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
+                        <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                    </svg>
                     App
                 </p>
             </div>

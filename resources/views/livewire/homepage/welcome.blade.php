@@ -23,6 +23,7 @@
         @livewire('homepage.buyer')
         @livewire('homepage.donate')
         @livewire('homepage.seller')
+        @livewire('homepage.faq')
         @livewire('homepage.footer')
     </body>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9377063296356941"

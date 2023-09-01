@@ -67,6 +67,7 @@
 
     @livewire('homepage.upcoming')
     @livewire('homepage.donate')
+    @livewire('homepage.faq')
     @livewire('homepage.footer')
 </body>
 

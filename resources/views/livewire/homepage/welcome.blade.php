@@ -23,6 +23,7 @@
         @livewire('homepage.buyer')
         @livewire('homepage.donate')
         @livewire('homepage.seller')
+        @livewire('homepage.upcoming')
         @livewire('homepage.faq')
         @livewire('homepage.footer')
     </body>

@@ -139,8 +139,8 @@
                     </li>
 
                     <li>
-                      <a class="text-white transition hover:text-white/75" href="/">
-                        Blog
+                      <a class="text-white transition hover:text-white/75" href="{{ url('/duvidas-frequentes') }}">
+                        Dúvidas
                       </a>
                     </li>
                   </ul>

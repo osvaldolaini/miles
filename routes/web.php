@@ -47,6 +47,11 @@ Route::get('/explore', function () {
     return view('livewire/homepage/explore');
 
 });
+Route::get('/duvidas-frequentes', function () {
+    // return view('welcome');
+    return view('livewire/homepage/faqs');
+
+});
 Route::get('/termo-de-uso', function () {
     // return view('welcome');
     return view('livewire/homepage/terms-of-use');

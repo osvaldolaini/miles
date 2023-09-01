@@ -84,7 +84,6 @@
                         Temos um grupo aberto no Telegram, onde serão discutidas e compartilhadas atualizações de maneira transparente.
                     </p>
                 </div>
-
             </div>
         </div>
     </section> --}}

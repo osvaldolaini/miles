@@ -135,14 +135,15 @@
 
                     </summary>
                     <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                        Não limitado a um grupo de influencer ou curso
-                        Sistema anti-flood no chat e sem “fura fila” no privado
-                        Dados de uso (Notas, avaliações, Ofertas, Pedidos, Foto, Bio…)
-                        Reutilização de CPF
-                        Campo de Valor máximo no pedido
-                        Gerência de Emissões e Contas
-                        Histórico de Negociações, Pedidos e Ofertas
-                        E uma porção de melhorias de uma plataforma flexível em desenvolvimento!
+                        <ul>
+                            <li>Não limitado a um grupo de influencer ou curso;</li>
+                            <li>Sistema anti-flood no chat e sem “fura fila” no privado;</li>
+                            <li>Dados de uso (Notas, avaliações, Ofertas, Pedidos, Foto, Bio…);</li>
+                            <li>Reutilização de CPF;</li>
+                            <li>Campo de Valor máximo no pedido</li>
+                            <li>Histórico de Negociações, Pedidos e Ofertas; e</li>
+                            <li>E uma porção de melhorias de uma plataforma flexível em desenvolvimento!</li>
+                        </ul>
                     </p>
                 </details>
                 <details class="w-full border rounded-lg">

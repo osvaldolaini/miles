@@ -7,7 +7,7 @@
                 <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Encontre a melhor oportunidade
                 </h2>
                 <a href="{{ url('/explore') }}" aria-label="Saiba mais sobre o sistema"
-                    class="bg-transparent hover:bg-teal-500 text-teal-500 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-teal-500 hover:border-transparent">
+                    class="bg-transparent font-bold hover:bg-teal-500 text-teal-500 hover:text-gray-900 rounded shadow hover:shadow-lg py-2 px-4 border border-teal-500 hover:border-transparent">
                     Explore agora</a>
                 <p class="text-sm md:text-base text-gray-50 mb-4 mt-2">Explore essa nova formas de se conectar a pessoas para negociar milhas.</p>
 

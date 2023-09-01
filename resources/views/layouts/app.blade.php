@@ -36,7 +36,6 @@
                         <x-ads-hostgator :type="'square'"></x-ads-hostgator>
 
                         <x-ads-google></x-ads-google>
-                        <x-ads-hostgator :type="'default'"></x-ads-hostgator>
                     </div>
                 </div>
             </div>
@@ -53,8 +52,6 @@
     @stack('modals')
 
     @livewireScripts
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9377063296356941"
-     crossorigin="anonymous"></script>
 </body>
 
 </html>

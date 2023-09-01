@@ -135,7 +135,7 @@
 
                     </summary>
                     <p class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                        <ul>
+                        <ul class="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                             <li>Não limitado a um grupo de influencer ou curso;</li>
                             <li>Sistema anti-flood no chat e sem “fura fila” no privado;</li>
                             <li>Dados de uso (Notas, avaliações, Ofertas, Pedidos, Foto, Bio…);</li>

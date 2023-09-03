@@ -5,16 +5,29 @@
 
         <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
             <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500"></div>
-            <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-16
-        sm:-mt-20">
+            <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-28
+        sm:-mt-32">
                 <span class="relative block">
-                    @if ($user->profile_photo_url)
-                        <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
-                            class="mx-auto object-cover rounded-full h-16 w-16 sm:h-20 sm:w-20  border-2 border-white dark:border-gray-800">
-                    @else
-                        <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
-                            class="mx-auto object-cover rounded-full h-16 w-16 sm:h-20 sm:w-20  border-2 border-white dark:border-gray-800">
-                    @endif
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button onclick="my_modal_2.showModal()">
+
+                        @if ($user->profile_photo_url)
+                            <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
+                                class="mx-auto object-cover rounded-full h-28 w-28 sm:h-32 sm:w-32  border-2 border-white dark:border-gray-800">
+                        @else
+                            <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
+                                class="mx-auto object-cover rounded-full h-28 w-28 sm:h-32 sm:w-32  border-2 border-white dark:border-gray-800">
+                        @endif
+                    </button>
+                    <dialog id="my_modal_2" class="modal bg-transparent">
+                        @if ($user->profile_photo_url)
+                            <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
+                                class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
+                        @else
+                            <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
+                                class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
+                        @endif
+                    </dialog>
                 </span>
                 <p class="mt-2 text-xl font-medium text-gray-800 dark:text-white">
                     {{ $user->name }}

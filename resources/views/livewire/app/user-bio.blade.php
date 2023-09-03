@@ -19,15 +19,18 @@
                                 class="mx-auto object-cover rounded-full h-28 w-28 sm:h-32 sm:w-32  border-2 border-white dark:border-gray-800">
                         @endif
                     </button>
-                    <dialog id="my_modal_2" class="modal bg-transparent">
-                        @if ($user->profile_photo_url)
-                            <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
-                                class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
-                        @else
-                            <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
-                                class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
-                        @endif
-                    </dialog>
+                        <dialog id="my_modal_2" class="modal bg-transparent">
+                            @if ($user->profile_photo_url)
+                                <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
+                                    class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
+                            @else
+                                <img src="{{ url('storage/profiles/avatar.jpg') }}" alt="sistemilhas-avatar"
+                                    class="mx-auto object-cover rounded-full h-60 w-60 border-2 border-white dark:border-gray-800">
+                            @endif
+                            <form method="dialog" class="modal-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
                 </span>
                 <p class="mt-2 text-xl font-medium text-gray-800 dark:text-white">
                     {{ $user->name }}

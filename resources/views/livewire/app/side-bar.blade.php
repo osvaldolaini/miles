@@ -81,14 +81,14 @@ dark:bg-gray-800 dark:text-white text-semibold rounded-lg mb-36">
                         <span class="span semibold">Minhas contas</span>
                     </a>
                 </li>
-                <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                {{-- <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
 
                     <a href="{{ route('demand.alerts') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                         @livewire('app.demand-notification-button')
 
                         <span class="span semibold">Notificações</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

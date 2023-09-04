@@ -18,22 +18,27 @@ class AccountCategorySeeder extends Seeder
             [
                 [
                     'active'    => '1',
-                    'title'     => 'TUDO AZUL',
+                    'title'     => 'AMERICA AIRLINES',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'SMILES',
+                    'title'     => 'AZUL INTERLINES',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'LATAM BR',
+                    'title'     => 'AZUL VIAGENS',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'LATAM USA',
+                    'title'     => 'COPA AIRLINES',
+                    'code'      => Str::uuid(),
+                ],
+                [
+                    'active'    => '1',
+                    'title'     => 'IBERIA AVIOS',
                     'code'      => Str::uuid(),
                 ],
                 [
@@ -43,30 +48,39 @@ class AccountCategorySeeder extends Seeder
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'LATAM WALLET',
+                    'title'     => 'LATAM BR',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'IBERIA',
+                    'title'     => 'LATAM US',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'AMERICA AIRLINES',
+                    'title'     => 'SMILES',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'VOUCHER TAP',
+                    'title'     => 'TAP AIR',
                     'code'      => Str::uuid(),
                 ],
                 [
                     'active'    => '1',
-                    'title'     => 'VOUCHER AZUL',
+                    'title'     => 'TUDO AZUL',
                     'code'      => Str::uuid(),
-                ]
-
+                ],
+                [
+                    'active'    => '1',
+                    'title'     => 'TUDO AZUL DIAMENTE',
+                    'code'      => Str::uuid(),
+                ],
+                [
+                    'active'    => '1',
+                    'title'     => 'TUDO AZUL LIMINAR',
+                    'code'      => Str::uuid(),
+                ],
             ]
         );
     }

@@ -19,11 +19,11 @@
 
     <div class="navbar-end ">
         @if (Auth::check())
-            <div class="text-teal-500 block sm:hidden border-e pr-3">
+            {{-- <div class="text-teal-500 block sm:hidden border-e pr-3">
                 <a href="{{ route('demand.alerts') }}">
                     @livewire('app.demand-notification-button')
                 </a>
-            </div>
+            </div> --}}
         @endif
         <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0
         lg:shadow-none hidden bg-gray-900">

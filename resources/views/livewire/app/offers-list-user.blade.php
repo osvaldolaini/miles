@@ -52,28 +52,28 @@
                                     @livewire('app.rating-users', ['demands' => $item->demand, 'rated' => $item->demand->user_id], key($item->demand->id))
                                 @else
 
-                                <div class="flex mt-0 pt-0">
-                                    <span
-                                        class="
-                                    bg-green-500
-                                    hover:bg-gray-900 border-2 border-green-900
-                                    active:bg-green-300 text-white text-xs font-bold
-                                    uppercase px-6 py-2.5 rounded-full
-                                    shadow hover:shadow-md
-                                    outline-none focus:outline-none ml-3 mb-4
-                                    ease-linear transition-all duration-150">
-                                        Finalizado
-                                    </span>
-                                    <button type='button' wire:click="openReceived({{ $item->demand->id }})"
-                                        class="bg-gray-500 cursor-pointer
-                                            hover:bg-gray-900 border-2 border-gray-500
-                                            active:bg-gray-300 text-white text-xs
-                                            font-bold uppercase px-6 py-2.5 rounded-full
-                                            shadow hover:shadow-md outline-none focus:outline-none
-                                            ml-3 mb-4 ease-linear transition-all
-                                            duration-150">
-                                        Detalhes
-                                    </button>
+                                    <div class="flex mt-0 pt-0">
+                                        <span
+                                            class="
+                                        bg-green-500
+                                        hover:bg-gray-900 border-2 border-green-900
+                                        active:bg-green-300 text-white text-xs font-bold
+                                        uppercase px-6 py-2.5 rounded-full
+                                        shadow hover:shadow-md
+                                        outline-none focus:outline-none ml-3 mb-4
+                                        ease-linear transition-all duration-150">
+                                            Finalizado
+                                        </span>
+                                        <button type='button' wire:click="openReceived({{ $item->demand->id }})"
+                                            class="bg-gray-500 cursor-pointer
+                                                hover:bg-gray-900 border-2 border-gray-500
+                                                active:bg-gray-300 text-white text-xs
+                                                font-bold uppercase px-6 py-2.5 rounded-full
+                                                shadow hover:shadow-md outline-none focus:outline-none
+                                                ml-3 mb-4 ease-linear transition-all
+                                                duration-150">
+                                            Detalhes
+                                        </button>
 
                                     </div>
                                 @endif
@@ -92,17 +92,17 @@
                                     Não selecionada
                                 </span>
                             @elseif ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)
-                            <span
-                                class="
-                                    bg-red-500
-                                    hover:bg-gray-900 border-2 border-gray-900
-                                    active:bg-red-300 text-white text-xs font-bold
-                                    uppercase px-6 py-2.5 rounded-full
-                                    shadow hover:shadow-md
-                                    outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
-                                    ease-linear transition-all duration-150">
-                                Não selecionada
-                            </span>
+                                <span
+                                    class="
+                                        bg-red-500
+                                        hover:bg-gray-900 border-2 border-gray-900
+                                        active:bg-red-300 text-white text-xs font-bold
+                                        uppercase px-6 py-2.5 rounded-full
+                                        shadow hover:shadow-md
+                                        outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
+                                        ease-linear transition-all duration-150">
+                                     Aguardando Seleção
+                                </span>
                             @else
                                 <span
                                     class="
@@ -113,7 +113,7 @@
                                         shadow hover:shadow-md
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
-                                    Aguardando Seleção
+                                        Não selecionada
                                 </span>
                             @endif
                         @endif

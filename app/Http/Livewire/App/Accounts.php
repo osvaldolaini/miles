@@ -56,7 +56,7 @@ class Accounts extends Component
     public function store()
     {
         $this->rules = [
-            'name' => 'required|unique:accounts',
+            'name' => 'required',
         ];
         $this->validate();
 
@@ -88,7 +88,8 @@ class Accounts extends Component
     public function update()
     {
         $this->rules = [
-            'name' => ['required', Rule::unique('accounts')->ignore($this->model_id)],
+            // 'name' => ['required', Rule::unique('accounts')->ignore($this->model_id)],
+            'name' => 'required',
         ];
         $this->validate();
 

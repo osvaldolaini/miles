@@ -3,7 +3,7 @@
     @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @foreach ($offers as $item)
-        <div class="py-2" @if ($loop->last) id="last_record"  wire:loading.delay.class="opacity-50" @endif>
+        <div class="py-2" @if ($loop->last) id="last_record" @endif>
             <div class="stats stats-vertical lg:stats-horizontal w-full
                 bg-teal-500 text-white dark:bg-teal-500" >
                 <div class="stat px-2">
@@ -113,7 +113,7 @@
                                         shadow hover:shadow-md
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
-                                    Aguardando {{ $item->order }}º na fila
+                                    Aguardando Seleção
                                 </span>
                             @endif
                         @endif

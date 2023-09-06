@@ -15,11 +15,11 @@ class DemandUser extends Component
     public $model_id;
     public $showDeleteModal = false;
 
-
     public $readyToLoad = false;
 
-    public $takeLimit = 4;
+    public $takeLimit = 10;
     public $totalRecords;
+
     public function takeMore()
     {
         $this->takeLimit += 1;
@@ -29,8 +29,10 @@ class DemandUser extends Component
     {
         // sleep(0.5);
         $this->readyToLoad = true;
+        // $this->demands = Auth::user()->demands->sortByDesc('id')
+        //     ->sortByDesc('order')->take($this->takeLimit);
         $this->demands = Auth::user()->demands->sortByDesc('id')
-            ->sortByDesc('order')->take($this->takeLimit);
+            ->sortByDesc('order');
     }
 
     public function mount()

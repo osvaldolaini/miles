@@ -20,11 +20,12 @@ class OffersListUser extends Component
     public $showModalUpdate = false;
     public $rules;
 
-    public $takeLimit = 4;
+    public $takeLimit = 3;
     public $totalRecords;
+
     public function takeMore()
     {
-        $this->takeLimit += 1;
+        $this->takeLimit += 2;
     }
 
     public function mount()
@@ -39,8 +40,12 @@ class OffersListUser extends Component
         // ->where('user_id',Auth::user()->id)
         // ->orderBy('status','desc')->orderBy('id','desc')->get();
 
+        // $offers = Auth::user()->offers->sortByDesc('id')
+        // ->sortByDesc('order')->take($this->takeLimit);
+
         $offers = Auth::user()->offers->sortByDesc('id')
-        ->sortByDesc('order')->take($this->takeLimit);
+        ->sortByDesc('order');
+
 
         return view('livewire.app.offers-list-user',
     ['offers'=>$offers]);

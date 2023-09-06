@@ -162,7 +162,7 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
-    <script>
+    {{-- <script>
         const lastRecord = document.getElementById('last_record');
         const options = {
             root: null,
@@ -177,5 +177,5 @@
             });
         });
         observer.observe(lastRecord);
-    </script>
+    </script> --}}
 </div>

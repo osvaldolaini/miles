@@ -158,9 +158,9 @@
                 </div>
             </div>
         @endforeach
-        @if ($takeLimit >= $totalRecords)
+        {{-- @if ($takeLimit >= $totalRecords)
             <p class="text-gray-800 font-bold text-2xl text-center my-10">...</p>
-        @endif
+        @endif --}}
     @endif
     {{-- MODAL DELETE --}}
     <x-confirmation-modal wire:model="showDeleteModal">
@@ -177,14 +177,14 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
-    <script>
+    {{-- <script>
         const lastRecord = document.getElementById('last_record');
         const options = {
             root: null,
             threshold: 1,
             rootMargin: '0px'
         }
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     @this.takeMore()
@@ -192,6 +192,6 @@
             });
         });
         observer.observe(lastRecord);
-    </script>
+    </script> --}}
 
 </div>

@@ -24,7 +24,7 @@
                             @endforeach
                         </div>
                         <span class="text-sm">{{ $offers->count() > 1 ? 'Foram feitas' : 'Foi feita' }}
-                            <span class="font-semibold"> {{ $offers->count() }} oferta</span>
+                            <span class="font-semibold"> {{ $offers->count() }} {{ $offers->count() > 1 ? 'ofertas' : 'oferta' }}</span>
                         </span>
                     </div>
                 </div>

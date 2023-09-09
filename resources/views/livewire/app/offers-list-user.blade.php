@@ -127,7 +127,7 @@
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
 
-                                    Aguardando Seleção
+                                    Aguardando Seleção {{ $item->demand->status }}
                                 </span>
                             @endif
                         @endif

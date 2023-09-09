@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     @livewire('homepage.seo')
 
     <title>@yield('page-title') {{ config('app.name', 'Laravel') }}
-</title>
+    </title>
     <x-favicons></x-favicons>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,8 +18,8 @@
     @livewireStyles
 </head>
 
-<body  class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-700  dark:text-white" >
-    <div  class="min-h-screen bg-cover bg-center bg-fixed " >
+<body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-700  dark:text-white">
+    <div class="min-h-screen bg-cover bg-center bg-fixed ">
         @livewire('homepage.navbar')
         <section class="w-full max-w-6xl mx-auto justify-center">
             <div class="flex">
@@ -33,13 +33,20 @@
                 <!-- Adsense -->
                 <div class="h-screen sticky top-0 hidden lg:block">
                     <div class="w-full mt-8 pb-0">
-                        <div class="card w-96 bg-base-100 shadow-xl">
-                            <div class="card-body">
-                              <h2 class="card-title">Anucie aqui!</h2>
-                              <p>Mostre su marca para o seu público alvo</p>
+                        <div class="card w-auto bg-base-100 shadow-xl image-full">
+                            <figure>
+                                <picture class="h-24" {{ $attributes }}>
+                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.png')}}" />
+                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.webp')}}"/>
+                                    <img class="h-24" src="{{ url('storage/logo/sistemilhas-logo-principal.png') }}"
+                                    alt="sistemilhas-logo">
+                                </picture>
+                            </figure>
+                            <div class="card-body text-white">
+                                <h2 class="card-title text-white">Anucie aqui!</h2>
+                                <p class="text-white">Mostre sua marca para o seu público alvo.</p>
                             </div>
-                            {{-- <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> --}}
-                          </div>
+                        </div>
 
                         <x-ads-hostgator :type="'square'"></x-ads-hostgator>
 

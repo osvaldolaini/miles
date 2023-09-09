@@ -47,7 +47,7 @@
                                 <p class="text-white">Mostre sua marca para o seu público alvo.</p>
                             </div>
                         </div>
-                        <div class="card w-auto bg-base-100 shadow-xl image-full">
+                        <div class="card w-auto bg-base-100 shadow-xl image-full mt-8">
                             <figure>
                                 <picture class="h-24" {{ $attributes }}>
                                     <source srcset="{{url('storage/logo/sistemilhas-logo-principal.png')}}" />

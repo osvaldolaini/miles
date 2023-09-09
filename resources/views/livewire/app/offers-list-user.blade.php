@@ -80,7 +80,7 @@
                                 @endif
                             @endif
                         @else
-                            @if ($item->demand->status >= 2)
+                            @if ($item->demand->status >= 2 OR $item->demand->status == 0)
                                 <span
                                     class="
                                         bg-red-500

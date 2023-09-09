@@ -104,7 +104,7 @@
                                         ease-linear transition-all duration-150">
                                     Pedido excluído
                                 </span>
-                            @elseif ($item->end_date > date('Y-m-d H:i:s') && $item->demand->status == 1)
+                            @elseif ($item->end_date < date('Y-m-d H:i:s'))
                                 <span
                                     class="
                                         bg-red-500

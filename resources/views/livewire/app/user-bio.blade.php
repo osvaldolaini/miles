@@ -1,8 +1,6 @@
 <div>
-
     @livewire('app.received')
     <div class="w-full p-1 sm:px-2 pt-0 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
-
         <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
             <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500"></div>
             <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-28
@@ -10,7 +8,6 @@
                 <span class="relative block">
                     <!-- Open the modal using ID.showModal() method -->
                     <button onclick="my_modal_2.showModal()">
-
                         @if ($user->profile_photo_url)
                             <img src="{{ $user->profile_photo_url }}" alt="sistemilhas-avatar-{{ $user->username }}"
                                 class="mx-auto object-cover rounded-full h-28 w-28 sm:h-32 sm:w-32  border-2 border-white dark:border-gray-800">
@@ -39,16 +36,12 @@
                     {{ $user->name }}
                 </p>
                 <div class="flex space-x-2">
-                    @if ($user->id != Auth::user()->id && $user->buy > 0)
-                        <p class="p-2 px-4 text-xs text-white bg-emerald-500 rounded-full">
-                            Comprou {{ $user->buyConvert }}
-                        </p>
-                    @endif
-                    @if ($user->id != Auth::user()->id && $user->sell > 0)
-                        <p class="p-2 px-4 text-xs text-white bg-red-500 rounded-full">
-                            Vendeu {{ $user->sellConvert }}
-                        </p>
-                    @endif
+                    <p class="p-2 px-4 text-xs text-white bg-emerald-500 rounded-full">
+                        Comprou {{ $user->buyConvert }}
+                    </p>
+                    <p class="p-2 px-4 text-xs text-white bg-red-500 rounded-full">
+                        Vendeu {{ $user->sellConvert }}
+                    </p>
                 </div>
                 {{-- <p class="p-2 px-4 text-xs text-white bg-pink-500 rounded-full">
                 Professional

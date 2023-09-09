@@ -55,7 +55,7 @@
                                         </button>
                                     </div>
                                     <div class="stat-actions py-0 my-1 dark:text-gray-900">
-                                        <div class="tooltip tooltip-top p-0" data-tip="Negociar">
+                                        <div class="tooltip tooltip-top p-0" data-tip="Finalizar">
                                             <a class="btn btn-info btn-sm"
                                                 href="{{ route('demand.checkout', [$offer->code]) }}">
                                                 <svg class="w-5 h-5" fill="currentColor" focusable="false"

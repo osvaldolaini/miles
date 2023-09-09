@@ -8,7 +8,6 @@
                 </a>
             </div>
         </div>
-
     </div>
 
     @if (Auth::check())

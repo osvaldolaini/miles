@@ -3,9 +3,7 @@
         <div class="stat px-2">
             <div class="stat-actions">
                 @if ($demand->status == 1)
-                    <button wire:click="showCheckoutModel()"
-                    {{-- {{ ($btn > 1 ? 'disabled="disabled"':"") }} --}}
-                            class="btn btn-info btn-sm">
+                    <button wire:click="showCheckoutModel()" {{-- {{ ($btn > 1 ? 'disabled="disabled"':"") }} --}} class="btn btn-info btn-sm">
                         <svg class="w-5 h-5" fill="currentColor" focusable="false" aria-hidden="true" viewBox="0 -64 640 640"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -34,7 +32,7 @@
             </div>
         </div>
         <div class="stat px-2">
-            @if($btn == 1)
+            @if ($btn == 1)
                 <div class="stat-title text-red-500 font-extrabold">
                     Preencher todo os passageiros
                 </div>
@@ -45,12 +43,11 @@
         </div>
     </div>
     <div class="pb-2">
-        <div
-            class="stats stats-vertical lg:stats-horizontal w-full
+        <div class="stats stats-vertical lg:stats-horizontal w-full
             bg-teal-500 text-white">
-            <div class="stat">
-                <div class="stat-title font-bold">Dados do pedido</div>
-                <div class="stat-title text-lg font-extrabold">
+            <div class="stat text-white">
+                <div class="stat-title font-bold text-white">Dados do pedido</div>
+                <div class="stat-title text-lg font-extrabold text-white">
                     R$ {{ $demand->value }} - R$ {{ $demand->value_max }}
                 </div>
                 <div class="stat-actions">
@@ -59,12 +56,12 @@
                     <h2 class="font-bold mt-0 pt-0 text-red-500">{{ $demand->category->title }}</h2>
                 </div>
             </div>
-            <div class="stat">
-                <div class="stat-title font-bold">Dados da oferta</div>
-                <div class="stat-value">
+            <div class="stat text-white">
+                <div class="stat-title font-bold text-white">Dados da oferta</div>
+                <div class="stat-value text-white">
                     R$ {{ $offer->value }}
                 </div>
-                <div class="stat-title font-bold">Ordem na fila: {{ $offer->order }}º</div>
+                {{-- <div class="stat-title font-bold text-white">Ordem na fila: {{ $offer->order }}º</div> --}}
                 <div class="stat-actions">
                     <x-user-card :user="$offer->user">
                     </x-user-card>
@@ -72,21 +69,19 @@
             </div>
         </div>
     </div>
-
     <div class="py-2 w-full">
         <div class="w-full">
-                <div class="stats stats-vertical py-0 w-full
-                bg-gradient-to-r from-zinc-200 from-10% via-zinc-300 via-30% to-teal-500 to-80%">
-                    <div class="stat py-1">
-                        <div class="stat-title text-lg font-extrabold">
-                            Passageiros
-                        </div>
+            <div class="stats stats-vertical py-0 w-full
+                bg-teal-500">
+                <div class="stat py-1">
+                    <div class="stat-title text-lg font-extrabold text-white">
+                        Passageiros
                     </div>
-                    @foreach ($demand->passengers as $passenger)
-                        @livewire('app.favorite-passenger', ['passenger' => $passenger], key($passenger->id))
-                    @endforeach
                 </div>
-
+                @foreach ($demand->passengers as $passenger)
+                    @livewire('app.favorite-passenger', ['passenger' => $passenger], key($passenger->id))
+                @endforeach
+            </div>
         </div>
     </div>
     {{-- MODAL DELETE --}}

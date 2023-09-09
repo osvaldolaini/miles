@@ -4,7 +4,7 @@
         <div class="bg-white shadow-lg rounded-2xl w-full dark:bg-gray-800">
             <div class="w-full mb-4 rounded-t-lg h-28 bg-teal-500"></div>
             <div class="w-full flex flex-col items-center justify-center p-2 sm:p-8 -mt-28
-        sm:-mt-32">
+                sm:-mt-32">
                 <span class="relative block">
                     <!-- Open the modal using ID.showModal() method -->
                     <button onclick="my_modal_2.showModal()">
@@ -33,7 +33,7 @@
                     </dialog>
                 </span>
                 <p class="mt-2 text-xl font-medium text-gray-800 dark:text-white">
-                    {{ $user->name }}
+                    {{ $user->name }} (ID: {{ $user->id }})
                 </p>
                 <div class="flex space-x-2">
                     <p class="p-2 px-4 text-xs text-white bg-emerald-500 rounded-full">
@@ -117,14 +117,41 @@
                                     Avaliado em {{ $rating->since }}
                                 </span>
                                 <span class="flex items-center text-xs dark:text-gray-400">
-                                    @for ($i = 0; $i < $rating->rate; $i++)
+                                    <div class="flex space-x-1">
+                                        <button type="button" title="Rate 1 stars" aria-label="Rate 1 stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 {{ ($rating->rate >= 1 ? 'text-yellow-500' :'text-gray-600') }}">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" title="Rate 2 stars" aria-label="Rate 2 stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 {{ ($rating->rate >= 2 ? 'text-yellow-500' :'text-gray-600') }}">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" title="Rate 3 stars" aria-label="Rate 3 stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 {{ ($rating->rate >= 3 ? 'text-yellow-500' :'text-gray-600') }}">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" title="Rate 4 stars" aria-label="Rate 4 stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 {{ ($rating->rate >= 4 ? 'text-yellow-500' :'text-gray-600') }}">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" title="Rate 5 stars" aria-label="Rate 5 stars">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 {{ ($rating->rate == 5 ? 'text-yellow-500' :'text-gray-600') }}">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    {{-- @for ($i = 0; $i < $rating->rate; $i++)
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M6.71 15.116l3.357-1.658.892.452 2.327 1.178-.56-3.912.708-.707 1.29-1.29-3.235-.576-.445-.915-1.059-2.176L8.4 8.683l-1.005.168-2.098.35 1.975 1.975-.141.99-.422 2.95zM5.2 18a.8.8 0 01-.792-.914l.743-5.203-2.917-2.917a.8.8 0 01.434-1.355l4.398-.733 2.218-4.435a.8.8 0 011.435.008l2.123 4.361 4.498.801a.8.8 0 01.425 1.353l-2.917 2.917.744 5.203a.8.8 0 01-1.154.828l-4.382-2.22-4.502 2.223A.792.792 0 015.2 18z"
                                                 fill="currentColor" />
                                         </svg>
-                                    @endfor
+                                    @endfor --}}
                                 </span>
                             </div>
                         </div>

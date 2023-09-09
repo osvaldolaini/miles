@@ -47,6 +47,20 @@
                                 <p class="text-white">Mostre sua marca para o seu público alvo.</p>
                             </div>
                         </div>
+                        <div class="card w-auto bg-base-100 shadow-xl image-full">
+                            <figure>
+                                <picture class="h-24" {{ $attributes }}>
+                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.png')}}" />
+                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.webp')}}"/>
+                                    <img class="h-24" src="{{ url('storage/logo/sistemilhas-logo-principal.png') }}"
+                                    alt="sistemilhas-logo">
+                                </picture>
+                            </figure>
+                            <div class="card-body text-white">
+                                <h2 class="card-title text-white">Anucie aqui!</h2>
+                                <p class="text-white">Mostre sua marca para o seu público alvo.</p>
+                            </div>
+                        </div>
 
                         <x-ads-hostgator :type="'square'"></x-ads-hostgator>
 

@@ -92,7 +92,7 @@
                                         ease-linear transition-all duration-150">
                                     Não selecionada
                                 </span>
-                            @elseif ($item->end_date < date('Y-m-d H:i:s') && $item->status == 1)
+                            @elseif ($item->end_date > date('Y-m-d H:i:s'))
                                 <span
                                     class="
                                         bg-red-500
@@ -119,7 +119,6 @@
                                 </span>
                             @endif
                         @endif
-
                     </div>
                 </div>
             </div>

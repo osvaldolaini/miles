@@ -80,7 +80,7 @@
                                 @endif
                             @endif
                         @else
-                            @if (c)
+                            @if ($item->demand->status >= 2)
                                 <span
                                     class="
                                         bg-red-500
@@ -92,8 +92,8 @@
                                         ease-linear transition-all duration-150">
                                     Não selecionada
                                 </span>
-                                @elseif ($item->demand->offer_id == $item->id)
-                                <span
+                            @elseif ($item->demand->status == 0)
+                            <span
                                     class="
                                         bg-red-500
                                         hover:bg-gray-900 border-2 border-gray-900
@@ -104,31 +104,6 @@
                                         ease-linear transition-all duration-150">
                                     Pedido excluído
                                 </span>
-                            @else
-                                <span
-                                    class="
-                                        bg-red-500
-                                        hover:bg-gray-900 border-2 border-gray-900
-                                        active:bg-red-300 text-white text-xs font-bold
-                                        uppercase px-6 py-2.5 rounded-full
-                                        shadow hover:shadow-md
-                                        outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
-                                        ease-linear transition-all duration-150">
-                                    Não selecionada
-                                </span>
-                            @else)
-                                <span
-                                    class="
-                                        bg-red-500
-                                        hover:bg-gray-900 border-2 border-gray-900
-                                        active:bg-red-300 text-white text-xs font-bold
-                                        uppercase px-6 py-2.5 rounded-full
-                                        shadow hover:shadow-md
-                                        outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
-                                        ease-linear transition-all duration-150">
-                                    Não selecionada
-                                </span>
-                            @else
                             @elseif ($item->end_date > date('Y-m-d H:i:s'))
                                 <span
                                     class="

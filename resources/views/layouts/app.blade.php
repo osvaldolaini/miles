@@ -33,6 +33,14 @@
                 <!-- Adsense -->
                 <div class="h-screen sticky top-0 hidden lg:block">
                     <div class="w-full mt-8 pb-0">
+                        <div class="card w-96 bg-base-100 shadow-xl">
+                            <div class="card-body">
+                              <h2 class="card-title">Anucie aqui!</h2>
+                              <p>Mostre su marca para o seu público alvo</p>
+                            </div>
+                            {{-- <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> --}}
+                          </div>
+
                         <x-ads-hostgator :type="'square'"></x-ads-hostgator>
 
                         <x-ads-google></x-ads-google>

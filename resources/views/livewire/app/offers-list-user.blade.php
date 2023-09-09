@@ -93,7 +93,7 @@
                                     Não selecionada
                                 </span>
                             @elseif ($item->demand->status == 0)
-                            <span
+                                <span
                                     class="
                                         bg-red-500
                                         hover:bg-gray-900 border-2 border-gray-900
@@ -127,7 +127,7 @@
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
 
-                                    Aguardando Seleção {{ $item->demand->status }}
+                                    Aguardando Seleção
                                 </span>
                             @endif
                         @endif

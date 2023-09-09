@@ -3,7 +3,8 @@
     @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @foreach ($offers as $item)
-        <div class="py-2" @if ($loop->last) id="last_record" @endif>
+        {{-- <div class="py-2" @if ($loop->last) id="last_record" @endif> --}}
+            <div class="py-2">
             <div class="stats stats-vertical lg:stats-horizontal w-full
                 bg-teal-500 text-white dark:bg-teal-500" >
                 <div class="stat px-2">
@@ -101,7 +102,7 @@
                                         shadow hover:shadow-md
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
-                                     Aguardando Seleção
+                                        Não selecionada
                                 </span>
                             @else
                                 <span
@@ -113,7 +114,8 @@
                                         shadow hover:shadow-md
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
-                                        Não selecionada
+
+                                        Aguardando Seleção
                                 </span>
                             @endif
                         @endif
@@ -186,7 +188,7 @@
         </x-slot>
     </x-dialog-modal>
 
-    <script>
+    {{-- <script>
         const lastRecord = document.getElementById('last_record');
         const options = {
             root: null,
@@ -201,5 +203,5 @@
             });
         });
         observer.observe(lastRecord);
-    </script>
+    </script> --}}
 </div>

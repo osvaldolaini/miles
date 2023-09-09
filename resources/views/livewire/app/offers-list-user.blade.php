@@ -1,12 +1,13 @@
-<div >
+<div>
     @livewire('app.message-alert')
     @livewire('app.received')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
     @foreach ($offers as $item)
         {{-- <div class="py-2" @if ($loop->last) id="last_record" @endif> --}}
-            <div class="py-2">
-            <div class="stats stats-vertical lg:stats-horizontal w-full
-                bg-teal-500 text-white dark:bg-teal-500" >
+        <div class="py-2">
+            <div
+                class="stats stats-vertical lg:stats-horizontal w-full
+                bg-teal-500 text-white dark:bg-teal-500">
                 <div class="stat px-2">
                     <div class="stat-title font-bold text-white">Dados do pedido</div>
                     <div class="stat-title text-lg font-extrabold text-white">
@@ -52,7 +53,6 @@
                                     {{-- Rating --}}
                                     @livewire('app.rating-users', ['demands' => $item->demand, 'rated' => $item->demand->user_id], key($item->demand->id))
                                 @else
-
                                     <div class="flex mt-0 pt-0">
                                         <span
                                             class="
@@ -102,7 +102,7 @@
                                         shadow hover:shadow-md
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
-                                        Não selecionada
+                                    Não selecionada
                                 </span>
                             @else
                                 <span
@@ -115,7 +115,7 @@
                                         outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4
                                         ease-linear transition-all duration-150">
 
-                                        Aguardando Seleção
+                                    Aguardando Seleção
                                 </span>
                             @endif
                         @endif
@@ -133,16 +133,33 @@
         <x-slot name="title">Finalizar</x-slot>
         <x-slot name="content">
             @if ($this->passengers)
+                @php
+                    $c = 0;
+                @endphp
+                @foreach ($passengers as $item)
+                    @if ($item->cpf != '')
+                        @php
+                            $c += 1;
+                        @endphp
+                    @endif
+                @endforeach
+                @if ($c == 0)
+                <h2 class="text-red-500">
+                    *Passageiro(s) não informado(s) pelo comprador.
+                </h2>
+                @else
                 <h2 class="text-red-500">
                     *O(s) passageiro(s)
                     @foreach ($passengers as $item)
                         {{ $item->name }},
                     @endforeach
-                     informados pelo comprador ficará(ão) vinculado(s) a conta selecionada.
+                    informados pelo comprador ficará(ão) vinculado(s) a conta selecionada.
                 </h2>
                 <h2 class="text-red-500">
                     É possivel verificar na lista de contas.
                 </h2>
+                @endif
+
             @endif
             <form action="#" wire:submit.prevent="update()" wire.loading.attr='disable'>
                 <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5">

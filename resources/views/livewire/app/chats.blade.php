@@ -18,7 +18,7 @@
                         <div class="stat-title text-lg font-extrabold dark:text-white">
                             R$ {{ $chat->demand->value }} - R$ {{ $chat->demand->value_max }}
                         </div>
-                        <div class="stat-title dark:text-white">Oferta de nº {{ $chat->offer->order }} da fila</div>
+                        {{-- <div class="stat-title dark:text-white">Oferta de nº {{ $chat->offer->order }} da fila</div> --}}
                         <div class="stat-value dark:text-white">
                             R$ {{ $chat->offer->value }}
                         </div>

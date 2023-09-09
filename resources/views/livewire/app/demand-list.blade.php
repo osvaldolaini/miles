@@ -1,4 +1,4 @@
-<div wire:init="loadPosts">
+<div wire:init="loadPosts" >
     @livewire('app.message-alert')
     <x-app-breadcrumb>{{ $breadcrumb }}</x-app-breadcrumb>
 

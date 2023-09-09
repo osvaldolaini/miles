@@ -33,7 +33,7 @@
                     </dialog>
                 </span>
                 <p class="mt-2 text-xl font-medium text-gray-800 dark:text-white">
-                    {{ $user->name }} (ID: {{ $user->id }})
+                    {{ $user->name }} (Id: {{ $user->id }})
                 </p>
                 <div class="flex space-x-2">
                     <p class="p-2 px-4 text-xs text-white bg-emerald-500 rounded-full">

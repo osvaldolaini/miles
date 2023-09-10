@@ -11,7 +11,7 @@
         <x-slot name="title">Filtros</x-slot>
         <x-slot name="content">
             <form action="#" wire:submit.prevent="applayfilters()" wire.loading.attr='disable'>
-                <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5 ">
+                <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5 dark:bg-gray-900">
                     <div class="flex flex-col justify-between flex-1">
                         <div class="space-y-6 text-black dark:text-gray-900">
                             <!-- Categories -->

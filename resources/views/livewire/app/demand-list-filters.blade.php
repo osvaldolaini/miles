@@ -160,4 +160,12 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
+    <script>
+        setInterval(function() {
+            // Livewire.emit('refreshComponent');
+            // @this.call('refreshData');
+            location.reload();
+             // Emite um evento para recarregar o componente
+        }, 20000); // Recarrega o componente a cada 5 segundos (5000 milissegundos)
+    </script>
 </div>

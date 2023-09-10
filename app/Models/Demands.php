@@ -24,11 +24,11 @@ class Demands extends Model
     ];
     public function setValueAttribute($value)
     {
-        $this->attributes['value'] = str_replace(",", ".", $value);;
+        $this->attributes['value'] = str_replace(",", ".", $value);
     }
     public function setValueMaxAttribute($value)
     {
-        $this->attributes['value_max'] = str_replace(",", ".", $value);;
+        $this->attributes['value_max'] = str_replace(",", ".", $value);
     }
     public function getValueMaxAttribute($value)
     {

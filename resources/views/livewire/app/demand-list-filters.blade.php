@@ -1,6 +1,6 @@
-<div wire:init="loadPosts" >
+<div wire:init="loadPosts">
     @livewire('app.message-alert')
-    <x-app-breadcrumb filter="true">{{ $breadcrumb }}</x-app-breadcrumb>
+    <x-app-breadcrumb filter="true" :oldSelecteds="$oldSelecteds">{{ $breadcrumb }}</x-app-breadcrumb>
 
     @if ($readyToLoad == false)
         <x-skeleton></x-skeleton>
@@ -65,7 +65,7 @@
                                         </label>
                                         <ul tabindex="0"
                                             class="dropdown-content z-[1] menu p-2 text-left
-                                            shadow bg-white rounded-box w-52 text-gray-900">
+                                    shadow bg-white rounded-box w-52 text-gray-900">
                                             @if ($item->reUse($item->account_categorie_id)['qtd'] > 1)
                                                 {{ $item->reUse($item->account_categorie_id)['qtd'] }}
                                                 CPF dessa oferta já foram utilizados na carteira

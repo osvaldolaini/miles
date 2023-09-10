@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\App;
 
-
+use App\Models\AccountCategory;
 use App\Models\Demands;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
@@ -15,12 +15,7 @@ class DemandList extends Component
     public $model_id;
     public $showDeleteModal = false;
 
-    public $takeLimit = 3;
-    public $totalRecords;
-    public function takeMore()
-    {
-        $this->takeLimit += 1;
-    }
+    public $categories;
 
     protected $listeners = ['echo:demand,DemandHasBeenCreated' => '$refresh'];
 
@@ -55,5 +50,4 @@ class DemandList extends Component
     {
         $this->emit('openAlert', $status, $msg);
     }
-
 }

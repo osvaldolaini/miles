@@ -6,6 +6,7 @@ use App\Http\Livewire\App\Chats;
 use App\Http\Livewire\App\Dashboard;
 use App\Http\Livewire\App\Demand;
 use App\Http\Livewire\App\DemandCheckout;
+use App\Http\Livewire\App\DemandListFilters;
 use App\Http\Livewire\App\DemandNotification;
 use App\Http\Livewire\App\DemandPassengers;
 use App\Http\Livewire\App\DemandUser;
@@ -85,4 +86,5 @@ Route::middleware([
 
     Route::get('/pedido-de-milhas/{demand:code}', DemandView::class)->name('demand.view');
 
+    Route::get('/balcao-com-filtros', DemandListFilters::class)->name('filters');
 });

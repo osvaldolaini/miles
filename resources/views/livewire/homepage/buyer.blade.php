@@ -33,7 +33,7 @@
                 <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
             </svg>
             </div>
-            <p class="text-gray-600 dark:text-gray-100">
+            <p class="text-gray-600 dark:text-gray-200">
                 Informe quantas milhas você precisa, para quantas pessoas e aguarde as ofertas.
             </p>
         </div>
@@ -45,7 +45,7 @@
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
           Escolha a oferta que mais tenha lhe agradado e converse com o ofertante.
         </p>
       </div>
@@ -57,7 +57,7 @@
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
             Após realizada a operação informe ao SisteMilhas como se transcorreu a negociação e avalie o ofertante.
         </p>
       </div>
@@ -68,7 +68,7 @@
             <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortável.
+        <p class="text-gray-600 dark:text-gray-200">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortável.
         </p>
       </div>
     </div>

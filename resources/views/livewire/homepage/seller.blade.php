@@ -20,7 +20,7 @@
         </span>
         encontrar pessoas para oferecer suas milhas
       </h2>
-      <p class="text-base text-gray-700 md:text-lg">
+      <p class="text-base text-gray-700 dark:text-gray-200 md:text-lg">
        Faça ofertas, para as pessoas que buscam milhas, de foram agil e
        inteligente com banco de dados de todas as suas negociações.
     </div>
@@ -33,7 +33,7 @@
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
           Faça ofertas para as pessoas que buscam milhas pelo sistema.
         </p>
       </div>
@@ -45,7 +45,7 @@
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
           Após aceita sua proposta, entre em contato como o comprador.
         </p>
       </div>
@@ -57,7 +57,7 @@
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
             Realizada a operação informe ao SisteMilhas como se transcorreu a negociação e avalie o comprador.
         </p>
       </div>
@@ -68,7 +68,7 @@
             <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
           </svg>
         </div>
-        <p class="text-gray-600 dark:text-gray-100">
+        <p class="text-gray-600 dark:text-gray-200">
             Tem forma mais agil de transferir suas milhas, com o histórico e de pessoas que você já negociou.
         </p>
       </div>

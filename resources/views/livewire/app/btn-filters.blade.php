@@ -22,14 +22,14 @@
                                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2 ">
                                     @foreach ($categories as $category)
                                         <div class="flex items-center col-span-1">
-                                            <input wire:model="categoriesSelecteds" type="checkbox" checked
+                                            <input wire:model="categoriesSelecteds.{{ $category->id }}" type="checkbox"
                                                 {{ in_array($category->id, $oldSelecteds) ? 'checked' : '' }}
-                                                id="cat_{{ $category->id }}" value="{{ $category->id }}"
+                                                id="cat_{{$category->id}}" value="{{ $category->id }}"
                                                 class="w-4 h-4 bg-gray-100 border-gray-300 rounded
-                                            text-primary-600 focus:ring-primary-500
-                                            dark:focus:ring-primary-600 dark:ring-offset-gray-800
-                                            focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label for="cat_{{ $category->id }}"
+                                                    text-primary-600 focus:ring-primary-500
+                                                    dark:focus:ring-primary-600 dark:ring-offset-gray-800
+                                                    focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                            <label for="cat_{{$category->id}}"
                                                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                 {{ $category->title }}
                                             </label>
@@ -78,18 +78,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="flex items-end space-x-4">
-                    <button type="submit"
-                        class="bg-teal-500
-                        hover:bg-gray-900 border-2 border-teal-500
-                        active:bg-teal-300 text-white text-xs
-                        font-bold uppercase px-6 py-2.5 rounded-full
-                        shadow hover:shadow-md outline-none focus:outline-none
-                        mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
-                        duration-150">
-                        Aplicar filtros
-                    </button>
-                </div> --}}
             </form>
 
         </x-slot>
@@ -98,19 +86,18 @@
                 class="bg-teal-500
                         hover:bg-gray-900 border-2 border-teal-500
                         active:bg-teal-300 text-white text-xs
-                        font-bold uppercase  rounded-full
+                        font-bold uppercase rounded-full
                         shadow hover:shadow-md outline-none focus:outline-none
-                        ease-linear transition-all
-                        duration-150
-                        mr-0 lg:mb-0 ml-3 mx-4 sm:px-6 py-2.5">
+                        ease-linear transition-all duration-150
+                        mr-0 lg:mb-0 ml-3 mx-4 px-2 sm:px-6 py-2.5">
                 Aplicar filtros
             </button>
             <button type="submit" wire:click="$toggle('showFilterModal')"
-            class="inline-flex border-2 border-teal-500 bg-gray-900 text-white
-            active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6
-             rounded-full shadow hover:shadow-md outline-none focus:outline-none  ease-linear
-            transition-all duration-150
-            mr-0 lg:mb-0 ml-3 mx-4 sm:px-6 py-2.5" >
+                class="inline-flex border-2 border-teal-500 bg-gray-900 text-white
+                        active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6
+                        rounded-full shadow hover:shadow-md outline-none focus:outline-none  ease-linear
+                        transition-all duration-150
+                        mr-0 lg:mb-0 ml-3 mx-4 sm:px-6 py-2.5">
                 Fechar
             </button>
         </x-slot>

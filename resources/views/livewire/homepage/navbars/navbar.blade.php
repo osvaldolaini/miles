@@ -160,7 +160,7 @@
                                 <span class="span semibold">Home</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('chats') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -173,7 +173,7 @@
                                 <span class="span semibold">Chat</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('demand.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -186,7 +186,7 @@
                                 <span class="span semibold">Meus pedidos</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('like.demand.user') }}"
                                 class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
@@ -200,7 +200,7 @@
                                 <span class="span semibold">Meus favoritos</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('offer.list.user') }}"
                                 class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
@@ -214,7 +214,7 @@
                                 <span class="span semibold">Minhas ofertas</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('account.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -226,7 +226,7 @@
                                 <span class="span semibold">Minhas contas</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('user.bio', [auth()->user()->username]) }}"
                                 class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
@@ -242,7 +242,7 @@
                             </a>
                         </li>
 
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
                             <a href="{{ route('profile.user') }}" class="a flex items-center p-2 space-x-3 rounded-md">
                                 <span class="span ">
                                     <svg class="w-4 h-4" fill="currentColor" focusable="false" aria-hidden="true"
@@ -256,7 +256,7 @@
                                 <span class="span semibold">Meus dados</span>
                             </a>
                         </li>
-                        <li class="li dark:bg-gray-800 dark:text-white cursor-pointer">
+                        <li class="li dark:bg-gray-900 dark:text-white cursor-pointer">
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}" x-data>

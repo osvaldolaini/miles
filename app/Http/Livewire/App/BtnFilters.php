@@ -22,6 +22,10 @@ class BtnFilters extends Component
         $this->categories = AccountCategory::select('title','id')
         ->orderBy('title','asc')->where('active',1)->get();
 
+        $this->categoriesSelecteds = AccountCategory::select('title','id')
+        ->orderBy('title','asc')->where('active',1)->pluck('id')->toArray();
+
+
         if (isset($_GET['max_value'])) {
             $this->max_val = $_GET['max_value'];
         }
@@ -30,10 +34,13 @@ class BtnFilters extends Component
         }
         if (isset($_GET['categorias'])) {
             $cats = explode(',',$_GET['categorias']);
+
+            $this->categoriesSelecteds = [];
             for ($i=0; $i < count($cats); $i++) {
-                $this->oldSelecteds[] = $cats[$i];
+                $this->categoriesSelecteds[] = intval($cats[$i]);
             }
         }
+        // dd($this->categoriesSelecteds);
     }
     public function render()
     {

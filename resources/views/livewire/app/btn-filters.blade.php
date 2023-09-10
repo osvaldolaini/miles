@@ -22,8 +22,8 @@
                                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2 ">
                                     @foreach ($categories as $category)
                                         <div class="flex items-center col-span-1">
-                                            <input wire:model="categoriesSelecteds.{{ $category->id }}" type="checkbox"
-                                                {{ in_array($category->id, $oldSelecteds) ? 'checked' : '' }}
+                                            <input wire:model="categoriesSelecteds" type="checkbox"
+
                                                 id="cat_{{$category->id}}" value="{{ $category->id }}"
                                                 class="w-4 h-4 bg-gray-100 border-gray-300 rounded
                                                     text-primary-600 focus:ring-primary-500

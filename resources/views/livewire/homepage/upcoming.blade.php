@@ -3,7 +3,7 @@
         <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
                 <p
-                    class="inline-block px-3 py-px mb-4 text-sm font-bold
+                    class="inline-block p-3 mb-4 text-2xl sm:text-sm font-bold
                     tracking-wider text-white uppercase rounded-full">
                     O que vem por aí...
                 </p>

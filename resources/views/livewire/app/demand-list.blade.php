@@ -168,6 +168,6 @@
             // @this.call('refreshData');
             location.reload();
              // Emite um evento para recarregar o componente
-        }, 15000); // Recarrega o componente a cada 5 segundos (5000 milissegundos)
+        }, 20000); // Recarrega o componente a cada 5 segundos (5000 milissegundos)
     </script>
 </div>

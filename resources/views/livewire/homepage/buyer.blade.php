@@ -38,37 +38,37 @@
             </p>
         </div>
       <div>
-        <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center justify-between mb-6 text-gray-700 dark:text-white">
           <p class="text-2xl font-bold">Passo 2</p>
-          <svg class="w-6 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg class="w-6 transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600">
+        <p class="text-gray-600 dark:text-gray-100">
           Escolha a oferta que mais tenha lhe agradado e converse com o ofertante.
         </p>
       </div>
       <div>
-        <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center justify-between mb-6 text-gray-700 dark:text-white">
           <p class="text-2xl font-bold">Passo 3</p>
-          <svg class="w-6 text-gray-700 dark:text-white transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <svg class="w-6 transform rotate-90 sm:rotate-0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12"></line>
             <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
           </svg>
         </div>
-        <p class="text-gray-600">
+        <p class="text-gray-600 dark:text-gray-100">
             Após realizada a operação informe ao SisteMilhas como se transcorreu a negociação e avalie o ofertante.
         </p>
       </div>
       <div>
-        <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center justify-between mb-6 text-gray-700 dark:text-white">
           <p class="text-2xl font-bold">Sucesso</p>
-          <svg class="w-8 text-gray-600" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-8 " stroke="currentColor" viewBox="0 0 24 24">
             <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
           </svg>
         </div>
-        <p class="text-gray-600">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortável.
+        <p class="text-gray-600 dark:text-gray-100">Pronto, mais uma negociação realizada. Simples, rápido, fácil e confortável.
         </p>
       </div>
     </div>

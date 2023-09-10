@@ -19,7 +19,7 @@
             </span>
             comprar passagem utilizando milhas.
         </h2>
-        <p class="text-base text-gray-700 dark:text-white md:text-lg">
+        <p class="text-base text-gray-600 dark:text-gray-300 md:text-lg">
             O SisteMilhas funciona como uma rede social,
             aqui você vai encontrar diversas pessoas que lhe oferecerão suas milhas?
         </p>

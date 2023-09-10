@@ -33,7 +33,7 @@
                 <polyline fill="none" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
             </svg>
             </div>
-            <p class="text-gray-600">
+            <p class="text-gray-600 dark:text-gray-100">
                 Informe quantas milhas você precisa, para quantas pessoas e aguarde as ofertas.
             </p>
         </div>

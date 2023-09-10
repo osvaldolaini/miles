@@ -8,7 +8,7 @@
         </svg> Filtros
     </button>
     <x-dialog-modal wire:model="showFilterModal" class="mt-0">
-        <x-slot name="title">Finalizar</x-slot>
+        <x-slot name="title">Filtros</x-slot>
         <x-slot name="content">
             <form action="#" wire:submit.prevent="applayfilters()" wire.loading.attr='disable'>
                 <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5">

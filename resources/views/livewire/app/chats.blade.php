@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="stat px-2">
-                        <div class="stat-title dark:text-white">Pedido </div>
+                        <div class="stat-title text-white">Pedido </div>
                         <div class="stat-title text-lg font-extrabold dark:text-white">
                             R$ {{ $chat->demand->value }} - R$ {{ $chat->demand->value_max }}
                         </div>
@@ -26,7 +26,7 @@
 
                     <div class="stat px-2">
                         <a href="{{ route('offer.user', [$chat->offer->code]) }}">
-                            <div class="stat-title dark:text-white">Última mensagem</div>
+                            <div class="stat-title text-white">Última mensagem</div>
                             <div class="stat-actions flex flex-col space-y-2">
 
                                 <div class="chat {{ $chat->user_id == $user_id ? 'chat-end' : 'chat-start' }} ">

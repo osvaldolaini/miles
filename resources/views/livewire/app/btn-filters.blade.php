@@ -22,16 +22,15 @@
                                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2 ">
                                     @foreach ($categories as $category)
                                         <div class="flex items-center col-span-1">
-                                            <input wire:model="categoriesSelecteds"
-                                                type="checkbox" checked
-                                                {{ (in_array($category->id,$oldSelecteds) ? 'checked':'') }}
-                                                id="cat_{{$category->id}}"
-                                                value="{{$category->id}}"
+                                            <input wire:model="categoriesSelecteds" type="checkbox" checked
+                                                {{ in_array($category->id, $oldSelecteds) ? 'checked' : '' }}
+                                                id="cat_{{ $category->id }}" value="{{ $category->id }}"
                                                 class="w-4 h-4 bg-gray-100 border-gray-300 rounded
                                             text-primary-600 focus:ring-primary-500
                                             dark:focus:ring-primary-600 dark:ring-offset-gray-800
                                             focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label for="cat_{{$category->id}}" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                            <label for="cat_{{ $category->id }}"
+                                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                 {{ $category->title }}
                                             </label>
                                         </div>
@@ -79,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-end space-x-4">
+                {{-- <div class="flex items-end space-x-4">
                     <button type="submit"
                         class="bg-teal-500
                         hover:bg-gray-900 border-2 border-teal-500
@@ -90,14 +89,28 @@
                         duration-150">
                         Aplicar filtros
                     </button>
-                </div>
+                </div> --}}
             </form>
 
         </x-slot>
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('showFilterModal')" class="mx-2">
+            <button type="submit" wire:click="applayfilters()"
+                class="bg-teal-500
+                        hover:bg-gray-900 border-2 border-teal-500
+                        active:bg-teal-300 text-white text-xs
+                        font-bold uppercase px-6 py-2.5 rounded-full
+                        shadow hover:shadow-md outline-none focus:outline-none
+                        mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
+                        duration-150">
+                Aplicar filtros
+            </button>
+            <button type="submit" wire:click="$toggle('showFilterModal')"
+            class="inline-flex border-2 border-teal-500 bg-gray-900 text-white
+            active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow
+            hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear
+            transition-all duration-150">
                 Fechar
-            </x-secondary-button>
+            </button>
         </x-slot>
     </x-dialog-modal>
 </div>

@@ -1,4 +1,4 @@
-<div wire:init="loadPosts" wire:poll.10s>
+<div wire:init="loadPosts" >
     @livewire('app.message-alert')
     <x-app-breadcrumb filter="true" :oldSelecteds="$oldSelecteds">{{ $breadcrumb }}</x-app-breadcrumb>
 

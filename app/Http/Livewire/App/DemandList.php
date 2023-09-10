@@ -35,12 +35,19 @@ class DemandList extends Component
     public function mount()
     {
         $this->breadcrumb = 'Balcão de pedidos';
+        $this->demands = Demands::where('status', 1)
+        ->orderBy('id', 'desc')
+        ->where('user_id', '!=', Auth::user()->id)
+        ->where('end_date','>=',date('Y-m-d H:i:s'))
+        // ->limit($this->takeLimit)
+        ->get();
     }
 
     public function render()
     {
         return view('livewire.app.demand-list');
     }
+
     public function closeAlert()
     {
         $this->emit('closeAlert');

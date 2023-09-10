@@ -1,4 +1,4 @@
-<div wire:init="loadPosts">
+<div wire:init="loadPosts" wire:poll.10s>
     @livewire('app.message-alert')
     <x-app-breadcrumb filter="true" :oldSelecteds="$oldSelecteds">{{ $breadcrumb }}</x-app-breadcrumb>
 
@@ -123,12 +123,8 @@
                 </div>
                 <div class="px-3">
                     <div class="flex items-center">
-
-                        @if ($item->user->id != Auth::user()->id)
-                            @livewire('app.demand-likes', ['demands' => $item], key($item->id))
-                        @endif
+                        @livewire('app.demand-likes', ['demands' => $item], key($item->id))
                         @livewire('app.offers-to-demand', ['demand' => $item, 'linkOffer' => false], key($item->id))
-
                     </div>
 
                     <div class="space-y-3">

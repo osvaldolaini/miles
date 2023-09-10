@@ -125,9 +125,9 @@ class Demands extends Model
     {
         return $this->belongsTo(Offers::class, 'offer_id', 'id');
     }
-    public function like($user)
+    public function like()
     {
-        $like = DemandLike::where('demand_id', $this->id)->where('user_id', $user)->first();
+        $like = DemandLike::where('demand_id', $this->id)->where('user_id', Auth::user()->id)->first();
         if (isset($like)) {
             return true;
         } else {

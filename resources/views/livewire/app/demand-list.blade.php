@@ -123,12 +123,10 @@
                 </div>
                 <div class="px-3">
                     <div class="flex items-center">
-
                         @if ($item->user->id != Auth::user()->id)
                             @livewire('app.demand-likes', ['demands' => $item], key($item->id))
                         @endif
                         @livewire('app.offers-to-demand', ['demand' => $item, 'linkOffer' => false], key($item->id))
-
                     </div>
 
                     <div class="space-y-3">
@@ -164,4 +162,12 @@
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>
+    <script>
+        setInterval(function() {
+            // Livewire.emit('refreshComponent');
+            // @this.call('refreshData');
+            location.reload();
+             // Emite um evento para recarregar o componente
+        }, 15000); // Recarrega o componente a cada 5 segundos (5000 milissegundos)
+    </script>
 </div>

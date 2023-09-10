@@ -11,7 +11,5 @@
                 @livewire('app.btn-filters')
             </div>
         @endif
-
     </div>
-
 </div>

@@ -11,12 +11,12 @@
         <x-slot name="title">Filtros</x-slot>
         <x-slot name="content">
             <form action="#" wire:submit.prevent="applayfilters()" wire.loading.attr='disable'>
-                <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5">
+                <div class="grid gap-4 mb-1 sm:grid-cols-1 sm:gap-6 sm:mb-5 ">
                     <div class="flex flex-col justify-between flex-1">
-                        <div class="space-y-6">
+                        <div class="space-y-6 text-black dark:text-gray-900">
                             <!-- Categories -->
                             <div class="space-y-2">
-                                <h6 class="text-base font-medium text-black dark:text-white">
+                                <h6 class="text-base font-medium ">
                                     Planos
                                 </h6>
                                 <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2 ">

@@ -98,17 +98,19 @@
                 class="bg-teal-500
                         hover:bg-gray-900 border-2 border-teal-500
                         active:bg-teal-300 text-white text-xs
-                        font-bold uppercase px-6 py-2.5 rounded-full
+                        font-bold uppercase  rounded-full
                         shadow hover:shadow-md outline-none focus:outline-none
-                        mr-0 lg:mb-0 ml-3 mx-4  ease-linear transition-all
-                        duration-150">
+                        ease-linear transition-all
+                        duration-150
+                        mr-0 lg:mb-0 ml-3 mx-4 sm:px-6 py-2.5">
                 Aplicar filtros
             </button>
             <button type="submit" wire:click="$toggle('showFilterModal')"
             class="inline-flex border-2 border-teal-500 bg-gray-900 text-white
-            active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6 py-2.5 rounded-full shadow
-            hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-4 ease-linear
-            transition-all duration-150">
+            active:bg-teal-300 hover:bg-teal-300 text-xs font-bold uppercase px-6
+             rounded-full shadow hover:shadow-md outline-none focus:outline-none  ease-linear
+            transition-all duration-150
+            mr-0 lg:mb-0 ml-3 mx-4 sm:px-6 py-2.5" >
                 Fechar
             </button>
         </x-slot>

@@ -36,10 +36,10 @@
                         <a href="https://www.instagram.com/aeromiles_" target="_blank" rel="noopener noreferrer">
                             <div class="card w-auto bg-base-100 shadow-xl image-full">
                                 <figure>
-                                    <picture class="h-24" {{ $attributes }}>
+                                    <picture class="h-36" {{ $attributes }}>
                                         <source srcset="{{ url('storage/ads/aero-miles.png') }}" />
                                         <source srcset="{{ url('storage/ads/aero-miles.webp') }}" />
-                                        <img class="h-24" src="{{ url('storage/ads/aero-miles.png') }}"
+                                        <img class="h-36" src="{{ url('storage/ads/aero-miles.png') }}"
                                             alt="sistemilhas-ads">
                                     </picture>
                                 </figure>
@@ -48,7 +48,7 @@
                                 <p class="text-white">Mostre sua marca para o seu público alvo.</p> --}}
                                 </div>
                             </div>
-                        </a>F
+                        </a>
                         <div class="card w-auto bg-base-100 shadow-xl image-full mt-8">
                             <figure>
                                 <picture class="h-24" {{ $attributes }}>

@@ -33,27 +33,29 @@
                 <!-- Adsense -->
                 <div class="h-screen sticky top-0 hidden lg:block">
                     <div class="w-full mt-8 pb-0">
-                        <div class="card w-auto bg-base-100 shadow-xl image-full">
-                            <figure>
-                                <picture class="h-24" {{ $attributes }}>
-                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.png')}}" />
-                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.webp')}}"/>
-                                    <img class="h-24" src="{{ url('storage/logo/sistemilhas-logo-principal.png') }}"
-                                    alt="sistemilhas-logo">
-                                </picture>
-                            </figure>
-                            <div class="card-body text-white">
-                                <h2 class="card-title text-white">Anucie aqui!</h2>
-                                <p class="text-white">Mostre sua marca para o seu público alvo.</p>
+                        <a href="https://www.instagram.com/aeromiles_" target="_blank" rel="noopener noreferrer">
+                            <div class="card w-auto bg-base-100 shadow-xl image-full">
+                                <figure>
+                                    <picture class="h-24" {{ $attributes }}>
+                                        <source srcset="{{ url('storage/ads/aero-miles.png') }}" />
+                                        <source srcset="{{ url('storage/ads/aero-miles.webp') }}" />
+                                        <img class="h-24" src="{{ url('storage/ads/aero-miles.png') }}"
+                                            alt="sistemilhas-ads">
+                                    </picture>
+                                </figure>
+                                <div class="card-body text-white">
+                                    {{-- <h2 class="card-title text-white">Anucie aqui!</h2>
+                                <p class="text-white">Mostre sua marca para o seu público alvo.</p> --}}
+                                </div>
                             </div>
-                        </div>
+                        </a>F
                         <div class="card w-auto bg-base-100 shadow-xl image-full mt-8">
                             <figure>
                                 <picture class="h-24" {{ $attributes }}>
-                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.png')}}" />
-                                    <source srcset="{{url('storage/logo/sistemilhas-logo-principal.webp')}}"/>
+                                    <source srcset="{{ url('storage/logo/sistemilhas-logo-principal.png') }}" />
+                                    <source srcset="{{ url('storage/logo/sistemilhas-logo-principal.webp') }}" />
                                     <img class="h-24" src="{{ url('storage/logo/sistemilhas-logo-principal.png') }}"
-                                    alt="sistemilhas-logo">
+                                        alt="sistemilhas-logo">
                                 </picture>
                             </figure>
                             <div class="card-body text-white">

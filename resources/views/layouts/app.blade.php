@@ -44,7 +44,7 @@
                                             alt="sistemilhas-ads">
                                     </picture>
                                 </figure>
-                                <p class="w-full text-right text-xs text-gray-300">
+                                <p class="w-full text-right text-xs text-gray-400">
                                     Publicidade
                                 </p>
                             </div>

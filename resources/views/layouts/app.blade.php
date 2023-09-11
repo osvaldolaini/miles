@@ -44,6 +44,7 @@
                                             alt="sistemilhas-ads">
                                     </picture>
                                 </figure>
+                                <p class="text-white">Publicidade</p>
                             </div>
                         </a>
                         <div class="card w-auto bg-base-100 shadow-xl image-full mt-8">
